@@ -1,9 +1,3 @@
 # Projet-POO
 
-
-
-Bla 
-
-Bla 
-
-Bla 
+Welcome in our POO project.
