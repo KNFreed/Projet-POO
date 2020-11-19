@@ -43,5 +43,6 @@ Nous devons modéliser l'application que nous créerons ainsi que la base de don
 [***Fichier source UML***](./Merise/MLD/MLD.uml)
 
 ### Script SQL
-
+Temps d'exécution
+![](./Merise/Script_SQL/temps_execution.png)
 [***Script SQL.sql***](./Merise/Script_SQL/Script_SQL.sql)
