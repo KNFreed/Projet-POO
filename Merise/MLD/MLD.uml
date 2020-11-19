@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>84c11fe3-3d2c-4962-98a8-640126edfa1c.SCHEMA:Projet</OriginalElement>
+  <nodes>
+    <node x="193.76250000000005" y="259.0">84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Catalogue_Entreprise</node>
+    <node x="1268.51375" y="281.0">84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Lieu_Livraison</node>
+    <node x="193.76250000000005" y="11.0">84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Historique_Tarif_TVA</node>
+    <node x="1069.51375" y="496.0">84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Facture_Vente</node>
+    <node x="915.6362500000002" y="0.0">84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Repertoire_Adresse</node>
+    <node x="471.5137500000001" y="215.0">84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Commande</node>
+    <node x="1295.0958333333335" y="22.0">84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Client</node>
+    <node x="407.3041666666667" y="909.0">84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Ligne_Facture</node>
+    <node x="467.75000000000006" y="595.0">84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Mode_Paiement</node>
+    <node x="1069.51375" y="281.0">84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Lieu_Facturation</node>
+    <node x="0.0" y="270.0">84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Stock</node>
+    <node x="260.7333333333335" y="628.0">84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Ligne</node>
+    <node x="665.5137500000001" y="248.0">84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Personnel</node>
+    <node x="833.5137500000001" y="259.0">84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Informations_Entreprise</node>
+    <node x="38.0" y="639.5">84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Present_en_Stock</node>
+    <node x="236.30416666666667" y="920.0">84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Ligne_Commande</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Catalogue_Entreprise" target="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Historique_Tarif_TVA">
+      <point x="0.0" y="-71.5" />
+      <point x="0.0" y="71.5" />
+    </edge>
+    <edge source="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Facture_Vente" target="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Client">
+      <point x="71.60000000000008" y="-181.5" />
+      <point x="1230.6137500000002" y="476.0" />
+      <point x="1458.3054166666668" y="476.0" />
+      <point x="1458.3054166666668" y="195.0" />
+      <point x="1415.9291666666668" y="195.0" />
+      <point x="48.33333333333337" y="60.5" />
+    </edge>
+    <edge source="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Facture_Vente" target="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Informations_Entreprise">
+      <point x="-35.80000000000001" y="-181.5" />
+      <point x="1123.2137500000001" y="466.0" />
+      <point x="941.5137500000001" y="466.0" />
+      <point x="0.0" y="71.5" />
+    </edge>
+    <edge source="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Lieu_Facturation" target="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Repertoire_Adresse">
+      <point x="-44.75" y="-49.5" />
+      <point x="1114.26375" y="195.0" />
+      <point x="1025.6362500000002" y="195.0" />
+      <point x="22.0" y="82.5" />
+    </edge>
+    <edge source="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Facture_Vente" target="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Lieu_Facturation">
+      <point x="0.0" y="-181.5" />
+      <point x="0.0" y="49.5" />
+    </edge>
+    <edge source="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Present_en_Stock" target="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Stock">
+      <point x="-40.0" y="-38.0" />
+      <point x="0.0" y="60.5" />
+    </edge>
+    <edge source="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Ligne_Commande" target="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Ligne">
+      <point x="0.0" y="-60.5" />
+      <point x="311.8041666666667" y="889.0" />
+      <point x="291.9833333333335" y="889.0" />
+      <point x="-31.25" y="49.5" />
+    </edge>
+    <edge source="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Ligne_Facture" target="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Ligne">
+      <point x="-50.33333333333326" y="-71.5" />
+      <point x="432.4708333333334" y="879.0" />
+      <point x="354.4833333333335" y="879.0" />
+      <point x="31.25" y="49.5" />
+    </edge>
+    <edge source="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Lieu_Facturation" target="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Client">
+      <point x="44.75" y="-49.5" />
+      <point x="1203.76375" y="195.0" />
+      <point x="1319.2625000000003" y="195.0" />
+      <point x="-48.33333333333334" y="60.5" />
+    </edge>
+    <edge source="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Ligne_Facture" target="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Facture_Vente">
+      <point x="50.33333333333326" y="-71.5" />
+      <point x="533.1374999999999" y="889.0" />
+      <point x="1159.01375" y="889.0" />
+      <point x="0.0" y="181.5" />
+    </edge>
+    <edge source="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Ligne_Commande" target="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Catalogue_Entreprise">
+      <point x="-50.33333333333326" y="-60.5" />
+      <point x="261.4708333333334" y="889.0" />
+      <point x="234.38625000000025" y="889.0" />
+      <point x="234.38625000000025" y="476.0" />
+      <point x="265.76250000000005" y="476.0" />
+      <point x="-24.0" y="71.5" />
+    </edge>
+    <edge source="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Facture_Vente" target="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Commande">
+      <point x="-71.60000000000002" y="-181.5" />
+      <point x="1087.4137500000002" y="476.0" />
+      <point x="599.8470833333334" y="476.0" />
+      <point x="51.33333333333337" y="115.5" />
+    </edge>
+    <edge source="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Lieu_Livraison" target="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Repertoire_Adresse">
+      <point x="-41.25" y="-49.5" />
+      <point x="1309.76375" y="185.0" />
+      <point x="1069.6362500000002" y="185.0" />
+      <point x="66.0" y="82.5" />
+    </edge>
+    <edge source="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Ligne" target="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Catalogue_Entreprise">
+      <point x="0.0" y="-49.5" />
+      <point x="323.2333333333335" y="476.0" />
+      <point x="313.76250000000005" y="476.0" />
+      <point x="24.0" y="71.5" />
+    </edge>
+    <edge source="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Facture_Vente" target="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Lieu_Livraison">
+      <point x="35.80000000000001" y="-181.5" />
+      <point x="1194.8137500000003" y="466.0" />
+      <point x="1351.01375" y="466.0" />
+      <point x="0.0" y="49.5" />
+    </edge>
+    <edge source="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Ligne_Facture" target="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Catalogue_Entreprise">
+      <point x="0.0" y="-71.5" />
+      <point x="482.8041666666667" y="879.0" />
+      <point x="441.00000000000006" y="879.0" />
+      <point x="441.00000000000006" y="476.0" />
+      <point x="361.76250000000005" y="476.0" />
+      <point x="72.0" y="71.5" />
+    </edge>
+    <edge source="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Personnel" target="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Repertoire_Adresse">
+      <point x="0.0" y="-82.5" />
+      <point x="739.5137500000001" y="185.0" />
+      <point x="937.6362500000002" y="185.0" />
+      <point x="-66.0" y="82.5" />
+    </edge>
+    <edge source="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Lieu_Livraison" target="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Client">
+      <point x="41.25" y="-49.5" />
+      <point x="1392.26375" y="195.0" />
+      <point x="1367.5958333333335" y="195.0" />
+      <point x="0.0" y="60.5" />
+    </edge>
+    <edge source="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Personnel" target="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Personnel">
+      <point x="0.0" y="82.5" />
+      <point x="739.5137500000001" y="433.0" />
+      <point x="645.5137500000001" y="433.0" />
+      <point x="645.5137500000001" y="330.5" />
+      <point x="-74.0" y="-0.0" />
+    </edge>
+    <edge source="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Informations_Entreprise" target="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Repertoire_Adresse">
+      <point x="0.0" y="-71.5" />
+      <point x="941.5137500000001" y="195.0" />
+      <point x="981.6362500000002" y="195.0" />
+      <point x="-22.0" y="82.5" />
+    </edge>
+    <edge source="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Ligne_Commande" target="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Commande">
+      <point x="50.33333333333326" y="-60.5" />
+      <point x="362.13749999999993" y="889.0" />
+      <point x="457.25000000000006" y="889.0" />
+      <point x="457.25000000000006" y="476.0" />
+      <point x="497.1804166666667" y="476.0" />
+      <point x="-51.33333333333337" y="115.5" />
+    </edge>
+    <edge source="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Mode_Paiement" target="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Commande">
+      <point x="0.0" y="-82.5" />
+      <point x="556.75" y="476.0" />
+      <point x="548.5137500000001" y="476.0" />
+      <point x="0.0" y="115.5" />
+    </edge>
+    <edge source="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Present_en_Stock" target="84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Catalogue_Entreprise">
+      <point x="40.0" y="-38.0" />
+      <point x="158.0" y="476.0" />
+      <point x="217.76250000000005" y="476.0" />
+      <point x="-72.0" y="71.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.6501865671641791" x="756.5" y="526.0" />
+  <SelectedNodes>
+    <node>84c11fe3-3d2c-4962-98a8-640126edfa1c.TABLE:Projet.Ligne_Commande</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Key columns</Category>
+    <Category>Columns</Category>
+    <Category>Virtual foreign keys</Category>
+  </Categories>
+</Diagram>
+
