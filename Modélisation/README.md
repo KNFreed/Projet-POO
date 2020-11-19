@@ -39,7 +39,7 @@ Nous devons modéliser l'application que nous créerons ainsi que la base de don
 
 ### MLD
 
-![](./Merise/MLD/MLD.png)  
+![](./Merise/MLD/MLD.svg)  
 [***Fichier source UML***](./Merise/MLD/MLD.uml)
 
 ### Script SQL
