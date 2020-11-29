@@ -81,15 +81,25 @@ create table Liste_Historique
 
 create table Mode_Paiement
 (
-    ID_Mode_Paiement int auto_increment
+    ID_Mode_Paiement  int auto_increment
+        primary key,
+    Nom_Mode_Paiement varchar(10) not null
+);
+
+create table Paiement
+(
+    ID_Paiement      int auto_increment
         primary key,
     Libelle_Paiement varchar(20) not null,
     Date_Paiement    date        not null,
     Montant          float       not null,
     Solde_Restant    float       not null,
     ID_Commande      int         not null,
-    constraint Mode_Paiement_Commande0_FK
-        foreign key (ID_Commande) references Commande (ID_Commande)
+    ID_Mode_Paiement int         not null,
+    constraint Paiement_Commande0_FK
+        foreign key (ID_Commande) references Commande (ID_Commande),
+    constraint Paiement_Mode_Paiement1_FK
+        foreign key (ID_Mode_Paiement) references Mode_Paiement (ID_Mode_Paiement)
 );
 
 create table Repertoire_Adresse
@@ -101,6 +111,22 @@ create table Repertoire_Adresse
     Code_Postal int         not null,
     Ville       varchar(20) not null,
     Pays        varchar(20) not null
+);
+
+create table Definition_Lieu
+(
+    ID_Lieu_Livraison                  int auto_increment
+        primary key,
+    Type                               char not null comment 'F pour Facturation ou L pour Livraison',
+    ID_Client                          int  not null,
+    ID_Client_CPosseder_Lieu_Livraison int  not null,
+    ID_Adresse                         int  not null,
+    constraint Definition_Lieu_Client0_FK
+        foreign key (ID_Client) references Client (ID_Client),
+    constraint Definition_Lieu_Client1_FK
+        foreign key (ID_Client_CPosseder_Lieu_Livraison) references Client (ID_Client),
+    constraint Definition_Lieu_Repertoire_Adresse2_FK
+        foreign key (ID_Adresse) references Repertoire_Adresse (ID_Adresse)
 );
 
 create table Informations_Entreprise
@@ -115,50 +141,37 @@ create table Informations_Entreprise
         foreign key (ID_Adresse) references Repertoire_Adresse (ID_Adresse)
 );
 
-create table Lieu_Facturation
-(
-    ID_Lieu_Facturation int auto_increment
-        primary key,
-    ID_Client           int not null,
-    ID_Adresse          int not null,
-    constraint Lieu_Facturation_Client0_FK
-        foreign key (ID_Client) references Client (ID_Client),
-    constraint Lieu_Facturation_Repertoire_Adresse1_FK
-        foreign key (ID_Adresse) references Repertoire_Adresse (ID_Adresse)
-);
-
-create table Lieu_Livraison
-(
-    ID_Lieu_Livraison int auto_increment
-        primary key,
-    ID_Client         int not null,
-    ID_Adresse        int not null,
-    constraint Lieu_Livraison_Client0_FK
-        foreign key (ID_Client) references Client (ID_Client),
-    constraint Lieu_Livraison_Repertoire_Adresse1_FK
-        foreign key (ID_Adresse) references Repertoire_Adresse (ID_Adresse)
-);
-
 create table Facture_Vente
 (
-    ID_Facture           int auto_increment
+    ID_Facture                        int auto_increment
         primary key,
-    FC_Montant_Total_HT  float not null,
-    FC_Montant_Total_TVA float not null,
-    FC_Reduction         float not null,
-    FC_Montant_Total_TTC float not null,
-    ID_Client            int   not null,
-    ID_Lieu_Facturation  int   not null,
-    ID_Lieu_Livraison    int   not null,
-    ID_Entreprise        int   not null,
+    FC_Montant_Total_HT               float not null,
+    FC_Montant_Total_TVA              float not null,
+    FC_Reduction                      float not null,
+    FC_Montant_Total_TTC              float not null,
+    ID_Client                         int   not null,
+    ID_Lieu_Livraison                 int   not null,
+    ID_Lieu_Livraison_Definition_Lieu int   not null,
+    ID_Entreprise                     int   not null,
     constraint Facture_Vente_Client0_FK
         foreign key (ID_Client) references Client (ID_Client),
+    constraint Facture_Vente_Definition_Lieu1_FK
+        foreign key (ID_Lieu_Livraison) references Definition_Lieu (ID_Lieu_Livraison),
+    constraint Facture_Vente_Definition_Lieu2_FK
+        foreign key (ID_Lieu_Livraison_Definition_Lieu) references Definition_Lieu (ID_Lieu_Livraison),
     constraint Facture_Vente_Informations_Entreprise3_FK
-        foreign key (ID_Entreprise) references Informations_Entreprise (ID_Entreprise),
-    constraint Facture_Vente_Lieu_Facturation1_FK
-        foreign key (ID_Lieu_Facturation) references Lieu_Facturation (ID_Lieu_Facturation),
-    constraint Facture_Vente_Lieu_Livraison2_FK
-        foreign key (ID_Lieu_Livraison) references Lieu_Livraison (ID_Lieu_Livraison)
+        foreign key (ID_Entreprise) references Informations_Entreprise (ID_Entreprise)
+);
+
+create table Facture_Contient
+(
+    ID_Ligne   int not null,
+    ID_Facture int not null,
+    primary key (ID_Ligne, ID_Facture),
+    constraint Facture_Contient_Facture_Vente1_FK
+        foreign key (ID_Facture) references Facture_Vente (ID_Facture),
+    constraint Facture_Contient_Ligne_Commande0_FK
+        foreign key (ID_Ligne) references Ligne_Commande (ID_Ligne)
 );
 
 create table Facture_de_Commande
@@ -170,21 +183,6 @@ create table Facture_de_Commande
         foreign key (ID_Commande) references Commande (ID_Commande),
     constraint Facture_de_Commande_Facture_Vente1_FK
         foreign key (ID_Facture) references Facture_Vente (ID_Facture)
-);
-
-create table Ligne_Facture
-(
-    ID_Ligne   int not null
-        primary key,
-    Quantite   int not null,
-    ID_Facture int not null,
-    ID_Article int not null,
-    constraint Ligne_Facture_Catalogue_Entreprise2_FK
-        foreign key (ID_Article) references Catalogue_Entreprise (ID_Article),
-    constraint Ligne_Facture_Facture_Vente1_FK
-        foreign key (ID_Facture) references Facture_Vente (ID_Facture),
-    constraint Ligne_Facture_Ligne0_FK
-        foreign key (ID_Ligne) references Ligne (ID_Ligne)
 );
 
 create table Personnel
