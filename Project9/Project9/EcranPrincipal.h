@@ -116,6 +116,7 @@ namespace Project9 {
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox1->TabIndex = 7;
 			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Image = Image::FromFile("./Logo2.png");
 			// 
 			// Param
 			// 

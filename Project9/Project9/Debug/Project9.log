@@ -1,14 +1,20 @@
 ﻿cl : command line warning D9035: option 'clr:pure' has been deprecated and will be removed in a future release
   Connexion.cpp
-C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(434,20): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(501,22): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(797,20): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(898,22): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(930,25): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(1055,25): warning C4101: 'ex': unreferenced local variable
 C:\Users\Nyu\source\repos\Project9\Project9\Connexion.h(251,21): warning C4101: 'ex': unreferenced local variable
   EcranPrincipal.cpp
-C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(434,20): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(501,22): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(797,20): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(898,22): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(930,25): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(1055,25): warning C4101: 'ex': unreferenced local variable
   GestionClient.cpp
-C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(434,20): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(501,22): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(797,20): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(898,22): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(930,25): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(1055,25): warning C4101: 'ex': unreferenced local variable
   Generating Code...
   Accueil.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   Project9.vcxproj -> C:\Users\Nyu\source\repos\Project9\Debug\Project9.exe
