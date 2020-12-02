@@ -218,6 +218,7 @@ namespace Project9 {
 			this->textBox1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
 				static_cast<System::Int32>(static_cast<System::Byte>(222)));
 			this->textBox1->Location = System::Drawing::Point(240, 165);
+			this->textBox1->MaxLength = 11;
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(122, 26);
 			this->textBox1->TabIndex = 3;
@@ -292,6 +293,7 @@ namespace Project9 {
 			this->textBox2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
 				static_cast<System::Int32>(static_cast<System::Byte>(222)));
 			this->textBox2->Location = System::Drawing::Point(240, 245);
+			this->textBox2->MaxLength = 20;
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(122, 26);
 			this->textBox2->TabIndex = 10;
@@ -319,6 +321,7 @@ namespace Project9 {
 			this->textBox3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
 				static_cast<System::Int32>(static_cast<System::Byte>(222)));
 			this->textBox3->Location = System::Drawing::Point(240, 277);
+			this->textBox3->MaxLength = 20;
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(122, 26);
 			this->textBox3->TabIndex = 13;
@@ -529,10 +532,12 @@ namespace Project9 {
 			this->textBox4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
 				static_cast<System::Int32>(static_cast<System::Byte>(222)));
 			this->textBox4->Location = System::Drawing::Point(240, 341);
+			this->textBox4->MaxLength = 40;
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(122, 26);
 			this->textBox4->TabIndex = 21;
 			this->textBox4->Visible = false;
+			this->textBox4->TextChanged += gcnew System::EventHandler(this, &GestionClient::textBox4_TextChanged);
 			// 
 			// label9
 			// 
@@ -558,6 +563,7 @@ namespace Project9 {
 			this->textBox5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
 				static_cast<System::Int32>(static_cast<System::Byte>(222)));
 			this->textBox5->Location = System::Drawing::Point(240, 373);
+			this->textBox5->MaxLength = 10;
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(122, 26);
 			this->textBox5->TabIndex = 23;
@@ -587,6 +593,7 @@ namespace Project9 {
 			this->textBox6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
 				static_cast<System::Int32>(static_cast<System::Byte>(222)));
 			this->textBox6->Location = System::Drawing::Point(240, 405);
+			this->textBox6->MaxLength = 20;
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(122, 26);
 			this->textBox6->TabIndex = 25;
@@ -660,6 +667,7 @@ namespace Project9 {
 			this->textBox7->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
 				static_cast<System::Int32>(static_cast<System::Byte>(222)));
 			this->textBox7->Location = System::Drawing::Point(240, 437);
+			this->textBox7->MaxLength = 20;
 			this->textBox7->Name = L"textBox7";
 			this->textBox7->Size = System::Drawing::Size(122, 26);
 			this->textBox7->TabIndex = 30;
@@ -850,53 +858,60 @@ private: System::Void AjoutPers_Click(System::Object^ sender, System::EventArgs^
 	   // INSERTION DUN NOUVEAU CLIENT
 	private: System::Void button2_Click2(System::Object^ sender, System::EventArgs^ e) {
 		try {
-			//Query
-			System::String^ theDate = this->dateTimePicker1->Value.ToString("yyyy-MM-dd");
-			// Connexion SQL
+			if (this->textBox2->Text != "" && this->textBox3->Text != "" && this->textBox4->Text != "" && this->textBox5->Text != "" && this->textBox6->Text != "" && this->textBox7->Text != "") {
+				//Query
+				System::String^ theDate = this->dateTimePicker1->Value.ToString("yyyy-MM-dd");
+				// Connexion SQL
 
-			MySqlConnection^ cnxx = gcnew MySqlConnection(cnxstr);
-			MySqlCommand^ cmd = gcnew MySqlCommand();
-			MySqlDataReader^ Reader;
-			cmd->Connection = cnxx;
+				MySqlConnection^ cnxx = gcnew MySqlConnection(cnxstr);
+				MySqlCommand^ cmd = gcnew MySqlCommand();
+				MySqlDataReader^ Reader;
+				cmd->Connection = cnxx;
 
-			if (this->checkBox1->Checked && this->checkBox2->Checked) {
-				cmd->CommandText = "START TRANSACTION; INSERT INTO Repertoire_Adresse (Rue, Code_Postal, Ville,Pays) VALUES ('" + this->textBox4->Text + "', '" + this->textBox5->Text + "', '" + this->textBox6->Text + "', '" + this->textBox7->Text + "'); INSERT INTO Client (Nom_Client, Prenom_Client, Date_Naissance) VALUES ('" + this->textBox2->Text + "', '" + this->textBox3->Text + "', '" + theDate + "'); INSERT INTO Definition_Lieu (ID_Client,ID_Adresse,Type) SELECT MAX(ID_Client), MAX(ID_Adresse), 'F' FROM Client,Repertoire_Adresse; INSERT INTO Definition_Lieu (ID_Client,ID_Adresse,Type) SELECT MAX(ID_Client), MAX(ID_Adresse), 'L' FROM Client,Repertoire_Adresse; COMMIT;";
-				cnxx->Open();
-				Reader = cmd->ExecuteReader();
-				while (Reader->Read())
-				{
-				};
-				Reader->Close();
-			} else if (this->checkBox1->Checked) {
-				cmd->CommandText = "START TRANSACTION; INSERT INTO Repertoire_Adresse (Rue, Code_Postal, Ville,Pays) VALUES ('" + this->textBox4->Text + "', '" + this->textBox5->Text + "', '" + this->textBox6->Text + "', '" + this->textBox7->Text + "'); INSERT INTO Client (Nom_Client, Prenom_Client, Date_Naissance) VALUES ('" + this->textBox2->Text + "', '" + this->textBox3->Text + "', '" + theDate + "'); INSERT INTO Definition_Lieu (ID_Client,ID_Adresse,Type) SELECT MAX(ID_Client), MAX(ID_Adresse), 'F' FROM Client,Repertoire_Adresse; COMMIT;";
-				cnxx->Open();
-				Reader = cmd->ExecuteReader();
-				while (Reader->Read())
-				{
-				};
-				Reader->Close();
-			} else if (this->checkBox2->Checked) {
-				cmd->CommandText = "START TRANSACTION; INSERT INTO Repertoire_Adresse (Rue, Code_Postal, Ville,Pays) VALUES ('" + this->textBox4->Text + "', '" + this->textBox5->Text + "', '" + this->textBox6->Text + "', '" + this->textBox7->Text + "'); INSERT INTO Client (Nom_Client, Prenom_Client, Date_Naissance) VALUES ('" + this->textBox2->Text + "', '" + this->textBox3->Text + "', '" + theDate + "'); INSERT INTO Definition_Lieu (ID_Client,ID_Adresse,Type) SELECT MAX(ID_Client), MAX(ID_Adresse), 'L' FROM Client,Repertoire_Adresse; COMMIT;";
-				cnxx->Open();
-				Reader = cmd->ExecuteReader();
-				while (Reader->Read())
-				{
-				};
-				Reader->Close();
-			} 
-			if (this->checkBox1->Checked || this->checkBox2->Checked) {
-				System::String^ requ = "SELECT ID_Client, Nom_Client AS Nom, Prenom_Client AS Prenom, Date_Naissance FROM Projet.Client;";
-				InsertDataGrid(requ);
+				if (this->checkBox1->Checked && this->checkBox2->Checked) {
+					cmd->CommandText = "START TRANSACTION; INSERT INTO Repertoire_Adresse (Rue, Code_Postal, Ville,Pays) VALUES ('" + this->textBox4->Text + "', '" + this->textBox5->Text + "', '" + this->textBox6->Text + "', '" + this->textBox7->Text + "'); INSERT INTO Client (Nom_Client, Prenom_Client, Date_Naissance) VALUES ('" + this->textBox2->Text + "', '" + this->textBox3->Text + "', '" + theDate + "'); INSERT INTO Definition_Lieu (ID_Client,ID_Adresse,Type) SELECT MAX(ID_Client), MAX(ID_Adresse), 'F' FROM Client,Repertoire_Adresse; INSERT INTO Definition_Lieu (ID_Client,ID_Adresse,Type) SELECT MAX(ID_Client), MAX(ID_Adresse), 'L' FROM Client,Repertoire_Adresse; COMMIT;";
+					cnxx->Open();
+					Reader = cmd->ExecuteReader();
+					while (Reader->Read())
+					{
+					};
+					Reader->Close();
+				}
+				else if (this->checkBox1->Checked) {
+					cmd->CommandText = "START TRANSACTION; INSERT INTO Repertoire_Adresse (Rue, Code_Postal, Ville,Pays) VALUES ('" + this->textBox4->Text + "', '" + this->textBox5->Text + "', '" + this->textBox6->Text + "', '" + this->textBox7->Text + "'); INSERT INTO Client (Nom_Client, Prenom_Client, Date_Naissance) VALUES ('" + this->textBox2->Text + "', '" + this->textBox3->Text + "', '" + theDate + "'); INSERT INTO Definition_Lieu (ID_Client,ID_Adresse,Type) SELECT MAX(ID_Client), MAX(ID_Adresse), 'F' FROM Client,Repertoire_Adresse; COMMIT;";
+					cnxx->Open();
+					Reader = cmd->ExecuteReader();
+					while (Reader->Read())
+					{
+					};
+					Reader->Close();
+				}
+				else if (this->checkBox2->Checked) {
+					cmd->CommandText = "START TRANSACTION; INSERT INTO Repertoire_Adresse (Rue, Code_Postal, Ville,Pays) VALUES ('" + this->textBox4->Text + "', '" + this->textBox5->Text + "', '" + this->textBox6->Text + "', '" + this->textBox7->Text + "'); INSERT INTO Client (Nom_Client, Prenom_Client, Date_Naissance) VALUES ('" + this->textBox2->Text + "', '" + this->textBox3->Text + "', '" + theDate + "'); INSERT INTO Definition_Lieu (ID_Client,ID_Adresse,Type) SELECT MAX(ID_Client), MAX(ID_Adresse), 'L' FROM Client,Repertoire_Adresse; COMMIT;";
+					cnxx->Open();
+					Reader = cmd->ExecuteReader();
+					while (Reader->Read())
+					{
+					};
+					Reader->Close();
+				}
+				if (this->checkBox1->Checked || this->checkBox2->Checked) {
+					System::String^ requ = "SELECT ID_Client, Nom_Client AS Nom, Prenom_Client AS Prenom, Date_Naissance FROM Projet.Client;";
+					InsertDataGrid(requ);
 
-				// On remet tout comme avant
-				retour();
+					// On remet tout comme avant
+					retour();
+				}
+				else {
+					MessageBox::Show("Merci de sélectionner au moins un type d'Adresse.");
+				}
 			}
 			else {
-				MessageBox::Show("Merci de sélectionner au moins un type d'Adresse.");
+				MessageBox::Show("Erreur : Merci de remplir tous les champs obligatoires.");
 			}
 		}
 		catch (Exception ^ ex) {
-			MessageBox::Show("aoi");
+			MessageBox::Show("Erreur innatendue. Contactez votre adminsitrateur système.");
 		}
 	}
 		   // REMISE EN PLACE DES BOUTONS 
@@ -956,88 +971,44 @@ private: System::Void AjoutPers_Click(System::Object^ sender, System::EventArgs^
 			   DataGridViewRow^ ligne = dataGridView1->SelectedRows[0];
 			   DataGridViewRow^ ligneAdresse = dataGridView2->SelectedRows[0];
 			   try {
-				   if(this->checkBox3->Checked){
-					   //Query
-					   System::String^ theDate = this->dateTimePicker1->Value.ToString("yyyy-MM-dd");
-					   // Connexion SQL
+				   if (this->textBox2->Text != "" && this->textBox3->Text != "" && this->textBox4->Text != "" && this->textBox5->Text != "" && this->textBox6->Text != "" && this->textBox7->Text != "") {
+					   if (this->checkBox3->Checked) {
+						   //Query
+						   System::String^ theDate = this->dateTimePicker1->Value.ToString("yyyy-MM-dd");
+						   // Connexion SQL
 
-					   MySqlConnection^ cnxx = gcnew MySqlConnection(cnxstr);
-					   MySqlCommand^ cmd = gcnew MySqlCommand();
-					   MySqlDataReader^ Reader;
-					   cmd->Connection = cnxx;
+						   MySqlConnection^ cnxx = gcnew MySqlConnection(cnxstr);
+						   MySqlCommand^ cmd = gcnew MySqlCommand();
+						   MySqlDataReader^ Reader;
+						   cmd->Connection = cnxx;
 
-					   if (this->checkBox1->Checked && this->checkBox2->Checked) {
-						   cmd->CommandText = "START TRANSACTION; INSERT INTO Repertoire_Adresse (Rue, Code_Postal, Ville,Pays) VALUES ('" + this->textBox4->Text + "', '" + this->textBox5->Text + "', '" + this->textBox6->Text + "', '" + this->textBox7->Text + "');  UPDATE Client SET Nom_Client = '" + this->textBox2->Text + "', Prenom_Client = '" + this->textBox3->Text + "', Date_Naissance = '" + theDate + "' WHERE ID_Client = '" + ligne->Cells["ID_Client"]->Value->ToString() + "'; INSERT INTO Definition_Lieu (ID_Client,ID_Adresse,Type) SELECT '" + ligne->Cells["ID_Client"]->Value->ToString() + "', MAX(ID_Adresse), 'F' FROM Repertoire_Adresse; INSERT INTO Definition_Lieu (ID_Client,ID_Adresse,Type) SELECT '" + ligne->Cells["ID_Client"]->Value->ToString() + "', MAX(ID_Adresse), 'L' FROM Repertoire_Adresse; COMMIT;";
-						   cnxx->Open();
-						   Reader = cmd->ExecuteReader();
-						   while (Reader->Read())
-						   {
-						   };
-						   Reader->Close();
-					   }
-					   else if (this->checkBox1->Checked) {
-						   cmd->CommandText = "START TRANSACTION; INSERT INTO Repertoire_Adresse (Rue, Code_Postal, Ville,Pays) VALUES ('" + this->textBox4->Text + "', '" + this->textBox5->Text + "', '" + this->textBox6->Text + "', '" + this->textBox7->Text + "'); UPDATE Client SET Nom_Client = '" + this->textBox2->Text + "', Prenom_Client = '" + this->textBox3->Text + "', Date_Naissance = '" + theDate + "' WHERE ID_Client = '" + ligne->Cells["ID_Client"]->Value->ToString() + "'; INSERT INTO Definition_Lieu (ID_Client,ID_Adresse,Type) SELECT '" + ligne->Cells["ID_Client"]->Value->ToString() + "', MAX(ID_Adresse), 'F' FROM Repertoire_Adresse; COMMIT;";
-						   cnxx->Open();
-						   Reader = cmd->ExecuteReader();
-						   while (Reader->Read())
-						   {
-						   };
-						   Reader->Close();
-					   }
-					   else if (this->checkBox2->Checked) {
-						   cmd->CommandText = "START TRANSACTION; INSERT INTO Repertoire_Adresse (Rue, Code_Postal, Ville,Pays) VALUES ('" + this->textBox4->Text + "', '" + this->textBox5->Text + "', '" + this->textBox6->Text + "', '" + this->textBox7->Text + "'); UPDATE Client SET Nom_Client = '" + this->textBox2->Text + "', Prenom_Client = '" + this->textBox3->Text + "', Date_Naissance = '" + theDate + "' WHERE ID_Client = '" + ligne->Cells["ID_Client"]->Value->ToString() + "'; INSERT INTO Definition_Lieu (ID_Client,ID_Adresse,Type) SELECT '" + ligne->Cells["ID_Client"]->Value->ToString() + "', MAX(ID_Adresse), 'L' FROM Repertoire_Adresse; COMMIT;";
-						   cnxx->Open();
-						   Reader = cmd->ExecuteReader();
-						   while (Reader->Read())
-						   {
-						   };
-						   Reader->Close();
-					   }
-					   if (this->checkBox1->Checked || this->checkBox2->Checked) {
-						   System::String^ requ = "SELECT ID_Client, Nom_Client AS Nom, Prenom_Client AS Prenom, Date_Naissance FROM Projet.Client;";
-						   InsertDataGrid(requ);
-
-						   // On remet tout comme avant
-						   retour();
-					   }
-					   else {
-						   MessageBox::Show("Merci de sélectionner au moins un type d'Adresse.");
-					   }
-				   }
-				   else {
-					   //Query
-					   System::String^ theDate = this->dateTimePicker1->Value.ToString("yyyy-MM-dd");
-					   // Connexion SQL
-
-					   MySqlConnection^ cnxx = gcnew MySqlConnection(cnxstr);
-					   MySqlCommand^ cmd = gcnew MySqlCommand();
-					   MySqlDataReader^ Reader;
-					   cmd->Connection = cnxx;
-
-					   if (this->checkBox1->Checked && this->checkBox2->Checked) {
-						   MessageBox::Show("Merci de ne cocher qu'un type d'adresse.");
-					   }
-					   else if (this->checkBox1->Checked) {
-						   cmd->CommandText = "START TRANSACTION;UPDATE Repertoire_Adresse SET Rue = '" + this->textBox4->Text + "', Code_Postal = '" + this->textBox5->Text + "', Ville = '" + this->textBox6->Text + "',Pays = '" + this->textBox7->Text + "' WHERE ID_Adresse = '" + ligneAdresse->Cells["ID_Adresse"]->Value->ToString() + "'; UPDATE Client SET Nom_Client = '" + this->textBox2->Text + "', Prenom_Client = '" + this->textBox3->Text + "', Date_Naissance = '" + theDate + "' WHERE ID_Client = '" + ligne->Cells["ID_Client"]->Value->ToString() + "'; UPDATE Definition_Lieu SET Type = 'F' WHERE ID_Lieu_Livraison = '" + ligneAdresse->Cells["ID_Lieu"]->Value->ToString() + "'; COMMIT;";
-						   cnxx->Open();
-						   Reader = cmd->ExecuteReader();
-						   while (Reader->Read())
-						   {
-						   };
-						   Reader->Close();
-					   }
-					   else if (this->checkBox2->Checked) {
-						   cmd->CommandText = "START TRANSACTION;UPDATE Repertoire_Adresse SET Rue = '" + this->textBox4->Text + "', Code_Postal = '" + this->textBox5->Text + "', Ville = '" + this->textBox6->Text + "',Pays = '" + this->textBox7->Text + "' WHERE ID_Adresse = '" + ligneAdresse->Cells["ID_Adresse"]->Value->ToString() + "'; UPDATE Client SET Nom_Client = '" + this->textBox2->Text + "', Prenom_Client = '" + this->textBox3->Text + "', Date_Naissance = '" + theDate + "' WHERE ID_Client = '" + ligne->Cells["ID_Client"]->Value->ToString() + "'; UPDATE Definition_Lieu SET Type = 'L' WHERE ID_Lieu_Livraison = '" + ligneAdresse->Cells["ID_Lieu"]->Value->ToString() + "'; COMMIT;";
-						   cnxx->Open();
-						   Reader = cmd->ExecuteReader();
-						   while (Reader->Read())
-						   {
-						   };
-						   Reader->Close();
-					   }
-					   if (this->checkBox1->Checked && this->checkBox2->Checked) {
-					   }
-					   else {
+						   if (this->checkBox1->Checked && this->checkBox2->Checked) {
+							   cmd->CommandText = "START TRANSACTION; INSERT INTO Repertoire_Adresse (Rue, Code_Postal, Ville,Pays) VALUES ('" + this->textBox4->Text + "', '" + this->textBox5->Text + "', '" + this->textBox6->Text + "', '" + this->textBox7->Text + "');  UPDATE Client SET Nom_Client = '" + this->textBox2->Text + "', Prenom_Client = '" + this->textBox3->Text + "', Date_Naissance = '" + theDate + "' WHERE ID_Client = '" + ligne->Cells["ID_Client"]->Value->ToString() + "'; INSERT INTO Definition_Lieu (ID_Client,ID_Adresse,Type) SELECT '" + ligne->Cells["ID_Client"]->Value->ToString() + "', MAX(ID_Adresse), 'F' FROM Repertoire_Adresse; INSERT INTO Definition_Lieu (ID_Client,ID_Adresse,Type) SELECT '" + ligne->Cells["ID_Client"]->Value->ToString() + "', MAX(ID_Adresse), 'L' FROM Repertoire_Adresse; COMMIT;";
+							   cnxx->Open();
+							   Reader = cmd->ExecuteReader();
+							   while (Reader->Read())
+							   {
+							   };
+							   Reader->Close();
+						   }
+						   else if (this->checkBox1->Checked) {
+							   cmd->CommandText = "START TRANSACTION; INSERT INTO Repertoire_Adresse (Rue, Code_Postal, Ville,Pays) VALUES ('" + this->textBox4->Text + "', '" + this->textBox5->Text + "', '" + this->textBox6->Text + "', '" + this->textBox7->Text + "'); UPDATE Client SET Nom_Client = '" + this->textBox2->Text + "', Prenom_Client = '" + this->textBox3->Text + "', Date_Naissance = '" + theDate + "' WHERE ID_Client = '" + ligne->Cells["ID_Client"]->Value->ToString() + "'; INSERT INTO Definition_Lieu (ID_Client,ID_Adresse,Type) SELECT '" + ligne->Cells["ID_Client"]->Value->ToString() + "', MAX(ID_Adresse), 'F' FROM Repertoire_Adresse; COMMIT;";
+							   cnxx->Open();
+							   Reader = cmd->ExecuteReader();
+							   while (Reader->Read())
+							   {
+							   };
+							   Reader->Close();
+						   }
+						   else if (this->checkBox2->Checked) {
+							   cmd->CommandText = "START TRANSACTION; INSERT INTO Repertoire_Adresse (Rue, Code_Postal, Ville,Pays) VALUES ('" + this->textBox4->Text + "', '" + this->textBox5->Text + "', '" + this->textBox6->Text + "', '" + this->textBox7->Text + "'); UPDATE Client SET Nom_Client = '" + this->textBox2->Text + "', Prenom_Client = '" + this->textBox3->Text + "', Date_Naissance = '" + theDate + "' WHERE ID_Client = '" + ligne->Cells["ID_Client"]->Value->ToString() + "'; INSERT INTO Definition_Lieu (ID_Client,ID_Adresse,Type) SELECT '" + ligne->Cells["ID_Client"]->Value->ToString() + "', MAX(ID_Adresse), 'L' FROM Repertoire_Adresse; COMMIT;";
+							   cnxx->Open();
+							   Reader = cmd->ExecuteReader();
+							   while (Reader->Read())
+							   {
+							   };
+							   Reader->Close();
+						   }
 						   if (this->checkBox1->Checked || this->checkBox2->Checked) {
 							   System::String^ requ = "SELECT ID_Client, Nom_Client AS Nom, Prenom_Client AS Prenom, Date_Naissance FROM Projet.Client;";
 							   InsertDataGrid(requ);
@@ -1046,14 +1017,63 @@ private: System::Void AjoutPers_Click(System::Object^ sender, System::EventArgs^
 							   retour();
 						   }
 						   else {
-							   MessageBox::Show("Merci de sélectionner au moins un type d'Adresse. Veuillez recommencer.");
-							   retour();
+							   MessageBox::Show("Merci de sélectionner au moins un type d'Adresse.");
+						   }
+					   }
+					   else {
+						   //Query
+						   System::String^ theDate = this->dateTimePicker1->Value.ToString("yyyy-MM-dd");
+						   // Connexion SQL
+
+						   MySqlConnection^ cnxx = gcnew MySqlConnection(cnxstr);
+						   MySqlCommand^ cmd = gcnew MySqlCommand();
+						   MySqlDataReader^ Reader;
+						   cmd->Connection = cnxx;
+
+						   if (this->checkBox1->Checked && this->checkBox2->Checked) {
+							   MessageBox::Show("Merci de ne cocher qu'un type d'adresse.");
+						   }
+						   else if (this->checkBox1->Checked) {
+							   cmd->CommandText = "START TRANSACTION;UPDATE Repertoire_Adresse SET Rue = '" + this->textBox4->Text + "', Code_Postal = '" + this->textBox5->Text + "', Ville = '" + this->textBox6->Text + "',Pays = '" + this->textBox7->Text + "' WHERE ID_Adresse = '" + ligneAdresse->Cells["ID_Adresse"]->Value->ToString() + "'; UPDATE Client SET Nom_Client = '" + this->textBox2->Text + "', Prenom_Client = '" + this->textBox3->Text + "', Date_Naissance = '" + theDate + "' WHERE ID_Client = '" + ligne->Cells["ID_Client"]->Value->ToString() + "'; UPDATE Definition_Lieu SET Type = 'F' WHERE ID_Lieu_Livraison = '" + ligneAdresse->Cells["ID_Lieu"]->Value->ToString() + "'; COMMIT;";
+							   cnxx->Open();
+							   Reader = cmd->ExecuteReader();
+							   while (Reader->Read())
+							   {
+							   };
+							   Reader->Close();
+						   }
+						   else if (this->checkBox2->Checked) {
+							   cmd->CommandText = "START TRANSACTION;UPDATE Repertoire_Adresse SET Rue = '" + this->textBox4->Text + "', Code_Postal = '" + this->textBox5->Text + "', Ville = '" + this->textBox6->Text + "',Pays = '" + this->textBox7->Text + "' WHERE ID_Adresse = '" + ligneAdresse->Cells["ID_Adresse"]->Value->ToString() + "'; UPDATE Client SET Nom_Client = '" + this->textBox2->Text + "', Prenom_Client = '" + this->textBox3->Text + "', Date_Naissance = '" + theDate + "' WHERE ID_Client = '" + ligne->Cells["ID_Client"]->Value->ToString() + "'; UPDATE Definition_Lieu SET Type = 'L' WHERE ID_Lieu_Livraison = '" + ligneAdresse->Cells["ID_Lieu"]->Value->ToString() + "'; COMMIT;";
+							   cnxx->Open();
+							   Reader = cmd->ExecuteReader();
+							   while (Reader->Read())
+							   {
+							   };
+							   Reader->Close();
+						   }
+						   if (this->checkBox1->Checked && this->checkBox2->Checked) {
+						   }
+						   else {
+							   if (this->checkBox1->Checked || this->checkBox2->Checked) {
+								   System::String^ requ = "SELECT ID_Client, Nom_Client AS Nom, Prenom_Client AS Prenom, Date_Naissance FROM Projet.Client;";
+								   InsertDataGrid(requ);
+
+								   // On remet tout comme avant
+								   retour();
+							   }
+							   else {
+								   MessageBox::Show("Merci de sélectionner au moins un type d'Adresse. Veuillez recommencer.");
+								   retour();
+							   }
 						   }
 					   }
 				   }
+				   else {
+					   MessageBox::Show("Erreur : Merci de remplir tous les champs obligatoires.");
+				   }
 			   }
 			   catch (Exception^ ex) {
-				   MessageBox::Show("aoi");
+				   MessageBox::Show("Erreur innatendue. Contactez votre adminsitrateur système.");
 			   }
 		   }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1149,6 +1169,8 @@ private: System::Void label13_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void label14_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void checkBox3_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

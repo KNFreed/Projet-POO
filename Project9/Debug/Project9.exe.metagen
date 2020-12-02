@@ -250,6 +250,8 @@ Class Project9.Accueil: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
 Class Project9.GestionPersonnel: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String cnxstr : Public
 Class Project9.GestionClient: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

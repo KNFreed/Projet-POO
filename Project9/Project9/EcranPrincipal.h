@@ -318,6 +318,7 @@ namespace Project9 {
 				this->gestionPersonnel1->Name = L"gestionPersonnel1";
 				this->gestionPersonnel1->Size = System::Drawing::Size(1234, 650);
 				this->gestionPersonnel1->TabIndex = 1;
+				this->gestionPersonnel1->cnxstr = cnxstr;
 				this->Controls->Add(this->gestionPersonnel1);
 			}
 		}

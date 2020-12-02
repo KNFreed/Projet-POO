@@ -36,6 +36,8 @@ namespace Project9 {
 			}
 		}
 
+	protected:
+
 	private:
 		/// <summary>
 		/// Required designer variable.
