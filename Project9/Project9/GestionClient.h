@@ -71,6 +71,7 @@ namespace Project9 {
 	private: System::Windows::Forms::DateTimePicker^ dateTimePicker1;
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::Button^ button2;
+	private: int mode_actuel;
 
 
 
@@ -853,6 +854,7 @@ private: System::Void AjoutPers_Click(System::Object^ sender, System::EventArgs^
 	this->button2->Location = System::Drawing::Point(391, 500);
 	this->button2->Click -= gcnew System::EventHandler(this, &GestionClient::button2_Click);
 	this->button2->Click += gcnew System::EventHandler(this, &GestionClient::button2_Click2);
+	this->mode_actuel = 2;
 	this->button4->Enabled = false;
 	this->button5->Enabled = false;
 	this->AffichPers->Enabled = false;
@@ -934,13 +936,18 @@ private: System::Void AjoutPers_Click(System::Object^ sender, System::EventArgs^
 			   this->checkBox2->Visible = false;
 			   this->label13->Visible = false;
 			   this->textBox7->Visible = false;
+			   this->checkBox3->Visible = false;
 			   this->label3->Text = L"Recherche par Nom";
 			   this->label3->Location = System::Drawing::Point(94, 248);
 			   this->label6->Visible = false;
 			   this->dateTimePicker1->Visible = false;
 			   this->button2->Location = System::Drawing::Point(391, 277);
-			   this->button2->Click -= gcnew System::EventHandler(this, &GestionClient::button2_Click2);
-			   this->button2->Click -= gcnew System::EventHandler(this, &GestionClient::button2_Click3);
+			   switch (mode_actuel) {
+			   case 2:
+				   this->button2->Click -= gcnew System::EventHandler(this, &GestionClient::button2_Click2);
+			   case 3:
+				   this->button2->Click -= gcnew System::EventHandler(this, &GestionClient::button2_Click3);
+			   }
 			   this->label14->Visible = false;
 			   
 			   this->button2->Click += gcnew System::EventHandler(this, &GestionClient::button2_Click);
@@ -1129,6 +1136,7 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 		this->button2->Location = System::Drawing::Point(391, 529);
 		this->button2->Click -= gcnew System::EventHandler(this, &GestionClient::button2_Click);
 		this->button2->Click += gcnew System::EventHandler(this, &GestionClient::button2_Click3);
+		this->mode_actuel = 3;
 		// Intégration du texte
 		this->textBox2->Text = ligne->Cells["Nom"]->Value->ToString();
 		this->textBox3->Text = ligne->Cells["Prenom"]->Value->ToString();

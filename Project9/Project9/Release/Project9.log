@@ -1,2 +1,50 @@
-﻿  Accueil.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+﻿  Connexion.cpp
+C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(754,23): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(797,30): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(832,30): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(808,20): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(917,22): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(1077,25): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(319,22): warning C4101: 'e': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(353,22): warning C4101: 'e': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(396,22): warning C4101: 'e': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(434,22): warning C4101: 'e': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(455,22): warning C4101: 'e': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(480,22): warning C4101: 'e': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(543,21): warning C4101: 'e': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(601,21): warning C4101: 'e': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(827,23): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(866,30): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(921,30): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(974,30): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\Connexion.h(252,21): warning C4101: 'ex': unreferenced local variable
+  EcranPrincipal.cpp
+C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(754,23): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(797,30): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(832,30): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(808,20): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(917,22): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(1077,25): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(319,22): warning C4101: 'e': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(353,22): warning C4101: 'e': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(396,22): warning C4101: 'e': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(434,22): warning C4101: 'e': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(455,22): warning C4101: 'e': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(480,22): warning C4101: 'e': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(543,21): warning C4101: 'e': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(601,21): warning C4101: 'e': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(827,23): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(866,30): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(921,30): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(974,30): warning C4101: 'ex': unreferenced local variable
+  GestionClient.cpp
+C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(808,20): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(917,22): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(1077,25): warning C4101: 'ex': unreferenced local variable
+  GestionPersonnel.cpp
+C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(754,23): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(797,30): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(832,30): warning C4101: 'ex': unreferenced local variable
+  Generating Code...
+  Accueil.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   Project9.vcxproj -> C:\Users\Nyu\source\repos\Project9\Release\Project9.exe

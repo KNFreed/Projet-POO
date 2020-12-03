@@ -88,6 +88,7 @@ namespace Project9 {
     private: System::Windows::Forms::Button^ AffichPers;
     private: System::Windows::Forms::Label^ label5;
     private: System::Windows::Forms::Panel^ panel1;
+    private: int mode_actuel;
 
 
 
@@ -813,13 +814,15 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
                    MySqlCommand^ cmd = gcnew MySqlCommand();
                    MySqlDataReader^ Reader;
                    cmd->Connection = cnxx;
-                   cmd->CommandText = "START TRANSACTION; UPDATE Repertoire_Adresse SET Rue = '" + this->textBox4->Text + "', Code_Postal = '" + this->textBox5->Text + "', Ville = '" + this->textBox6->Text + "', Pays = '" + this->textBox7->Text + "' WHERE ID_Adresse = '" + ligneAdresse->Cells["ID_Adresse"]->Value->ToString() + "'; UPDATE Personnel SET Nom_Employe = '" + this->textBox2->Text + "', Prenom_Employe = '" + this->textBox3->Text + "', Date_Embauche = '" + theDate + "', ID_Superieur = '" + this->textBox8->Text + "' WHERE ID_Employe = '" + ligne->Cells["ID_Employe"]->Value->ToString() + "'; COMMIT; ";
+                   if (this->textBox8->Text == "") { this->textBox8->Text = "null"; }
+                   cmd->CommandText = "START TRANSACTION; UPDATE Repertoire_Adresse SET Rue = '" + this->textBox4->Text + "', Code_Postal = '" + this->textBox5->Text + "', Ville = '" + this->textBox6->Text + "', Pays = '" + this->textBox7->Text + "' WHERE ID_Adresse = '" + ligneAdresse->Cells["ID_Adresse"]->Value->ToString() + "'; UPDATE Personnel SET Nom_Employe = '" + this->textBox2->Text + "', Prenom_Employe = '" + this->textBox3->Text + "', Date_Embauche = '" + theDate + "', ID_Superieur = " + this->textBox8->Text + " WHERE ID_Employe = '" + ligne->Cells["ID_Employe"]->Value->ToString() + "'; COMMIT; ";
                    cnxx->Open();
                    Reader = cmd->ExecuteReader();
                    while (Reader->Read())
                    {
                    };
                    Reader->Close();
+                   retour();
                }
                else {
                    MessageBox::Show("Erreur : Merci de remplir tous les champs obligatoires.");
@@ -852,8 +855,12 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
            this->label6->Visible = false;
            this->dateTimePicker1->Visible = false;
            this->button2->Location = System::Drawing::Point(391, 277);
-           this->button2->Click -= gcnew System::EventHandler(this, &GestionPersonnel::button2_Click2);
-           this->button2->Click -= gcnew System::EventHandler(this, &GestionPersonnel::button2_Click3);
+           switch (mode_actuel) {
+           case 2:
+               this->button2->Click -= gcnew System::EventHandler(this, &GestionPersonnel::button2_Click2);
+           case 3:
+               this->button2->Click -= gcnew System::EventHandler(this, &GestionPersonnel::button2_Click3);
+           }
 
            this->button2->Click += gcnew System::EventHandler(this, &GestionPersonnel::button2_Click);
            textBox2->Text = "";
@@ -903,6 +910,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
     this->button2->Location = System::Drawing::Point(391, 478);
     this->button2->Click -= gcnew System::EventHandler(this, &GestionPersonnel::button2_Click);
     this->button2->Click += gcnew System::EventHandler(this, &GestionPersonnel::button2_Click2);
+    this->mode_actuel = 2;
     this->button4->Enabled = false;
     this->button5->Enabled = false;
     this->AffichPers->Enabled = false;
@@ -944,6 +952,7 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
         this->button2->Location = System::Drawing::Point(391, 478);
         this->button2->Click -= gcnew System::EventHandler(this, &GestionPersonnel::button2_Click);
         this->button2->Click += gcnew System::EventHandler(this, &GestionPersonnel::button2_Click3);
+        this->mode_actuel = 3;
         this->button4->Enabled = false;
         this->button5->Enabled = false;
 
@@ -996,7 +1005,7 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
     MySqlCommand^ cmd = gcnew MySqlCommand();
     MySqlDataReader^ Reader;
     cmd->Connection = cnxx;
-    cmd->CommandText = "START TRANSACTION;DELETE Projet.Personnel, Projet.Repertoire_Adresse FROM Personnel LEFT JOIN Projet.Repertoire_Adresse ON Personnel.ID_Adresse = Repertoire_Adresse.ID_Adresse WHERE ID_Employe = '" + ligne->Cells["ID_Employe"]->Value->ToString() + "'; COMMIT;";
+    cmd->CommandText = "START TRANSACTION;UPDATE Personnel SET ID_Superieur = null WHERE ID_Superieur = '" + ligne->Cells["ID_Employe"]->Value->ToString() + "';DELETE Projet.Personnel, Projet.Repertoire_Adresse FROM Personnel LEFT JOIN Projet.Repertoire_Adresse ON Personnel.ID_Adresse = Repertoire_Adresse.ID_Adresse WHERE ID_Employe = '" + ligne->Cells["ID_Employe"]->Value->ToString() + "'; COMMIT;";
     cnxx->Open();
     Reader = cmd->ExecuteReader();
     while (Reader->Read())

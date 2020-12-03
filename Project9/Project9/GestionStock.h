@@ -81,6 +81,7 @@ namespace Project9 {
     private: System::Windows::Forms::ComboBox^ comboBox1;
     private: System::Windows::Forms::DataGridView^ dataGridView3;
     private: System::Windows::Forms::Label^ label15;
+    private: int mode_actuel;
 
 	private:
 		/// <summary>
@@ -846,7 +847,6 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
                    cmd->Connection = cnxx;
 
                    cmd->CommandText = "START TRANSACTION; INSERT INTO Catalogue_Entreprise (Libelle_Article, Nature, Prix_HT, Taux_TVA_Produit, Prix_Commercial) VALUES ('" + this->textBox2->Text + "', '" + this->textBox3->Text + "', " + this->textBox4->Text + ", " + this->textBox5->Text + ", " + this->textBox6->Text + "); INSERT INTO Stock (Couleur, Quantite_Stock, Seuil_Reapprov) VALUES ('" + this->comboBox1->Text + "', " + this->textBox7->Text + ", " + this->textBox8->Text + "); INSERT INTO Historique_Tarif_TVA (Date_Debut_Mesure, Taux_TVA, Prix_UHT) VALUES ('" + theDate + "', " + this->textBox5->Text + ", " + this->textBox4->Text + "); INSERT INTO Present_en_Stock (ID_Stock, ID_Article) SELECT MAX(Stock.ID_Stock),MAX(Catalogue_Entreprise.ID_Article) FROM Stock,Catalogue_Entreprise; INSERT INTO Liste_Historique (ID_Histo, ID_Article) SELECT MAX(Historique_Tarif_TVA.ID_Histo),MAX(Catalogue_Entreprise.ID_Article) FROM Historique_Tarif_TVA,Catalogue_Entreprise; COMMIT;";
-                   MessageBox::Show(cmd->CommandText);
                    cnxx->Open();
                    Reader = cmd->ExecuteReader();
                    while (Reader->Read())
@@ -884,7 +884,6 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
                        MySqlDataReader^ Reader;
                        cmd->Connection = cnxx;
                        cmd->CommandText = "START TRANSACTION; UPDATE Catalogue_Entreprise SET Libelle_Article = '" + this->textBox2->Text + "', Nature = '" + this->textBox3->Text + "', Prix_HT = " + this->textBox4->Text + ", Taux_TVA_Produit = " + this->textBox5->Text + ", Prix_Commercial = " + this->textBox6->Text + " WHERE ID_Article = '" + ligne->Cells["ID_Article"]->Value->ToString() + "'; UPDATE Historique_Tarif_TVA SET Date_Fin_Mesure = '" + theDate + "' WHERE ID_Histo = '" + ligneHisto->Cells["ID_Histo"]->Value->ToString() + "'; INSERT INTO Historique_Tarif_TVA (Date_Debut_Mesure, Taux_TVA, Prix_UHT) VALUES ('" + theDate + "', " + this->textBox5->Text + ", " + this->textBox4->Text + "); INSERT INTO Liste_Historique (ID_Histo, ID_Article) SELECT MAX(Historique_Tarif_TVA.ID_Histo),'" + ligne->Cells["ID_Article"]->Value->ToString() + "' FROM Historique_Tarif_TVA; COMMIT;";
-                       MessageBox::Show(cmd->CommandText);
                        cnxx->Open();
                        Reader = cmd->ExecuteReader();
                        while (Reader->Read())
@@ -937,7 +936,6 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
                        MySqlDataReader^ Reader;
                        cmd->Connection = cnxx;
                        cmd->CommandText = "START TRANSACTION; INSERT INTO Stock (Couleur, Quantite_Stock, Seuil_Reapprov) VALUES ('" + this->comboBox1->Text + "', " + this->textBox7->Text + ", " + this->textBox8->Text + "); INSERT INTO Present_en_Stock (ID_Stock, ID_Article) SELECT MAX(Stock.ID_Stock),'" + ligne->Cells["ID_Article"]->Value->ToString() + "' FROM Stock,Catalogue_Entreprise; COMMIT;";
-                       MessageBox::Show(cmd->CommandText);
                        cnxx->Open();
                        Reader = cmd->ExecuteReader();
                        while (Reader->Read())
@@ -1010,6 +1008,7 @@ private: System::Void AjoutPers_Click(System::Object^ sender, System::EventArgs^
     this->button2->Location = System::Drawing::Point(391, 506);
     this->button2->Click -= gcnew System::EventHandler(this, &GestionStock::button2_Click);
     this->button2->Click += gcnew System::EventHandler(this, &GestionStock::button2_Click2);
+    this->mode_actuel = 2;
     this->button4->Enabled = false;
     this->button5->Enabled = false;
     this->button6->Enabled = false;
@@ -1046,9 +1045,14 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
            this->textBox8->Visible = false;
            this->comboBox1->Visible = false;
            this->button2->Location = System::Drawing::Point(391, 247);
-           this->button2->Click -= gcnew System::EventHandler(this, &GestionStock::button2_Click2);
-           this->button2->Click -= gcnew System::EventHandler(this, &GestionStock::button2_Click3);
-           this->button2->Click -= gcnew System::EventHandler(this, &GestionStock::button2_Click4);
+           switch (mode_actuel) {
+           case 2:
+               this->button2->Click -= gcnew System::EventHandler(this, &GestionStock::button2_Click2);
+           case 3:
+               this->button2->Click -= gcnew System::EventHandler(this, &GestionStock::button2_Click3);
+           case 4:
+               this->button2->Click -= gcnew System::EventHandler(this, &GestionStock::button2_Click4);
+           }
            this->label14->Visible = false;
 
            this->button2->Click += gcnew System::EventHandler(this, &GestionStock::button2_Click);
@@ -1127,6 +1131,7 @@ private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e
     this->button2->Location = System::Drawing::Point(391, 529);
     this->button2->Click -= gcnew System::EventHandler(this, &GestionStock::button2_Click);
     this->button2->Click += gcnew System::EventHandler(this, &GestionStock::button2_Click4);
+    this->mode_actuel = 4;
     //Block les autres boutons
     this->AjoutPers->Enabled = false;
     this->AffichPers->Enabled = false;
@@ -1164,6 +1169,7 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
     this->button2->Location = System::Drawing::Point(391, 407);
     this->button2->Click -= gcnew System::EventHandler(this, &GestionStock::button2_Click);
     this->button2->Click += gcnew System::EventHandler(this, &GestionStock::button2_Click3);
+    this->mode_actuel = 3;
     // Modif des noms
     this->label3->Text = "Nom";
     this->label3->Location = System::Drawing::Point(194, 248);
