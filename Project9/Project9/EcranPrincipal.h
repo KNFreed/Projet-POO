@@ -133,7 +133,7 @@ namespace Project9 {
 			this->Param->Name = L"Param";
 			this->Param->Size = System::Drawing::Size(200, 83);
 			this->Param->TabIndex = 6;
-			this->Param->Text = L"Paramètres";
+			this->Param->Text = L"Informations";
 			this->Param->UseVisualStyleBackColor = false;
 			this->Param->Click += gcnew System::EventHandler(this, &FormEcranPrincipal::Param_Click);
 			// 
@@ -241,9 +241,10 @@ namespace Project9 {
 			this->ClientSize = System::Drawing::Size(1435, 650);
 			this->Controls->Add(this->panel1);
 			this->Name = L"FormEcranPrincipal";
-			this->Text = L"EcranPrincipal";
+			this->Text = L"Gestion Compta";
 			this->Load += gcnew System::EventHandler(this, &FormEcranPrincipal::MyForm_Load);
 			this->panel1->ResumeLayout(false);
+			this->Icon = Icon->ExtractAssociatedIcon("./Icon.ico");
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 
@@ -376,6 +377,7 @@ namespace Project9 {
 				this->GestionStats->Name = L"GestionStats";
 				this->GestionStats->Size = System::Drawing::Size(1234, 650);
 				this->GestionStats->TabIndex = 1;
+				this->GestionStats->cnxstr = cnxstr;
 				this->Controls->Add(this->GestionStats);
 			}
 		}

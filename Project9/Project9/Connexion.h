@@ -194,13 +194,13 @@ namespace Project9 {
 			// 
 			// pictureBox1
 			// 
-			this->pictureBox1->Image = Image::FromFile("./Logo2.png");
 			this->pictureBox1->Location = System::Drawing::Point(6, -63);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(312, 231);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::AutoSize;
 			this->pictureBox1->TabIndex = 0;
 			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Image = Image::FromFile("./Logo2.png");
 			// 
 			// FormConnexion
 			// 
@@ -219,8 +219,9 @@ namespace Project9 {
 			this->Controls->Add(this->panel1);
 			this->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
 				static_cast<System::Int32>(static_cast<System::Byte>(222)));
+			this->Icon = Icon->ExtractAssociatedIcon("./Icon.ico");
 			this->Name = L"FormConnexion";
-			this->Text = L"Connexion BDD";
+			this->Text = L"Gestion Compta - Connexion";
 			this->Load += gcnew System::EventHandler(this, &FormConnexion::MyForm_Load);
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
