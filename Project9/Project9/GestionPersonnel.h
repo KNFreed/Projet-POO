@@ -771,8 +771,12 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
                    MySqlCommand^ cmd = gcnew MySqlCommand();
                    MySqlDataReader^ Reader;
                    cmd->Connection = cnxx;
-
-                   cmd->CommandText = "START TRANSACTION; INSERT INTO Repertoire_Adresse (Rue, Code_Postal, Ville,Pays) VALUES ('" + this->textBox4->Text + "', '" + this->textBox5->Text + "', '" + this->textBox6->Text + "', '" + this->textBox7->Text + "'); INSERT INTO Personnel (Nom_Employe, Prenom_Employe, Date_Embauche,ID_Superieur,ID_Adresse) SELECT '" + this->textBox2->Text + "', '" + this->textBox3->Text + "', '" + theDate + "','" + this->textBox8->Text + "',MAX(ID_Adresse) FROM Repertoire_Adresse; COMMIT;";
+                   if (this->textBox8->Text == "") {
+                       cmd->CommandText = "START TRANSACTION; INSERT INTO Repertoire_Adresse (Rue, Code_Postal, Ville,Pays) VALUES ('" + this->textBox4->Text + "', '" + this->textBox5->Text + "', '" + this->textBox6->Text + "', '" + this->textBox7->Text + "'); INSERT INTO Personnel (Nom_Employe, Prenom_Employe, Date_Embauche,ID_Adresse) SELECT '" + this->textBox2->Text + "', '" + this->textBox3->Text + "', '" + theDate + "',MAX(ID_Adresse) FROM Repertoire_Adresse; COMMIT;";
+                   }
+                   else {
+                       cmd->CommandText = "START TRANSACTION; INSERT INTO Repertoire_Adresse (Rue, Code_Postal, Ville,Pays) VALUES ('" + this->textBox4->Text + "', '" + this->textBox5->Text + "', '" + this->textBox6->Text + "', '" + this->textBox7->Text + "'); INSERT INTO Personnel (Nom_Employe, Prenom_Employe, Date_Embauche,ID_Superieur,ID_Adresse) SELECT '" + this->textBox2->Text + "', '" + this->textBox3->Text + "', '" + theDate + "','" + this->textBox8->Text + "',MAX(ID_Adresse) FROM Repertoire_Adresse; COMMIT;";
+                   }
                    cnxx->Open();
                    Reader = cmd->ExecuteReader();
                    while (Reader->Read())

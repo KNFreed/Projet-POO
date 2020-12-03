@@ -1,8 +1,8 @@
 ﻿cl : command line warning D9035: option 'clr:pure' has been deprecated and will be removed in a future release
   Connexion.cpp
 C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(753,23): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(792,30): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(825,30): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(797,30): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(830,30): warning C4101: 'ex': unreferenced local variable
 C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(807,20): warning C4101: 'ex': unreferenced local variable
 C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(915,22): warning C4101: 'ex': unreferenced local variable
 C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(1070,25): warning C4101: 'ex': unreferenced local variable
@@ -22,8 +22,8 @@ C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(974,30): warning C410
 C:\Users\Nyu\source\repos\Project9\Project9\Connexion.h(252,21): warning C4101: 'ex': unreferenced local variable
   EcranPrincipal.cpp
 C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(753,23): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(792,30): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(825,30): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(797,30): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(830,30): warning C4101: 'ex': unreferenced local variable
 C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(807,20): warning C4101: 'ex': unreferenced local variable
 C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(915,22): warning C4101: 'ex': unreferenced local variable
 C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(1070,25): warning C4101: 'ex': unreferenced local variable
@@ -40,14 +40,10 @@ C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(826,23): warning C410
 C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(866,30): warning C4101: 'ex': unreferenced local variable
 C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(921,30): warning C4101: 'ex': unreferenced local variable
 C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(974,30): warning C4101: 'ex': unreferenced local variable
-  GestionClient.cpp
-C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(807,20): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(915,22): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(1070,25): warning C4101: 'ex': unreferenced local variable
   GestionPersonnel.cpp
 C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(753,23): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(792,30): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(825,30): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(797,30): warning C4101: 'ex': unreferenced local variable
+C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(830,30): warning C4101: 'ex': unreferenced local variable
   Generating Code...
   Accueil.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   Project9.vcxproj -> C:\Users\Nyu\source\repos\Project9\Debug\Project9.exe
