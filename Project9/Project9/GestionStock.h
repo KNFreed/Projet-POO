@@ -225,7 +225,7 @@ namespace Project9 {
             this->dataGridView2->Name = L"dataGridView2";
             this->dataGridView2->ReadOnly = true;
             this->dataGridView2->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
-            this->dataGridView2->Size = System::Drawing::Size(306, 189);
+            this->dataGridView2->Size = System::Drawing::Size(357, 189);
             this->dataGridView2->TabIndex = 24;
             // 
             // label8
@@ -267,13 +267,14 @@ namespace Project9 {
                 static_cast<System::Byte>(0)));
             this->button5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
                 static_cast<System::Int32>(static_cast<System::Byte>(222)));
-            this->button5->Location = System::Drawing::Point(407, 442);
+            this->button5->Location = System::Drawing::Point(479, 442);
             this->button5->Margin = System::Windows::Forms::Padding(0);
             this->button5->Name = L"button5";
-            this->button5->Size = System::Drawing::Size(203, 68);
+            this->button5->Size = System::Drawing::Size(239, 68);
             this->button5->TabIndex = 21;
             this->button5->Text = L"Supprimer produit";
             this->button5->UseVisualStyleBackColor = false;
+            this->button5->Click += gcnew System::EventHandler(this, &GestionStock::button5_Click);
             // 
             // textBox5
             // 
@@ -403,22 +404,23 @@ namespace Project9 {
             this->button4->Location = System::Drawing::Point(0, 442);
             this->button4->Margin = System::Windows::Forms::Padding(0);
             this->button4->Name = L"button4";
-            this->button4->Size = System::Drawing::Size(203, 68);
+            this->button4->Size = System::Drawing::Size(239, 68);
             this->button4->TabIndex = 20;
             this->button4->Text = L"Modifier produit";
             this->button4->UseVisualStyleBackColor = false;
+            this->button4->Click += gcnew System::EventHandler(this, &GestionStock::button4_Click);
             // 
             // dataGridView1
             // 
             this->dataGridView1->AllowUserToAddRows = false;
             this->dataGridView1->AllowUserToDeleteRows = false;
             this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-            this->dataGridView1->Location = System::Drawing::Point(-1, 28);
+            this->dataGridView1->Location = System::Drawing::Point(0, 28);
             this->dataGridView1->MultiSelect = false;
             this->dataGridView1->Name = L"dataGridView1";
             this->dataGridView1->ReadOnly = true;
             this->dataGridView1->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
-            this->dataGridView1->Size = System::Drawing::Size(612, 198);
+            this->dataGridView1->Size = System::Drawing::Size(718, 198);
             this->dataGridView1->TabIndex = 0;
             this->dataGridView1->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &GestionStock::dataGridView1_CellClick);
             // 
@@ -435,9 +437,9 @@ namespace Project9 {
             this->panel2->Controls->Add(this->button5);
             this->panel2->Controls->Add(this->button4);
             this->panel2->Controls->Add(this->dataGridView1);
-            this->panel2->Location = System::Drawing::Point(617, 139);
+            this->panel2->Location = System::Drawing::Point(510, 139);
             this->panel2->Name = L"panel2";
-            this->panel2->Size = System::Drawing::Size(611, 510);
+            this->panel2->Size = System::Drawing::Size(718, 510);
             this->panel2->TabIndex = 43;
             // 
             // button6
@@ -453,10 +455,10 @@ namespace Project9 {
                 static_cast<System::Byte>(0)));
             this->button6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
                 static_cast<System::Int32>(static_cast<System::Byte>(222)));
-            this->button6->Location = System::Drawing::Point(203, 442);
+            this->button6->Location = System::Drawing::Point(239, 443);
             this->button6->Margin = System::Windows::Forms::Padding(0);
             this->button6->Name = L"button6";
-            this->button6->Size = System::Drawing::Size(204, 68);
+            this->button6->Size = System::Drawing::Size(240, 68);
             this->button6->TabIndex = 27;
             this->button6->Text = L"Modifier stock";
             this->button6->UseVisualStyleBackColor = false;
@@ -467,12 +469,12 @@ namespace Project9 {
             this->dataGridView3->AllowUserToAddRows = false;
             this->dataGridView3->AllowUserToDeleteRows = false;
             this->dataGridView3->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-            this->dataGridView3->Location = System::Drawing::Point(308, 251);
+            this->dataGridView3->Location = System::Drawing::Point(361, 250);
             this->dataGridView3->MultiSelect = false;
             this->dataGridView3->Name = L"dataGridView3";
             this->dataGridView3->ReadOnly = true;
             this->dataGridView3->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
-            this->dataGridView3->Size = System::Drawing::Size(306, 189);
+            this->dataGridView3->Size = System::Drawing::Size(357, 189);
             this->dataGridView3->TabIndex = 26;
             // 
             // label15
@@ -482,7 +484,7 @@ namespace Project9 {
                 static_cast<System::Byte>(0)));
             this->label15->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
                 static_cast<System::Int32>(static_cast<System::Byte>(222)));
-            this->label15->Location = System::Drawing::Point(311, 229);
+            this->label15->Location = System::Drawing::Point(361, 229);
             this->label15->Name = L"label15";
             this->label15->Size = System::Drawing::Size(46, 18);
             this->label15->TabIndex = 25;
@@ -866,7 +868,60 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
            }
        }
 
-       System::Void button2_Click3(System::Object^ sender, System::EventArgs^ e) {}
+       System::Void button2_Click3(System::Object^ sender, System::EventArgs^ e) {
+      
+           DataGridViewRow^ ligne = dataGridView1->SelectedRows[0];
+           DataGridViewRow^ ligneHisto = dataGridView2->SelectedRows[0];
+           try {
+               if (this->textBox2->Text != "" && this->textBox3->Text != "" && this->textBox4->Text != "" && this->textBox5->Text != "" && this->textBox6->Text != "") {
+                   if (this->textBox4->Text != ligne->Cells["Prix_HT"]->Value->ToString() || this->textBox5->Text != ligne->Cells["Taux_TVA_Produit"]->Value->ToString()) {
+                       //Query
+                       System::String^ theDate = this->dateTimePicker1->Value.ToString("yyyy-MM-dd");
+                       // Connexion SQL
+
+                       MySqlConnection^ cnxx = gcnew MySqlConnection(cnxstr);
+                       MySqlCommand^ cmd = gcnew MySqlCommand();
+                       MySqlDataReader^ Reader;
+                       cmd->Connection = cnxx;
+                       cmd->CommandText = "START TRANSACTION; UPDATE Catalogue_Entreprise SET Libelle_Article = '" + this->textBox2->Text + "', Nature = '" + this->textBox3->Text + "', Prix_HT = " + this->textBox4->Text + ", Taux_TVA_Produit = " + this->textBox5->Text + ", Prix_Commercial = " + this->textBox6->Text + " WHERE ID_Article = '" + ligne->Cells["ID_Article"]->Value->ToString() + "'; UPDATE Historique_Tarif_TVA SET Date_Fin_Mesure = '" + theDate + "' WHERE ID_Histo = '" + ligneHisto->Cells["ID_Histo"]->Value->ToString() + "'; INSERT INTO Historique_Tarif_TVA (Date_Debut_Mesure, Taux_TVA, Prix_UHT) VALUES ('" + theDate + "', " + this->textBox5->Text + ", " + this->textBox4->Text + "); INSERT INTO Liste_Historique (ID_Histo, ID_Article) SELECT MAX(Historique_Tarif_TVA.ID_Histo),'" + ligne->Cells["ID_Article"]->Value->ToString() + "' FROM Historique_Tarif_TVA; COMMIT;";
+                       MessageBox::Show(cmd->CommandText);
+                       cnxx->Open();
+                       Reader = cmd->ExecuteReader();
+                       while (Reader->Read())
+                       {
+                       };
+                       Reader->Close();
+                   }
+                   else {
+                       //Query
+                       // Connexion SQL
+
+                       MySqlConnection^ cnxx = gcnew MySqlConnection(cnxstr);
+                       MySqlCommand^ cmd = gcnew MySqlCommand();
+                       MySqlDataReader^ Reader;
+                       cmd->Connection = cnxx;
+                       cmd->CommandText = "START TRANSACTION; UPDATE Catalogue_Entreprise SET Libelle_Article = '" + this->textBox2->Text + "', Nature = '" + this->textBox3->Text + "', Prix_Commercial = " + this->textBox6->Text + " WHERE ID_Article = '" + ligne->Cells["ID_Article"]->Value->ToString() + "'; COMMIT;";
+                       cnxx->Open();
+                       Reader = cmd->ExecuteReader();
+                       while (Reader->Read())
+                       {
+                       };
+                       Reader->Close();
+                   }
+                   System::String^ requ = "SELECT ID_Article, Libelle_Article AS Nom, Nature, Prix_HT, Taux_TVA_Produit, Prix_Commercial FROM Projet.Catalogue_Entreprise;";
+                   InsertDataGrid(requ);
+
+                   // On remet tout comme avant
+                   retour();
+               }
+               else {
+                   MessageBox::Show("Erreur : Merci de remplir tous les champs obligatoires.");
+               }
+           }
+           catch (Exception^ ex) {
+               MessageBox::Show("Erreur innatendue. Contactez votre adminsitrateur système.");
+           }
+       }
 
        System::Void button2_Click4(System::Object^ sender, System::EventArgs^ e) {
            DataGridViewRow^ ligne = dataGridView1->SelectedRows[0];
@@ -875,7 +930,6 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
                if (this->textBox7->Text != "" && this->textBox8->Text != "" && this->comboBox1->Text != "") {
                    if (this->checkBox1->Checked) {
                        //Query
-                       System::String^ theDate = this->dateTimePicker1->Value.ToString("yyyy-MM-dd");
                        // Connexion SQL
 
                        MySqlConnection^ cnxx = gcnew MySqlConnection(cnxstr);
@@ -893,7 +947,6 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
                    }
                    else {
                        //Query
-                       System::String^ theDate = this->dateTimePicker1->Value.ToString("yyyy-MM-dd");
                        // Connexion SQL
 
                        MySqlConnection^ cnxx = gcnew MySqlConnection(cnxstr);
@@ -983,6 +1036,8 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
            this->label13->Visible = false;
            this->textBox7->Visible = false;
            this->checkBox1->Visible = false;
+           this->textBox3->Visible = false;
+           this->label4->Visible = false;
            this->label14->Visible = true;
            this->label3->Text = L"Recherche par Nom";
            this->label3->Location = System::Drawing::Point(94, 248);
@@ -1015,7 +1070,7 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
     DataGridViewRow^ ligne = dataGridView1->SelectedRows[0];
     System::String^ Identifiant = ligne->Cells["ID_Article"]->Value->ToString();
-    System::String^ requ = "SELECT Date_Debut_Mesure, Taux_TVA, Prix_UHT FROM Projet.Liste_Historique LEFT JOIN Projet.Historique_Tarif_TVA ON Liste_Historique.ID_Histo = Historique_Tarif_TVA.ID_Histo WHERE ID_Article =" + Identifiant + ";";
+    System::String^ requ = "SELECT Historique_Tarif_TVA.ID_Histo, Date_Debut_Mesure, Date_Fin_Mesure, Taux_TVA, Prix_UHT FROM Projet.Liste_Historique LEFT JOIN Projet.Historique_Tarif_TVA ON Liste_Historique.ID_Histo = Historique_Tarif_TVA.ID_Histo WHERE ID_Article =" + Identifiant + " ORDER BY Date_Debut_Mesure DESC;";
     this->button4->Enabled = true;
     this->button5->Enabled = true;
     this->button6->Enabled = true;
@@ -1033,6 +1088,9 @@ private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Wi
 			   table = gcnew Data::DataTable();
 			   adapt->Fill(table);
 			   dataGridView2->DataSource = table;
+               dataGridView2->Columns[1]->DefaultCellStyle->Format = "MM/dd/yyyy";
+               dataGridView2->Columns[0]->Visible = false;
+               dataGridView2->Columns[2]->DefaultCellStyle->Format = "MM/dd/yyyy";
 		   }
     System::Void StockDataGrid(System::String^ req) {
 			   MySqlDataAdapter^ adapt;
@@ -1044,6 +1102,7 @@ private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Wi
 			   table = gcnew Data::DataTable();
 			   adapt->Fill(table);
 			   dataGridView3->DataSource = table;
+               dataGridView3->Columns[0]->Visible = false;
 		   }
 private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
     // Ajout des items spécifiques au stock
@@ -1080,6 +1139,67 @@ private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e
     this->textBox7->Text = ligneStock->Cells["Quantite_Stock"]->Value->ToString();
     this->textBox8->Text = ligneStock->Cells["Seuil_reapprov"]->Value->ToString();
     this->comboBox1->Text = ligneStock->Cells["Couleur"]->Value->ToString();
+}
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+    // Ajout des items spécifiques au stock
+    this->label4->Visible = true;
+    this->label6->Visible = true;
+    this->label9->Visible = true;
+    this->label10->Visible = true;
+    this->label11->Visible = true;
+    this->textBox3->Visible = true;
+    this->textBox4->Visible = true;
+    this->textBox5->Visible = true;
+    this->textBox6->Visible = true;
+    this->dateTimePicker1->Visible = true;
+    this->button3->Visible = true;
+    // Retrait des items inutiles au stock
+    this->label1->Visible = false;
+    this->label2->Visible = false;
+    this->label5->Visible = false;
+    this->textBox1->Visible = false;
+    this->button1->Visible = false;
+    //Déplacement case Ajouter
+    this->button2->Text = "Update";
+    this->button2->Location = System::Drawing::Point(391, 407);
+    this->button2->Click -= gcnew System::EventHandler(this, &GestionStock::button2_Click);
+    this->button2->Click += gcnew System::EventHandler(this, &GestionStock::button2_Click3);
+    // Modif des noms
+    this->label3->Text = "Nom";
+    this->label3->Location = System::Drawing::Point(194, 248);
+    //Block les autres boutons
+    this->AjoutPers->Enabled = false;
+    this->AffichPers->Enabled = false;
+    this->button4->Enabled = false;
+    this->button5->Enabled = false;
+    this->button6->Enabled = false;
+    // Insert données par défaut
+    DataGridViewRow^ ligne = dataGridView1->SelectedRows[0];
+    DataGridViewRow^ ligneHisto = dataGridView2->SelectedRows[0];
+    this->textBox2->Text = ligne->Cells["Nom"]->Value->ToString();
+    this->textBox3->Text = ligne->Cells["Nature"]->Value->ToString();
+    this->textBox4->Text = ligne->Cells["Prix_HT"]->Value->ToString();
+    this->textBox5->Text = ligne->Cells["Taux_TVA_Produit"]->Value->ToString();
+    this->textBox6->Text = ligne->Cells["Prix_Commercial"]->Value->ToString();
+}
+private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+    DataGridViewRow^ ligne = dataGridView1->SelectedRows[0];
+    MySqlConnection^ cnxx = gcnew MySqlConnection(cnxstr);
+    MySqlCommand^ cmd = gcnew MySqlCommand();
+    MySqlDataReader^ Reader;
+    cmd->Connection = cnxx;
+    cmd->CommandText = "START TRANSACTION; DELETE Projet.Present_en_Stock, Projet.Stock FROM Present_en_Stock LEFT JOIN Projet.Stock ON Present_en_Stock.ID_Stock = Stock.ID_Stock WHERE ID_Article = '" + ligne->Cells["ID_Article"]->Value->ToString() + "'; DELETE Projet.Liste_Historique, Projet.Historique_Tarif_TVA FROM Liste_Historique LEFT JOIN Projet.Historique_Tarif_TVA ON Liste_Historique.ID_Histo = Historique_Tarif_TVA.ID_Histo WHERE ID_Article = '" + ligne->Cells["ID_Article"]->Value->ToString() + "'; DELETE FROM Catalogue_Entreprise WHERE ID_Article = '" + ligne->Cells["ID_Article"]->Value->ToString() + "'; COMMIT;";
+    cnxx->Open();
+    Reader = cmd->ExecuteReader();
+    while (Reader->Read())
+    {
+    };
+    Reader->Close();
+    System::String^ requ = "SELECT ID_Article, Libelle_Article AS Nom, Nature, Prix_HT, Taux_TVA_Produit, Prix_Commercial FROM Projet.Catalogue_Entreprise;";
+    InsertDataGrid(requ);
+    this->button4->Enabled = false;
+    this->button5->Enabled = false;
+    this->button6->Enabled = false;
 }
 };
 }

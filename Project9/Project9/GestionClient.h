@@ -790,6 +790,8 @@ namespace Project9 {
 			   table = gcnew Data::DataTable();
 			   adapt->Fill(table);
 			   dataGridView2->DataSource = table;
+			   dataGridView2->Columns[5]->Visible = false;
+			   dataGridView2->Columns[6]->Visible = false;
 		   }
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
@@ -1087,6 +1089,8 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 	Reader->Close();
 	System::String^ requ = "SELECT ID_Client, Nom_Client AS Nom, Prenom_Client AS Prenom, Date_Naissance FROM Projet.Client;";
 	InsertDataGrid(requ);
+	this->button4->Enabled = false;
+	this->button5->Enabled = false;
 }
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 	DataGridViewRow^ ligne = dataGridView1->SelectedRows[0];

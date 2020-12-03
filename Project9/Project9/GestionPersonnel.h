@@ -972,6 +972,7 @@ private:
         table = gcnew Data::DataTable();
         adapt->Fill(table);
         dataGridView2->DataSource = table;
+        dataGridView2->Columns[0]->Visible = false;
     }
     
     System::Void dataGridView1_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
@@ -1000,6 +1001,8 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
     Reader->Close();
     System::String^ requ = "SELECT ID_Employe, Nom_Employe AS Nom, Prenom_Employe AS Prenom, Date_Embauche, ID_Superieur FROM Projet.Personnel;";
     InsertDataGrid(requ);
+    this->button4->Enabled = false;
+    this->button5->Enabled = false;
 }
 };
 }
