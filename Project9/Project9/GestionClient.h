@@ -937,14 +937,9 @@ private: System::Void AjoutPers_Click(System::Object^ sender, System::EventArgs^
 			   this->label6->Visible = false;
 			   this->dateTimePicker1->Visible = false;
 			   this->button2->Location = System::Drawing::Point(391, 277);
-			   try {
-				   this->button2->Click -= gcnew System::EventHandler(this, &GestionClient::button2_Click2);
-				   this->label14->Visible = false;
-				   this->checkBox3->Visible = false;
-			   }
-			   catch (Exception^ ex) {
-				   this->button2->Click -= gcnew System::EventHandler(this, &GestionClient::button2_Click3);
-			   }
+			   this->button2->Click -= gcnew System::EventHandler(this, &GestionClient::button2_Click2);
+			   this->button2->Click -= gcnew System::EventHandler(this, &GestionClient::button2_Click3);
+			   this->label14->Visible = false;
 			   
 			   this->button2->Click += gcnew System::EventHandler(this, &GestionClient::button2_Click);
 			   textBox2->Text = "";
@@ -962,9 +957,7 @@ private: System::Void AjoutPers_Click(System::Object^ sender, System::EventArgs^
 				   this->AjoutPers->Enabled = true;
 				   this->button5->Enabled = true;
 			   }
-			   else {
-				   this->AffichPers->Enabled = true;
-			   }
+			   this->AffichPers->Enabled = true;
 	}
 		   // ENVOI MISE A JOUR D'UN CLIENT
 		   System::Void button2_Click3(System::Object^ sender, System::EventArgs^ e) {
@@ -1150,7 +1143,9 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 			this->checkBox2->Checked = true;
 		}
 		this->AjoutPers->Enabled = false;
+		this->button4->Enabled = false;
 		this->button5->Enabled = false;
+		this->AffichPers->Enabled = false;
 
 	}
 }

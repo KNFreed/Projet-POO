@@ -271,6 +271,8 @@ Class Project9.GestionStats: AutoLayout, AnsiClass, Class, Public, BeforeFieldIn
 Class Project9.GestionStock: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String cnxstr : Public
 Class Project9.Parametres: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

@@ -152,7 +152,7 @@ namespace Project9 {
 			this->GestStats->Name = L"GestStats";
 			this->GestStats->Size = System::Drawing::Size(200, 83);
 			this->GestStats->TabIndex = 5;
-			this->GestStats->Text = L"Gestion des statistiques";
+			this->GestStats->Text = L"Statistiques";
 			this->GestStats->UseVisualStyleBackColor = false;
 			this->GestStats->Click += gcnew System::EventHandler(this, &FormEcranPrincipal::GestStats_Click);
 			// 
@@ -171,7 +171,7 @@ namespace Project9 {
 			this->GestSto->Name = L"GestSto";
 			this->GestSto->Size = System::Drawing::Size(200, 83);
 			this->GestSto->TabIndex = 4;
-			this->GestSto->Text = L"Gestion du stock";
+			this->GestSto->Text = L"Gestion du catalogue";
 			this->GestSto->UseVisualStyleBackColor = false;
 			this->GestSto->Click += gcnew System::EventHandler(this, &FormEcranPrincipal::GestSto_Click);
 			// 
@@ -363,6 +363,7 @@ namespace Project9 {
 				this->GestionStock->Name = L"GestionStock";
 				this->GestionStock->Size = System::Drawing::Size(1234, 650);
 				this->GestionStock->TabIndex = 1;
+				this->GestionStock->cnxstr = cnxstr;
 				this->Controls->Add(this->GestionStock);
 			}
 		}

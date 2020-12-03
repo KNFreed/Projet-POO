@@ -848,12 +848,8 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
            this->label6->Visible = false;
            this->dateTimePicker1->Visible = false;
            this->button2->Location = System::Drawing::Point(391, 277);
-           try {
-               this->button2->Click -= gcnew System::EventHandler(this, &GestionPersonnel::button2_Click2);
-           }
-           catch (Exception^ ex) {
-               this->button2->Click -= gcnew System::EventHandler(this, &GestionPersonnel::button2_Click3);
-           }
+           this->button2->Click -= gcnew System::EventHandler(this, &GestionPersonnel::button2_Click2);
+           this->button2->Click -= gcnew System::EventHandler(this, &GestionPersonnel::button2_Click3);
 
            this->button2->Click += gcnew System::EventHandler(this, &GestionPersonnel::button2_Click);
            textBox2->Text = "";
@@ -869,9 +865,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
                this->AjoutPers->Enabled = true;
                this->button5->Enabled = true;
            }
-           else {
-               this->AffichPers->Enabled = true;
-           }
+           this->AffichPers->Enabled = true;
        }
        
        
@@ -948,7 +942,6 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
         this->button2->Click += gcnew System::EventHandler(this, &GestionPersonnel::button2_Click3);
         this->button4->Enabled = false;
         this->button5->Enabled = false;
-        this->AffichPers->Enabled = false;
 
         // Intégration du texte
         this->textBox2->Text = ligne->Cells["Nom"]->Value->ToString();
@@ -962,8 +955,8 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
         this->textBox5->Text = ligneAdresse->Cells["Code_Postal"]->Value->ToString();
         this->textBox6->Text = ligneAdresse->Cells["Ville"]->Value->ToString();
         this->textBox7->Text = ligneAdresse->Cells["Pays"]->Value->ToString();
+        this->AffichPers->Enabled = false;
         this->AjoutPers->Enabled = false;
-        this->button5->Enabled = false;
     }
 
 }
