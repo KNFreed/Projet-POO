@@ -1,60 +1,51 @@
-﻿cl : command line warning D9035: option 'clr:pure' has been deprecated and will be removed in a future release
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(2123,5): warning MSB3245: Could not resolve this reference. Could not locate the assembly "System.Data.CData.MariaDB". Check to make sure the assembly exists on disk. If this reference is required by your code, you may get compilation errors.
+cl : command line warning D9035: option 'clr:pure' has been deprecated and will be removed in a future release
   Connexion.cpp
-C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(768,27): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(815,27): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(850,27): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(798,23): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(906,22): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(1066,25): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionCommandes.h(968,12): warning C4101: 'req': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionPersonnel.h(768,27): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionPersonnel.h(815,27): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionPersonnel.h(850,27): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionClient.h(798,23): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionClient.h(906,22): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionClient.h(1066,25): warning C4101: 'ex': unreferenced local variable
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\yvals.h(245): warning STL4001: /clr:pure is deprecated and will be REMOVED.
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(501,22): warning C4101: 'e': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(535,22): warning C4101: 'e': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(578,22): warning C4101: 'e': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(616,22): warning C4101: 'e': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(637,22): warning C4101: 'e': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(659,22): warning C4101: 'e': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(723,21): warning C4101: 'e': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(781,21): warning C4101: 'e': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(812,23): warning C4101: 'e': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(835,21): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(831,23): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(871,30): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(924,30): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(976,30): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\Connexion.h(252,21): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(501,22): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(535,22): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(578,22): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(616,22): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(637,22): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(659,22): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(723,21): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(781,21): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(812,23): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(835,21): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStock.h(831,23): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStock.h(871,30): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStock.h(924,30): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStock.h(976,30): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\Connexion.h(252,21): warning C4101: 'ex': unreferenced local variable
   EcranPrincipal.cpp
-C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(768,27): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(815,27): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(850,27): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(798,23): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(906,22): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(1066,25): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionCommandes.h(968,12): warning C4101: 'req': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionPersonnel.h(768,27): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionPersonnel.h(815,27): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionPersonnel.h(850,27): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionClient.h(798,23): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionClient.h(906,22): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionClient.h(1066,25): warning C4101: 'ex': unreferenced local variable
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\yvals.h(245): warning STL4001: /clr:pure is deprecated and will be REMOVED.
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(501,22): warning C4101: 'e': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(535,22): warning C4101: 'e': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(578,22): warning C4101: 'e': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(616,22): warning C4101: 'e': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(637,22): warning C4101: 'e': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(659,22): warning C4101: 'e': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(723,21): warning C4101: 'e': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(781,21): warning C4101: 'e': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(812,23): warning C4101: 'e': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(835,21): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(831,23): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(871,30): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(924,30): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(976,30): warning C4101: 'ex': unreferenced local variable
-  GestionClient.cpp
-C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(798,23): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(906,22): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(1066,25): warning C4101: 'ex': unreferenced local variable
-  GestionStock.cpp
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(831,23): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(871,30): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(924,30): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(976,30): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(501,22): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(535,22): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(578,22): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(616,22): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(637,22): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(659,22): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(723,21): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(781,21): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(812,23): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(835,21): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStock.h(831,23): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStock.h(871,30): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStock.h(924,30): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStock.h(976,30): warning C4101: 'ex': unreferenced local variable
+  GestionCommandes.cpp
   Generating Code...
   Accueil.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
-  Project9.vcxproj -> C:\Users\Nyu\source\repos\Project9\Debug\Project9.exe
+  Project9.vcxproj -> D:\Nyu\Documents\GitHub\Projet-POO\Project9\Debug\Project9.exe

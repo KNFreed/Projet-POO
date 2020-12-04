@@ -24,10 +24,11 @@ namespace Project9 {
 			//TODO: Add the constructor code here
 			//
 		}
-	private: System::Windows::Forms::TextBox^ textBox1;
+
+
 
 	public:String^ cnxstr;
-	private: System::Windows::Forms::TextBox^ textBox2;
+
 
 
 	private: System::Windows::Forms::DateTimePicker^ dateTimePicker1;
@@ -35,8 +36,10 @@ namespace Project9 {
 	private: System::Windows::Forms::DateTimePicker^ dateTimePicker3;
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::GroupBox^ groupBox1;
+	private: System::Windows::Forms::Button^ Add_ComV;
+
+	private: System::Windows::Forms::GroupBox^ G_Com;
+
 	private: System::Windows::Forms::TextBox^ textBox3;
 
 
@@ -51,13 +54,14 @@ namespace Project9 {
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::DataGridView^ dataGridView2;
 	private: System::Windows::Forms::Label^ label17;
-	private: System::Windows::Forms::TextBox^ textBox9;
+	private: System::Windows::Forms::TextBox^ reduc_Com;
 
 
-	private: System::Windows::Forms::Label^ label16;
-	private: System::Windows::Forms::Label^ label15;
-	private: System::Windows::Forms::Label^ label14;
-	private: System::Windows::Forms::TextBox^ textBox8;
+
+
+
+
+
 
 
 
@@ -79,17 +83,36 @@ namespace Project9 {
 	private: System::Windows::Forms::Label^ label13;
 	private: System::Windows::Forms::ComboBox^ comboBox1;
 	private: System::Windows::Forms::Label^ label18;
-	private: System::Windows::Forms::TextBox^ textBox10;
-	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::Button^ button6;
-	private: System::Windows::Forms::GroupBox^ groupBox2;
+	private: System::Windows::Forms::TextBox^ Ref_Com;
 
-	private: System::Windows::Forms::CheckBox^ checkBox1;
+	private: System::Windows::Forms::Button^ Search_ID_Com;
+	private: System::Windows::Forms::Button^ Search_Ref_Com;
+	private: System::Windows::Forms::Button^ Cancel_Com;
+
+
+
+	private: System::Windows::Forms::GroupBox^ G_Paie;
+
+
+
 	private: System::Windows::Forms::TextBox^ textBox11;
 	private: System::Windows::Forms::Label^ label19;
+	private: System::Windows::Forms::Button^ Modif_ComV;
+
+
+	private: System::Windows::Forms::Label^ label14;
+	private: System::Windows::Forms::DataGridView^ dataGridView3;
+	private: System::Windows::Forms::Button^ modif_stock;
+	private: System::Windows::Forms::TextBox^ Qtt_Com;
+
+	private: System::Windows::Forms::Label^ label15;
+	private: System::Windows::Forms::CheckBox^ checkBox1;
 	private: System::Windows::Forms::CheckBox^ checkBox2;
-	private: System::Windows::Forms::Button^ button7;
+	private: System::Windows::Forms::Label^ label16;
+	private: System::Windows::Forms::Label^ label20;
+	private: System::Windows::Forms::ComboBox^ comboBox2;
+
+
 
 	private: System::Windows::Forms::Label^ label5;
 
@@ -113,15 +136,17 @@ namespace Project9 {
 
 
 	private: System::Windows::Forms::Label^ label7;
-	private: System::Windows::Forms::Button^ button5;
-	private: System::Windows::Forms::Button^ button4;
+private: System::Windows::Forms::Button^ sup_com;
+
+private: System::Windows::Forms::Button^ modif_com;
+
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
 
 	private:
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -134,31 +159,32 @@ namespace Project9 {
 			this->AfficherCom = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->modif_stock = (gcnew System::Windows::Forms::Button());
+			this->label14 = (gcnew System::Windows::Forms::Label());
+			this->dataGridView3 = (gcnew System::Windows::Forms::DataGridView());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
 			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->button5 = (gcnew System::Windows::Forms::Button());
-			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->sup_com = (gcnew System::Windows::Forms::Button());
+			this->modif_com = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->dateTimePicker2 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->dateTimePicker3 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
-			this->label18 = (gcnew System::Windows::Forms::Label());
-			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
-			this->label17 = (gcnew System::Windows::Forms::Label());
-			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
-			this->label16 = (gcnew System::Windows::Forms::Label());
+			this->Add_ComV = (gcnew System::Windows::Forms::Button());
+			this->G_Com = (gcnew System::Windows::Forms::GroupBox());
+			this->label20 = (gcnew System::Windows::Forms::Label());
+			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
+			this->Qtt_Com = (gcnew System::Windows::Forms::TextBox());
 			this->label15 = (gcnew System::Windows::Forms::Label());
-			this->label14 = (gcnew System::Windows::Forms::Label());
-			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
-			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->label18 = (gcnew System::Windows::Forms::Label());
+			this->Ref_Com = (gcnew System::Windows::Forms::TextBox());
+			this->label17 = (gcnew System::Windows::Forms::Label());
+			this->reduc_Com = (gcnew System::Windows::Forms::TextBox());
+			this->Cancel_Com = (gcnew System::Windows::Forms::Button());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->label13 = (gcnew System::Windows::Forms::Label());
@@ -174,20 +200,22 @@ namespace Project9 {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->Search_ID_Com = (gcnew System::Windows::Forms::Button());
+			this->Search_Ref_Com = (gcnew System::Windows::Forms::Button());
+			this->G_Paie = (gcnew System::Windows::Forms::GroupBox());
 			this->textBox11 = (gcnew System::Windows::Forms::TextBox());
-			this->label19 = (gcnew System::Windows::Forms::Label());
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->checkBox2 = (gcnew System::Windows::Forms::CheckBox());
-			this->button7 = (gcnew System::Windows::Forms::Button());
+			this->label19 = (gcnew System::Windows::Forms::Label());
+			this->Modif_ComV = (gcnew System::Windows::Forms::Button());
+			this->label16 = (gcnew System::Windows::Forms::Label());
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
-			this->groupBox1->SuspendLayout();
-			this->groupBox2->SuspendLayout();
+			this->G_Com->SuspendLayout();
+			this->G_Paie->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// AjouterCom
@@ -246,16 +274,61 @@ namespace Project9 {
 			// 
 			this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
 				static_cast<System::Int32>(static_cast<System::Byte>(42)));
+			this->panel2->Controls->Add(this->modif_stock);
+			this->panel2->Controls->Add(this->label14);
+			this->panel2->Controls->Add(this->dataGridView3);
 			this->panel2->Controls->Add(this->label8);
 			this->panel2->Controls->Add(this->dataGridView2);
 			this->panel2->Controls->Add(this->label7);
-			this->panel2->Controls->Add(this->button5);
-			this->panel2->Controls->Add(this->button4);
+			this->panel2->Controls->Add(this->sup_com);
+			this->panel2->Controls->Add(this->modif_com);
 			this->panel2->Controls->Add(this->dataGridView1);
-			this->panel2->Location = System::Drawing::Point(658, 136);
+			this->panel2->Location = System::Drawing::Point(632, 136);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(570, 510);
+			this->panel2->Size = System::Drawing::Size(602, 511);
 			this->panel2->TabIndex = 16;
+			// 
+			// modif_stock
+			// 
+			this->modif_stock->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
+				static_cast<System::Int32>(static_cast<System::Byte>(42)));
+			this->modif_stock->Enabled = false;
+			this->modif_stock->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)),
+				static_cast<System::Int32>(static_cast<System::Byte>(221)), static_cast<System::Int32>(static_cast<System::Byte>(222)));
+			this->modif_stock->FlatAppearance->BorderSize = 0;
+			this->modif_stock->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->modif_stock->Font = (gcnew System::Drawing::Font(L"Whitney Semibold", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->modif_stock->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
+				static_cast<System::Int32>(static_cast<System::Byte>(222)));
+			this->modif_stock->Location = System::Drawing::Point(410, 453);
+			this->modif_stock->Margin = System::Windows::Forms::Padding(0);
+			this->modif_stock->Name = L"modif_stock";
+			this->modif_stock->Size = System::Drawing::Size(189, 59);
+			this->modif_stock->TabIndex = 26;
+			this->modif_stock->Text = L"Modifier article";
+			this->modif_stock->UseVisualStyleBackColor = false;
+			// 
+			// label14
+			// 
+			this->label14->AutoSize = true;
+			this->label14->Font = (gcnew System::Drawing::Font(L"Whitney Semibold", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label14->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
+				static_cast<System::Int32>(static_cast<System::Byte>(222)));
+			this->label14->Location = System::Drawing::Point(302, 238);
+			this->label14->Name = L"label14";
+			this->label14->Size = System::Drawing::Size(75, 18);
+			this->label14->TabIndex = 25;
+			this->label14->Text = L"Article(s)";
+			// 
+			// dataGridView3
+			// 
+			this->dataGridView3->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView3->Location = System::Drawing::Point(305, 257);
+			this->dataGridView3->Name = L"dataGridView3";
+			this->dataGridView3->Size = System::Drawing::Size(294, 197);
+			this->dataGridView3->TabIndex = 24;
 			// 
 			// label8
 			// 
@@ -280,7 +353,7 @@ namespace Project9 {
 			this->dataGridView2->Name = L"dataGridView2";
 			this->dataGridView2->ReadOnly = true;
 			this->dataGridView2->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
-			this->dataGridView2->Size = System::Drawing::Size(571, 182);
+			this->dataGridView2->Size = System::Drawing::Size(307, 197);
 			this->dataGridView2->TabIndex = 22;
 			// 
 			// label7
@@ -296,49 +369,49 @@ namespace Project9 {
 			this->label7->TabIndex = 20;
 			this->label7->Text = L"Commande(s)";
 			// 
-			// button5
+			// sup_com
 			// 
-			this->button5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
+			this->sup_com->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
 				static_cast<System::Int32>(static_cast<System::Byte>(42)));
-			this->button5->Enabled = false;
-			this->button5->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)),
+			this->sup_com->Enabled = false;
+			this->sup_com->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)),
 				static_cast<System::Int32>(static_cast<System::Byte>(221)), static_cast<System::Int32>(static_cast<System::Byte>(222)));
-			this->button5->FlatAppearance->BorderSize = 0;
-			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button5->Font = (gcnew System::Drawing::Font(L"Whitney Semibold", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->sup_com->FlatAppearance->BorderSize = 0;
+			this->sup_com->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->sup_com->Font = (gcnew System::Drawing::Font(L"Whitney Semibold", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
+			this->sup_com->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
 				static_cast<System::Int32>(static_cast<System::Byte>(222)));
-			this->button5->Location = System::Drawing::Point(305, 442);
-			this->button5->Margin = System::Windows::Forms::Padding(0);
-			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(271, 69);
-			this->button5->TabIndex = 23;
-			this->button5->Text = L"Supprimer commande";
-			this->button5->UseVisualStyleBackColor = false;
-			this->button5->Click += gcnew System::EventHandler(this, &GestionCommandes::button5_Click);
+			this->sup_com->Location = System::Drawing::Point(227, 452);
+			this->sup_com->Margin = System::Windows::Forms::Padding(0);
+			this->sup_com->Name = L"sup_com";
+			this->sup_com->Size = System::Drawing::Size(186, 58);
+			this->sup_com->TabIndex = 23;
+			this->sup_com->Text = L"Supprimer commande";
+			this->sup_com->UseVisualStyleBackColor = false;
+			this->sup_com->Click += gcnew System::EventHandler(this, &GestionCommandes::sup_com_Click);
 			// 
-			// button4
+			// modif_com
 			// 
-			this->button4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
+			this->modif_com->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
 				static_cast<System::Int32>(static_cast<System::Byte>(42)));
-			this->button4->Enabled = false;
-			this->button4->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)),
+			this->modif_com->Enabled = false;
+			this->modif_com->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)),
 				static_cast<System::Int32>(static_cast<System::Byte>(221)), static_cast<System::Int32>(static_cast<System::Byte>(222)));
-			this->button4->FlatAppearance->BorderSize = 0;
-			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button4->Font = (gcnew System::Drawing::Font(L"Whitney Semibold", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->modif_com->FlatAppearance->BorderSize = 0;
+			this->modif_com->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->modif_com->Font = (gcnew System::Drawing::Font(L"Whitney Semibold", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
+			this->modif_com->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
 				static_cast<System::Int32>(static_cast<System::Byte>(222)));
-			this->button4->Location = System::Drawing::Point(0, 443);
-			this->button4->Margin = System::Windows::Forms::Padding(0);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(306, 68);
-			this->button4->TabIndex = 22;
-			this->button4->Text = L"Modifier commande";
-			this->button4->UseVisualStyleBackColor = false;
-			this->button4->Click += gcnew System::EventHandler(this, &GestionCommandes::button4_Click);
+			this->modif_com->Location = System::Drawing::Point(0, 451);
+			this->modif_com->Margin = System::Windows::Forms::Padding(0);
+			this->modif_com->Name = L"modif_com";
+			this->modif_com->Size = System::Drawing::Size(227, 60);
+			this->modif_com->TabIndex = 22;
+			this->modif_com->Text = L"Modifier commande";
+			this->modif_com->UseVisualStyleBackColor = false;
+			this->modif_com->Click += gcnew System::EventHandler(this, &GestionCommandes::modif_com_Click);
 			// 
 			// dataGridView1
 			// 
@@ -350,25 +423,9 @@ namespace Project9 {
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->ReadOnly = true;
 			this->dataGridView1->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
-			this->dataGridView1->Size = System::Drawing::Size(571, 205);
+			this->dataGridView1->Size = System::Drawing::Size(600, 205);
 			this->dataGridView1->TabIndex = 0;
 			this->dataGridView1->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &GestionCommandes::dataGridView1_CellClick);
-			// 
-			// textBox1
-			// 
-			this->textBox1->Location = System::Drawing::Point(158, 160);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(122, 23);
-			this->textBox1->TabIndex = 8;
-			this->textBox1->TextChanged += gcnew System::EventHandler(this, &GestionCommandes::textBox2_TextChanged);
-			// 
-			// textBox2
-			// 
-			this->textBox2->Location = System::Drawing::Point(158, 203);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(122, 23);
-			this->textBox2->TabIndex = 9;
-			this->textBox2->TextChanged += gcnew System::EventHandler(this, &GestionCommandes::textBox2_TextChanged);
 			// 
 			// dateTimePicker1
 			// 
@@ -460,98 +517,70 @@ namespace Project9 {
 			this->label5->TabIndex = 27;
 			this->label5->Text = L"Date de livraison";
 			// 
-			// button1
+			// Add_ComV
 			// 
-			this->button1->Location = System::Drawing::Point(542, 603);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 23);
-			this->button1->TabIndex = 21;
-			this->button1->Text = L"Ajouter";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Visible = false;
-			this->button1->Click += gcnew System::EventHandler(this, &GestionCommandes::button1_Click);
+			this->Add_ComV->Location = System::Drawing::Point(523, 607);
+			this->Add_ComV->Name = L"Add_ComV";
+			this->Add_ComV->Size = System::Drawing::Size(75, 23);
+			this->Add_ComV->TabIndex = 21;
+			this->Add_ComV->Text = L"Ajouter";
+			this->Add_ComV->UseVisualStyleBackColor = true;
+			this->Add_ComV->Visible = false;
+			this->Add_ComV->Click += gcnew System::EventHandler(this, &GestionCommandes::Add_ComV_Click);
 			// 
-			// groupBox1
+			// G_Com
 			// 
-			this->groupBox1->Controls->Add(this->label18);
-			this->groupBox1->Controls->Add(this->textBox10);
-			this->groupBox1->Controls->Add(this->label17);
-			this->groupBox1->Controls->Add(this->textBox9);
-			this->groupBox1->Controls->Add(this->label16);
-			this->groupBox1->Controls->Add(this->label15);
-			this->groupBox1->Controls->Add(this->label14);
-			this->groupBox1->Controls->Add(this->label4);
-			this->groupBox1->Controls->Add(this->textBox8);
-			this->groupBox1->Controls->Add(this->textBox1);
-			this->groupBox1->Controls->Add(this->label5);
-			this->groupBox1->Controls->Add(this->textBox2);
-			this->groupBox1->Controls->Add(this->dateTimePicker1);
-			this->groupBox1->Controls->Add(this->label6);
-			this->groupBox1->Controls->Add(this->dateTimePicker2);
-			this->groupBox1->Controls->Add(this->dateTimePicker3);
-			this->groupBox1->Font = (gcnew System::Drawing::Font(L"Whitney Semibold", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->G_Com->Controls->Add(this->label20);
+			this->G_Com->Controls->Add(this->comboBox2);
+			this->G_Com->Controls->Add(this->Qtt_Com);
+			this->G_Com->Controls->Add(this->label15);
+			this->G_Com->Controls->Add(this->label18);
+			this->G_Com->Controls->Add(this->Ref_Com);
+			this->G_Com->Controls->Add(this->label17);
+			this->G_Com->Controls->Add(this->reduc_Com);
+			this->G_Com->Controls->Add(this->label4);
+			this->G_Com->Controls->Add(this->label5);
+			this->G_Com->Controls->Add(this->dateTimePicker1);
+			this->G_Com->Controls->Add(this->label6);
+			this->G_Com->Controls->Add(this->dateTimePicker2);
+			this->G_Com->Controls->Add(this->dateTimePicker3);
+			this->G_Com->Font = (gcnew System::Drawing::Font(L"Whitney Semibold", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->groupBox1->Location = System::Drawing::Point(25, 275);
-			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(306, 364);
-			this->groupBox1->TabIndex = 29;
-			this->groupBox1->TabStop = false;
-			this->groupBox1->Text = L"Commande";
-			this->groupBox1->Visible = false;
+			this->G_Com->Location = System::Drawing::Point(3, 245);
+			this->G_Com->Name = L"G_Com";
+			this->G_Com->Size = System::Drawing::Size(306, 345);
+			this->G_Com->TabIndex = 29;
+			this->G_Com->TabStop = false;
+			this->G_Com->Text = L"Commande";
+			this->G_Com->Visible = false;
 			// 
-			// label18
+			// label20
 			// 
-			this->label18->AutoSize = true;
-			this->label18->Font = (gcnew System::Drawing::Font(L"Whitney Semibold", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label20->AutoSize = true;
+			this->label20->Font = (gcnew System::Drawing::Font(L"Whitney Semibold", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label18->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
+			this->label20->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
 				static_cast<System::Int32>(static_cast<System::Byte>(222)));
-			this->label18->Location = System::Drawing::Point(17, 328);
-			this->label18->Name = L"label18";
-			this->label18->Size = System::Drawing::Size(76, 18);
-			this->label18->TabIndex = 40;
-			this->label18->Text = L"Référence";
+			this->label20->Location = System::Drawing::Point(15, 296);
+			this->label20->Name = L"label20";
+			this->label20->Size = System::Drawing::Size(120, 18);
+			this->label20->TabIndex = 34;
+			this->label20->Text = L"Articles en stock";
 			// 
-			// textBox10
+			// comboBox2
 			// 
-			this->textBox10->Location = System::Drawing::Point(158, 326);
-			this->textBox10->Name = L"textBox10";
-			this->textBox10->Size = System::Drawing::Size(122, 23);
-			this->textBox10->TabIndex = 12;
+			this->comboBox2->FormattingEnabled = true;
+			this->comboBox2->Location = System::Drawing::Point(158, 291);
+			this->comboBox2->Name = L"comboBox2";
+			this->comboBox2->Size = System::Drawing::Size(121, 23);
+			this->comboBox2->TabIndex = 33;
 			// 
-			// label17
+			// Qtt_Com
 			// 
-			this->label17->AutoSize = true;
-			this->label17->Font = (gcnew System::Drawing::Font(L"Whitney Semibold", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label17->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
-				static_cast<System::Int32>(static_cast<System::Byte>(222)));
-			this->label17->Location = System::Drawing::Point(15, 282);
-			this->label17->Name = L"label17";
-			this->label17->Size = System::Drawing::Size(137, 18);
-			this->label17->TabIndex = 38;
-			this->label17->Text = L"Montant réduction";
-			// 
-			// textBox9
-			// 
-			this->textBox9->Location = System::Drawing::Point(158, 280);
-			this->textBox9->Name = L"textBox9";
-			this->textBox9->Size = System::Drawing::Size(122, 23);
-			this->textBox9->TabIndex = 11;
-			this->textBox9->TextChanged += gcnew System::EventHandler(this, &GestionCommandes::textBox8_TextChanged);
-			// 
-			// label16
-			// 
-			this->label16->AutoSize = true;
-			this->label16->Font = (gcnew System::Drawing::Font(L"Whitney Semibold", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label16->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
-				static_cast<System::Int32>(static_cast<System::Byte>(222)));
-			this->label16->Location = System::Drawing::Point(17, 202);
-			this->label16->Name = L"label16";
-			this->label16->Size = System::Drawing::Size(126, 18);
-			this->label16->TabIndex = 36;
-			this->label16->Text = L"Montant tot TVA";
+			this->Qtt_Com->Location = System::Drawing::Point(158, 246);
+			this->Qtt_Com->Name = L"Qtt_Com";
+			this->Qtt_Com->Size = System::Drawing::Size(122, 23);
+			this->Qtt_Com->TabIndex = 42;
 			// 
 			// label15
 			// 
@@ -560,49 +589,67 @@ namespace Project9 {
 				static_cast<System::Byte>(0)));
 			this->label15->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
 				static_cast<System::Int32>(static_cast<System::Byte>(222)));
-			this->label15->Location = System::Drawing::Point(17, 162);
+			this->label15->Location = System::Drawing::Point(17, 251);
 			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(115, 18);
-			this->label15->TabIndex = 35;
-			this->label15->Text = L"Montant tot HT";
+			this->label15->Size = System::Drawing::Size(70, 18);
+			this->label15->TabIndex = 41;
+			this->label15->Text = L"Quantité";
 			// 
-			// label14
+			// label18
 			// 
-			this->label14->AutoSize = true;
-			this->label14->Font = (gcnew System::Drawing::Font(L"Whitney Semibold", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label18->AutoSize = true;
+			this->label18->Font = (gcnew System::Drawing::Font(L"Whitney Semibold", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label14->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
+			this->label18->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
 				static_cast<System::Int32>(static_cast<System::Byte>(222)));
-			this->label14->Location = System::Drawing::Point(17, 240);
-			this->label14->Name = L"label14";
-			this->label14->Size = System::Drawing::Size(124, 18);
-			this->label14->TabIndex = 34;
-			this->label14->Text = L"Montant tot TTC";
+			this->label18->Location = System::Drawing::Point(17, 208);
+			this->label18->Name = L"label18";
+			this->label18->Size = System::Drawing::Size(76, 18);
+			this->label18->TabIndex = 40;
+			this->label18->Text = L"Référence";
 			// 
-			// textBox8
+			// Ref_Com
 			// 
-			this->textBox8->Location = System::Drawing::Point(158, 241);
-			this->textBox8->Name = L"textBox8";
-			this->textBox8->Size = System::Drawing::Size(122, 23);
-			this->textBox8->TabIndex = 10;
-			this->textBox8->TextChanged += gcnew System::EventHandler(this, &GestionCommandes::textBox8_TextChanged);
+			this->Ref_Com->Location = System::Drawing::Point(158, 203);
+			this->Ref_Com->Name = L"Ref_Com";
+			this->Ref_Com->Size = System::Drawing::Size(122, 23);
+			this->Ref_Com->TabIndex = 12;
 			// 
-			// button6
+			// label17
 			// 
-			this->button6->Location = System::Drawing::Point(371, 603);
-			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(75, 23);
-			this->button6->TabIndex = 20;
-			this->button6->Text = L"Annuler";
-			this->button6->UseVisualStyleBackColor = true;
-			this->button6->Visible = false;
-			this->button6->Click += gcnew System::EventHandler(this, &GestionCommandes::button6_Click);
+			this->label17->AutoSize = true;
+			this->label17->Font = (gcnew System::Drawing::Font(L"Whitney Semibold", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label17->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
+				static_cast<System::Int32>(static_cast<System::Byte>(222)));
+			this->label17->Location = System::Drawing::Point(15, 163);
+			this->label17->Name = L"label17";
+			this->label17->Size = System::Drawing::Size(137, 18);
+			this->label17->TabIndex = 38;
+			this->label17->Text = L"Montant réduction";
+			// 
+			// reduc_Com
+			// 
+			this->reduc_Com->Location = System::Drawing::Point(158, 161);
+			this->reduc_Com->Name = L"reduc_Com";
+			this->reduc_Com->Size = System::Drawing::Size(122, 23);
+			this->reduc_Com->TabIndex = 11;
+			// 
+			// Cancel_Com
+			// 
+			this->Cancel_Com->Location = System::Drawing::Point(331, 607);
+			this->Cancel_Com->Name = L"Cancel_Com";
+			this->Cancel_Com->Size = System::Drawing::Size(75, 23);
+			this->Cancel_Com->TabIndex = 20;
+			this->Cancel_Com->Text = L"Annuler";
+			this->Cancel_Com->UseVisualStyleBackColor = true;
+			this->Cancel_Com->Visible = false;
+			this->Cancel_Com->Click += gcnew System::EventHandler(this, &GestionCommandes::Cancel_Com_Click);
 			// 
 			// comboBox1
 			// 
 			this->comboBox1->FormattingEnabled = true;
 			this->comboBox1->Location = System::Drawing::Point(157, 187);
-			this->comboBox1->MaxLength = 15;
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(121, 23);
 			this->comboBox1->TabIndex = 17;
@@ -679,7 +726,6 @@ namespace Project9 {
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(122, 23);
 			this->textBox6->TabIndex = 15;
-			this->textBox6->TextChanged += gcnew System::EventHandler(this, &GestionCommandes::textBox8_TextChanged);
 			// 
 			// dateTimePicker4
 			// 
@@ -720,7 +766,7 @@ namespace Project9 {
 				static_cast<System::Byte>(0)));
 			this->textBox3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
 				static_cast<System::Int32>(static_cast<System::Byte>(222)));
-			this->textBox3->Location = System::Drawing::Point(219, 164);
+			this->textBox3->Location = System::Drawing::Point(209, 143);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(122, 26);
 			this->textBox3->TabIndex = 3;
@@ -734,7 +780,7 @@ namespace Project9 {
 				static_cast<System::Byte>(0)));
 			this->textBox4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
 				static_cast<System::Int32>(static_cast<System::Byte>(222)));
-			this->textBox4->Location = System::Drawing::Point(219, 231);
+			this->textBox4->Location = System::Drawing::Point(209, 197);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(122, 26);
 			this->textBox4->TabIndex = 4;
@@ -746,7 +792,7 @@ namespace Project9 {
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
 				static_cast<System::Int32>(static_cast<System::Byte>(222)));
-			this->label1->Location = System::Drawing::Point(22, 231);
+			this->label1->Location = System::Drawing::Point(12, 197);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(176, 18);
 			this->label1->TabIndex = 29;
@@ -759,7 +805,7 @@ namespace Project9 {
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
 				static_cast<System::Int32>(static_cast<System::Byte>(222)));
-			this->label2->Location = System::Drawing::Point(22, 166);
+			this->label2->Location = System::Drawing::Point(12, 145);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(181, 18);
 			this->label2->TabIndex = 32;
@@ -772,55 +818,57 @@ namespace Project9 {
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
 				static_cast<System::Int32>(static_cast<System::Byte>(222)));
-			this->label3->Location = System::Drawing::Point(262, 200);
+			this->label3->Location = System::Drawing::Point(252, 176);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(31, 18);
 			this->label3->TabIndex = 33;
 			this->label3->Text = L"OU";
 			// 
-			// button2
+			// Search_ID_Com
 			// 
-			this->button2->Location = System::Drawing::Point(454, 167);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(75, 23);
-			this->button2->TabIndex = 24;
-			this->button2->Text = L"Rechercher";
-			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &GestionCommandes::button2_Click);
+			this->Search_ID_Com->Location = System::Drawing::Point(354, 143);
+			this->Search_ID_Com->Name = L"Search_ID_Com";
+			this->Search_ID_Com->Size = System::Drawing::Size(75, 23);
+			this->Search_ID_Com->TabIndex = 24;
+			this->Search_ID_Com->Text = L"Rechercher";
+			this->Search_ID_Com->UseVisualStyleBackColor = true;
+			this->Search_ID_Com->Click += gcnew System::EventHandler(this, &GestionCommandes::Search_ID_Com_Click);
 			// 
-			// button3
+			// Search_Ref_Com
 			// 
-			this->button3->Location = System::Drawing::Point(454, 231);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(75, 23);
-			this->button3->TabIndex = 25;
-			this->button3->Text = L"Rechercher";
-			this->button3->UseVisualStyleBackColor = true;
-			this->button3->Click += gcnew System::EventHandler(this, &GestionCommandes::button3_Click);
+			this->Search_Ref_Com->Location = System::Drawing::Point(354, 197);
+			this->Search_Ref_Com->Name = L"Search_Ref_Com";
+			this->Search_Ref_Com->Size = System::Drawing::Size(75, 23);
+			this->Search_Ref_Com->TabIndex = 25;
+			this->Search_Ref_Com->Text = L"Rechercher";
+			this->Search_Ref_Com->UseVisualStyleBackColor = true;
+			this->Search_Ref_Com->Click += gcnew System::EventHandler(this, &GestionCommandes::Search_Ref_Com_Click);
 			// 
-			// groupBox2
+			// G_Paie
 			// 
-			this->groupBox2->Controls->Add(this->textBox11);
-			this->groupBox2->Controls->Add(this->label19);
-			this->groupBox2->Controls->Add(this->textBox5);
-			this->groupBox2->Controls->Add(this->textBox6);
-			this->groupBox2->Controls->Add(this->dateTimePicker4);
-			this->groupBox2->Controls->Add(this->label11);
-			this->groupBox2->Controls->Add(this->label12);
-			this->groupBox2->Controls->Add(this->textBox7);
-			this->groupBox2->Controls->Add(this->label13);
-			this->groupBox2->Controls->Add(this->comboBox1);
-			this->groupBox2->Controls->Add(this->label10);
-			this->groupBox2->Controls->Add(this->label9);
-			this->groupBox2->Font = (gcnew System::Drawing::Font(L"Whitney Semibold", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->G_Paie->Controls->Add(this->textBox11);
+			this->G_Paie->Controls->Add(this->checkBox1);
+			this->G_Paie->Controls->Add(this->checkBox2);
+			this->G_Paie->Controls->Add(this->label19);
+			this->G_Paie->Controls->Add(this->textBox5);
+			this->G_Paie->Controls->Add(this->textBox6);
+			this->G_Paie->Controls->Add(this->dateTimePicker4);
+			this->G_Paie->Controls->Add(this->label11);
+			this->G_Paie->Controls->Add(this->label12);
+			this->G_Paie->Controls->Add(this->textBox7);
+			this->G_Paie->Controls->Add(this->label13);
+			this->G_Paie->Controls->Add(this->comboBox1);
+			this->G_Paie->Controls->Add(this->label10);
+			this->G_Paie->Controls->Add(this->label9);
+			this->G_Paie->Font = (gcnew System::Drawing::Font(L"Whitney Semibold", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->groupBox2->Location = System::Drawing::Point(354, 275);
-			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Size = System::Drawing::Size(297, 264);
-			this->groupBox2->TabIndex = 42;
-			this->groupBox2->TabStop = false;
-			this->groupBox2->Text = L"Paiement";
-			this->groupBox2->Visible = false;
+			this->G_Paie->Location = System::Drawing::Point(320, 245);
+			this->G_Paie->Name = L"G_Paie";
+			this->G_Paie->Size = System::Drawing::Size(297, 332);
+			this->G_Paie->TabIndex = 42;
+			this->G_Paie->TabStop = false;
+			this->G_Paie->Text = L"Paiement";
+			this->G_Paie->Visible = false;
 			// 
 			// textBox11
 			// 
@@ -829,7 +877,27 @@ namespace Project9 {
 			this->textBox11->Size = System::Drawing::Size(122, 23);
 			this->textBox11->TabIndex = 18;
 			this->textBox11->Visible = false;
-			this->textBox11->Enter += gcnew System::EventHandler(this, &GestionCommandes::textBox11_TextChanged);
+			// 
+			// checkBox1
+			// 
+			this->checkBox1->AutoSize = true;
+			this->checkBox1->Location = System::Drawing::Point(30, 302);
+			this->checkBox1->Name = L"checkBox1";
+			this->checkBox1->Size = System::Drawing::Size(94, 20);
+			this->checkBox1->TabIndex = 45;
+			this->checkBox1->Text = L"Commande";
+			this->checkBox1->UseVisualStyleBackColor = true;
+			// 
+			// checkBox2
+			// 
+			this->checkBox2->AutoSize = true;
+			this->checkBox2->Location = System::Drawing::Point(157, 299);
+			this->checkBox2->Name = L"checkBox2";
+			this->checkBox2->Size = System::Drawing::Size(83, 20);
+			this->checkBox2->TabIndex = 46;
+			this->checkBox2->Text = L"Paiement";
+			this->checkBox2->UseVisualStyleBackColor = true;
+			this->checkBox2->CheckedChanged += gcnew System::EventHandler(this, &GestionCommandes::checkBox2_CheckedChanged);
 			// 
 			// label19
 			// 
@@ -845,58 +913,48 @@ namespace Project9 {
 			this->label19->Text = L"Commande ID";
 			this->label19->Visible = false;
 			// 
-			// checkBox1
+			// Modif_ComV
 			// 
-			this->checkBox1->AutoSize = true;
-			this->checkBox1->Location = System::Drawing::Point(450, 566);
-			this->checkBox1->Name = L"checkBox1";
-			this->checkBox1->Size = System::Drawing::Size(70, 17);
-			this->checkBox1->TabIndex = 19;
-			this->checkBox1->Text = L"Paiement";
-			this->checkBox1->UseVisualStyleBackColor = true;
-			this->checkBox1->Visible = false;
-			this->checkBox1->CheckedChanged += gcnew System::EventHandler(this, &GestionCommandes::checkBox1_CheckedChanged);
+			this->Modif_ComV->Location = System::Drawing::Point(424, 607);
+			this->Modif_ComV->Name = L"Modif_ComV";
+			this->Modif_ComV->Size = System::Drawing::Size(75, 23);
+			this->Modif_ComV->TabIndex = 44;
+			this->Modif_ComV->Text = L"Modifier";
+			this->Modif_ComV->UseVisualStyleBackColor = true;
+			this->Modif_ComV->Visible = false;
+			this->Modif_ComV->Click += gcnew System::EventHandler(this, &GestionCommandes::Modif_ComV_Click);
 			// 
-			// checkBox2
+			// label16
 			// 
-			this->checkBox2->AutoSize = true;
-			this->checkBox2->Location = System::Drawing::Point(450, 543);
-			this->checkBox2->Name = L"checkBox2";
-			this->checkBox2->Size = System::Drawing::Size(79, 17);
-			this->checkBox2->TabIndex = 43;
-			this->checkBox2->Text = L"Commande";
-			this->checkBox2->UseVisualStyleBackColor = false;
-			this->checkBox2->Visible = false;
-			// 
-			// button7
-			// 
-			this->button7->Location = System::Drawing::Point(461, 603);
-			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(75, 23);
-			this->button7->TabIndex = 44;
-			this->button7->Text = L"Modifier";
-			this->button7->UseVisualStyleBackColor = true;
-			this->button7->Visible = false;
-			this->button7->Click += gcnew System::EventHandler(this, &GestionCommandes::button7_Click);
+			this->label16->AutoSize = true;
+			this->label16->Font = (gcnew System::Drawing::Font(L"Whitney Semibold", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label16->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
+				static_cast<System::Int32>(static_cast<System::Byte>(222)));
+			this->label16->Location = System::Drawing::Point(410, 518);
+			this->label16->Name = L"label16";
+			this->label16->Size = System::Drawing::Size(71, 18);
+			this->label16->TabIndex = 33;
+			this->label16->Text = L"Selection";
+			this->label16->Visible = false;
 			// 
 			// GestionCommandes
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->Controls->Add(this->button7);
-			this->Controls->Add(this->checkBox2);
-			this->Controls->Add(this->checkBox1);
-			this->Controls->Add(this->groupBox2);
-			this->Controls->Add(this->button6);
-			this->Controls->Add(this->button3);
+			this->Controls->Add(this->label16);
+			this->Controls->Add(this->Modif_ComV);
+			this->Controls->Add(this->G_Paie);
+			this->Controls->Add(this->Cancel_Com);
+			this->Controls->Add(this->Search_Ref_Com);
 			this->Controls->Add(this->label3);
-			this->Controls->Add(this->button1);
-			this->Controls->Add(this->button2);
+			this->Controls->Add(this->Add_ComV);
+			this->Controls->Add(this->Search_ID_Com);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->textBox4);
 			this->Controls->Add(this->textBox3);
-			this->Controls->Add(this->groupBox1);
+			this->Controls->Add(this->G_Com);
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel1);
 			this->Name = L"GestionCommandes";
@@ -905,211 +963,59 @@ namespace Project9 {
 			this->panel1->ResumeLayout(false);
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
-			this->groupBox1->ResumeLayout(false);
-			this->groupBox1->PerformLayout();
-			this->groupBox2->ResumeLayout(false);
-			this->groupBox2->PerformLayout();
+			this->G_Com->ResumeLayout(false);
+			this->G_Com->PerformLayout();
+			this->G_Paie->ResumeLayout(false);
+			this->G_Paie->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
- private: System::Void InsertDataGrid(System::String ^ req) {
+		//Zone affichage DataGrid
+private:
+	System::Void InsertDataGrid(System::String^ req) {
 		MySqlDataAdapter^ adapt;
 		MySqlConnection^ cnxx = gcnew MySqlConnection(cnxstr);
 		adapt = gcnew MySqlDataAdapter(req, cnxx);
 		MySqlCommandBuilder^ commandBuilder;
 		commandBuilder = gcnew MySqlCommandBuilder(adapt);
-		System::Data::DataTable^ table;
-		table = gcnew Data::DataTable();
+		DataTable^ table;
+		table = gcnew DataTable();
 		adapt->Fill(table);
 		dataGridView1->DataSource = table;
 	}
 
-private: System::Void PaiementDataGrid(System::String^ req) {
-	MySqlDataAdapter^ adapt;
-	MySqlConnection^ cnxx = gcnew MySqlConnection(cnxstr);
-	adapt = gcnew MySqlDataAdapter(req, cnxx);
-	MySqlCommandBuilder^ commandBuilder;
-	commandBuilder = gcnew MySqlCommandBuilder(adapt);
-	System::Data::DataTable^ table;
-	table = gcnew Data::DataTable();
-	adapt->Fill(table);
-	dataGridView2->DataSource = table;
+	System::Void PaiementDataGrid(System::String^ req) {
+		MySqlDataAdapter^ adapt;
+		MySqlConnection^ cnxx = gcnew MySqlConnection(cnxstr);
+		adapt = gcnew MySqlDataAdapter(req, cnxx);
+		MySqlCommandBuilder^ commandBuilder;
+		commandBuilder = gcnew MySqlCommandBuilder(adapt);
+		DataTable^ table;
+		table = gcnew DataTable();
+		adapt->Fill(table);
+		dataGridView2->DataSource = table;
+	}
 
-	 }
-
-private: System::Void AjouterCom_Click(System::Object^ sender, System::EventArgs^ e) {
-
-	this->groupBox1->Visible = true;
-	this->groupBox2->Visible = true;
-	this->button1->Visible = true;
-	this->button7->Visible = false;
-	this->button6->Visible = true;
-	this->checkBox1->Visible = true;
-	this->checkBox2->Visible = true;
-
-}
-
-
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) { // Ajout commande paiement
-		try
-		{
-			String^ theDate_com = this->dateTimePicker1->Value.ToString("yyyy-MM-dd");
-			String^ theDate_liv = this->dateTimePicker2->Value.ToString("yyyy-MM-dd");
-			String^ theDate_env = this->dateTimePicker3->Value.ToString("yyyy-MM-dd");
-			String^ theDate_paie = this->dateTimePicker4->Value.ToString("yyyy-MM-dd");
-
-			MySqlConnection^ cnxx = gcnew MySqlConnection(this->cnxstr);
-			MySqlCommand^ cmd = gcnew MySqlCommand();
-			MySqlDataReader^ reader;
-			String^ req;
-			cmd->Connection = cnxx;
-			if (this->checkBox1->Checked && !this->checkBox2->Checked && this->comboBox1->Text!="" && this->textBox11->Text != "") {
-				try
-				{
-					cmd->CommandText = "START TRANSACTION; INSERT INTO Projet.Paiement(Libelle_Paiement, Date_Paiement, Montant, Solde_Restant, ID_Commande, ID_Mode_Paiement) SELECT '" + this->textBox5->Text + "', '" + theDate_paie + "', '" + this->textBox6->Text + "', '" + this->textBox7->Text + "', '" + this->textBox11->Text + "', Mode_Paiement.ID_Mode_Paiement FROM Projet.Mode_Paiement, Projet.Commande WHERE Mode_Paiement.Nom_Mode_Paiement = '" + this->comboBox1->Text + "'; COMMIT;";
-					cnxx->Open();
-				reader = cmd->ExecuteReader();
-					while (reader->Read())
-					{
-					};
-					reader->Close();				}
-				catch (Exception^ e)
-				{
-					MessageBox::Show("Merci de renseigner des paramètres existants"+e);
-				}
-			
-			}
-			else if (this->checkBox2->Checked && !this->checkBox1->Checked){
-				cmd->CommandText = "START TRANSACTION; INSERT INTO Projet.Commande (Date_Livraison, Date_Envoi, Date_Commande, CDE_Montant_Total_HT, CDE_Montant_Total_TVA, CDE_Reduction, CDE_Montant_Total_TTC, Reference ) VALUES ('" + theDate_liv + "', '" + theDate_env + "', '" + theDate_com + "', '" + this->textBox1->Text + "', '" + this->textBox2->Text + "', '" + this->textBox9->Text + "', '" + this->textBox8->Text + "', '" + this->textBox10->Text + "'); COMMIT;";
-				cnxx->Open();
-				reader = cmd->ExecuteReader();
-				while (reader->Read())
-				{
-				};
-				reader->Close();
-			}
-			else if (this->checkBox2->Checked && this->checkBox1->Checked) {
-				cmd->CommandText = "START TRANSACTION; INSERT INTO Projet.Commande (Date_Livraison, Date_Envoi, Date_Commande, CDE_Montant_Total_HT, CDE_Montant_Total_TVA, CDE_Reduction, CDE_Montant_Total_TTC, Reference ) VALUES ('" + theDate_liv + "', '" + theDate_env + "', '" + theDate_com + "', '" + this->textBox1->Text + "', '" + this->textBox2->Text + "', '" + this->textBox9->Text + "', '" + this->textBox8->Text + "', '" + this->textBox10->Text + "'); INSERT INTO Projet.Paiement(Libelle_Paiement, Date_Paiement, Montant, Solde_Restant, ID_Commande, ID_Mode_Paiement) SELECT '" + this->textBox5->Text + "', '" + theDate_paie + "', '" + this->textBox6->Text + "', '" + this->textBox7->Text + "', MAX(Commande.ID_Commande), Mode_Paiement.ID_Mode_Paiement FROM Projet.Mode_Paiement, Projet.Commande WHERE Mode_Paiement.Nom_Mode_Paiement = '" + this->comboBox1->Text + "'; COMMIT;";
-				cnxx->Open();
-				reader = cmd->ExecuteReader();
-				while (reader->Read())
-				{
-				};
-				reader->Close();
-			}
-			else if (!this->checkBox2->Checked && !this->checkBox1->Checked) {
-				MessageBox::Show("Merci de cocher au moins une information");
-			}
-			else {
-				MessageBox::Show("Vous avez oublié de remplir des paramètres ! Affichage des Commandes");
-			}
-			
-
-			InsertDataGrid("SELECT ID_Commande, Date_Livraison, Date_Envoi, Date_Commande, CDE_Montant_Total_HT, CDE_Montant_Total_TVA, CDE_Reduction, CDE_Montant_Total_TTC, Reference FROM Projet.Commande");
-
-		}
-		catch (Exception^ e)
-		{
-			MessageBox::Show("OOPS : " +e);
-		}
-		this->groupBox1->Visible = false;
-		this->groupBox2->Visible = false;
-		this->button1->Visible = false;
-		this->button6->Visible = false;
-		this->checkBox1->Visible = false;
-		this->checkBox2->Visible = false;
-}
-
-
-private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->groupBox1->Visible = false;
-	this->groupBox2->Visible = false;
-	this->checkBox1->Visible = false;
-	this->checkBox2->Visible = false;
-	this->button7->Visible = false;
-	this->button1->Visible = false;
-	this->button6->Visible = false;
-
-}
-
-private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-
-	DataGridViewRow^ ligneCom = dataGridView1->SelectedRows[0];
-	DataGridViewRow^ lignePaiement = dataGridView2->SelectedRows[0];
-	if (ligneCom)
-	{
-		//Affichage des données dans textbox Commande
-		this->dateTimePicker3->Value = DateTime::ParseExact(ligneCom->Cells["Date_Commande"]->FormattedValue->ToString(), "MM/dd/yyyy", Globalization::CultureInfo::InvariantCulture);
-		this->dateTimePicker2->Value = DateTime::ParseExact(ligneCom->Cells["Date_Envoi"]->FormattedValue->ToString(), "MM/dd/yyyy", Globalization::CultureInfo::InvariantCulture);
-		this->dateTimePicker1->Value = DateTime::ParseExact(ligneCom->Cells["Date_Livraison"]->FormattedValue->ToString(), "MM/dd/yyyy", Globalization::CultureInfo::InvariantCulture);
-
-		this->textBox1->Text = ligneCom->Cells["CDE_Montant_Total_HT"]->Value->ToString();
-		this->textBox2->Text = ligneCom->Cells["CDE_Montant_Total_TVA"]->Value->ToString();
-		this->textBox9->Text = ligneCom->Cells["CDE_Reduction"]->Value->ToString();
-		this->textBox8->Text = ligneCom->Cells["CDE_Montant_Total_TTC"]->Value->ToString();
-		this->textBox10->Text = ligneCom->Cells["Reference"]->Value->ToString();
-
-	};
-
-	if (lignePaiement) {
-		//Paiement
-		this->dateTimePicker4->Value = DateTime::ParseExact(lignePaiement->Cells["Date_Paiement"]->FormattedValue->ToString(), "MM/dd/yyyy", Globalization::CultureInfo::InvariantCulture);
-
-		this->textBox5->Text = lignePaiement->Cells["Libelle_Paiement"]->Value->ToString();
-		this->textBox6->Text = lignePaiement->Cells["Montant"]->Value->ToString();
-		this->textBox7->Text = lignePaiement->Cells["Solde_Restant"]->Value->ToString();
-		this->textBox11->Text = ligneCom->Cells["ID_Commande"]->Value->ToString();
-		this->comboBox1->Text = lignePaiement->Cells["Paiement_Mode"]->Value->ToString();
+	System::Void ArticleDataGrid(System::String^ req) {
+		MySqlDataAdapter^ adapt;
+		MySqlConnection^ cnxx = gcnew MySqlConnection(cnxstr);
+		adapt = gcnew MySqlDataAdapter(req, cnxx);
+		MySqlCommandBuilder^ commandBuilder;
+		commandBuilder = gcnew MySqlCommandBuilder(adapt);
+		DataTable^ table;
+		table = gcnew DataTable();
+		adapt->Fill(table);
+		dataGridView3->DataSource = table;
 	}
 
 
-	this->groupBox1->Visible = true;
-	this->groupBox2->Visible = true;
-
-
-	this->checkBox1->Visible = true;
-	this->checkBox2->Visible = true;
-	this->button7->Visible = true;
-	this->button1->Visible = false;
-	this->button6->Visible = true;
-}
-
-private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-	if (this->checkBox1->Checked) {
-		this->label19->Visible = true;
-		this->textBox11->Visible = true;
-	}
-	else {
-		this->label19->Visible = false;
-		this->textBox11->Visible = false;
-	}
-}
-
-
-private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-	try
-	{
-		DataGridViewRow^ ligneCom = dataGridView1->SelectedRows[0];
-		System::String^ Identifiant = ligneCom->Cells["ID_Commande"]->Value->ToString();
-		System::String^ requ = "SELECT Paiement.ID_Paiement, Paiement.Libelle_Paiement, Paiement.Date_Paiement, Paiement.Montant, Paiement.Solde_Restant, Mode_Paiement.Nom_Mode_Paiement AS Paiement_Mode, ID_Commande FROM Projet.Paiement JOIN Projet.Mode_Paiement ON Paiement.ID_Mode_Paiement = Mode_Paiement.ID_Mode_Paiement WHERE ID_Commande =" + Identifiant + ";";
-		this->button4->Enabled = true;
-		this->button5->Enabled = true;
-		PaiementDataGrid(requ);
-		this->textBox11->Text = ligneCom->Cells["ID_Commande"]->Value->ToString();
-	}
-	catch (Exception^ e)
-	{
-		MessageBox::Show("" + e);
-	}
-
-}
-
+	//Events Bouttons
 private: System::Void AfficherCom_Click(System::Object^ sender, System::EventArgs^ e) {
-
 	String^ req;
 	req = "SELECT ID_Commande, Date_Livraison, Date_Envoi, Date_Commande, CDE_Montant_Total_HT, CDE_Montant_Total_TVA, CDE_Reduction, CDE_Montant_Total_TTC, Reference FROM Projet.Commande";
 	InsertDataGrid(req);
@@ -1119,7 +1025,71 @@ private: System::Void textBox11_TextChanged(System::Object^ sender, System::Even
 	auto result = MessageBox::Show("Attention vous allez modifier l'ID_Commande,  faites attention", "Modifier ID_Commande", MessageBoxButtons::OKCancel);
 
 }
-private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
+
+private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+	try
+	{
+		DataGridViewRow^ ligneCom = dataGridView1->SelectedRows[0];
+
+		System::String^ Identifiant = ligneCom->Cells["ID_Commande"]->Value->ToString();
+		System::String^ req_paie;
+		System::String^ req_stock;
+		this->textBox11->Text = Identifiant;
+
+		req_paie = "SELECT Paiement.ID_Paiement, Paiement.Libelle_Paiement, Paiement.Date_Paiement, Paiement.Montant, Paiement.Solde_Restant, Mode_Paiement.Nom_Mode_Paiement AS Paiement_Mode, ID_Commande FROM Projet.Paiement JOIN Projet.Mode_Paiement ON Paiement.ID_Mode_Paiement = Mode_Paiement.ID_Mode_Paiement WHERE ID_Commande =" + Identifiant + ";";
+		PaiementDataGrid(req_paie);
+		
+
+		req_stock = "SELECT Libelle_Article, Quantite, (Prix_HT * Prix_Commercial) AS 'Prix UHT', Taux_TVA_Produit, (Quantite * Prix_HT * Prix_Commercial) AS 'Total HT', (Quantite * Prix_HT * Prix_Commercial * ((100 + Taux_TVA_Produit) / 100)) AS 'Total TTC'\
+			FROM Ligne\
+			LEFT JOIN Ligne_Commande ON Ligne.ID_Ligne = Ligne_Commande.ID_Ligne\
+			LEFT JOIN Catalogue_Entreprise  on Ligne.ID_Article = Catalogue_Entreprise.ID_Article\
+			WHERE ID_Commande = " + Identifiant + ";";
+
+		ArticleDataGrid(req_stock);
+
+		this->modif_stock->Enabled = true;
+		this->modif_com->Enabled = true;
+		this->sup_com->Enabled = true;
+	}
+	catch (Exception^ e)
+	{
+		MessageBox::Show("" + e);
+	}
+}
+
+private: System::Void Search_ID_Com_Click(System::Object^ sender, System::EventArgs^ e) { //Par ID Commande
+	String^ IDcom = this->textBox3->Text;
+	this->textBox4->Clear();
+	String^ req = "SELECT ID_Commande, Date_Livraison, Date_Envoi, Date_Commande, CDE_Montant_Total_HT, CDE_Montant_Total_TVA, CDE_Reduction, CDE_Montant_Total_TTC, Reference FROM Projet.Commande WHERE ID_Commande = " + IDcom + ";";
+	InsertDataGrid(req);
+}
+
+private: System::Void Search_Ref_Com_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ IDcom = this->textBox4->Text;
+	this->textBox3->Clear();
+	String^ req = "SELECT ID_Commande, Date_Livraison, Date_Envoi, Date_Commande, CDE_Montant_Total_HT, CDE_Montant_Total_TVA, CDE_Reduction, CDE_Montant_Total_TTC, Reference FROM Projet.Commande WHERE Commande.Reference = '" + IDcom + "';";
+	InsertDataGrid(req);
+}
+
+private: System::Void AjouterCom_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->G_Com->Visible = true;
+	this->G_Paie->Visible = true;
+	this->Modif_ComV->Visible = false;
+	this->Cancel_Com->Visible = true;
+	this->Add_ComV->Visible = true;
+}
+
+
+private: System::Void Cancel_Com_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->G_Com->Visible = false;
+	this->G_Paie->Visible = false;
+	this->Modif_ComV->Visible = false;
+	this->Cancel_Com->Visible = false;
+	this->Add_ComV->Visible = false;
+}
+
+private: System::Void Modif_ComV_Click(System::Object^ sender, System::EventArgs^ e) {
 	DataGridViewRow^ ligneCom = dataGridView1->SelectedRows[0];
 	DataGridViewRow^ lignePaie = dataGridView2->SelectedRows[0];
 	try
@@ -1139,53 +1109,205 @@ private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e
 			req = "START TRANSACTION; UPDATE Projet.Paiement SET Libelle_Paiement = '" + this->textBox5->Text + "', Date_Paiement = '" + theDate_paie + "', Montant ='" + this->textBox6->Text + "', Solde_Restant='" + this->textBox7->Text + "', ID_Mode_Paiement =(SELECT ID_Mode_Paiement FROM Projet.Mode_Paiement WHERE Nom_Mode_Paiement = '" + this->comboBox1->Text + "'), ID_Commande = " + this->textBox11->Text + " WHERE ID_Paiement = " + lignePaie->Cells["ID_Paiement"]->Value->ToString() + " ;COMMIT;";
 		}
 		else if (!this->checkBox1->Checked && this->checkBox2->Checked) {
-			req = "START TRANSACTION; UPDATE Projet.Commande SET Date_Livraison='" + theDate_liv + "', Date_Envoi= '" + theDate_env + "', Date_Commande='" + theDate_com + "', CDE_Montant_Total_HT= '" + this->textBox1->Text + "', CDE_Montant_Total_TVA='" + this->textBox2->Text + "', CDE_Reduction='" + this->textBox9->Text + "', CDE_Montant_Total_TTC= '" + this->textBox8->Text + "', Reference= '" + this->textBox10->Text + "' WHERE ID_Commande = " + ligneCom->Cells["ID_Commande"]->Value->ToString() + ";COMMIT;";
+			req = "START TRANSACTION; UPDATE Projet.Commande SET Date_Livraison='" + theDate_liv + "', Date_Envoi= '" + theDate_env + "', Date_Commande='" + theDate_com + "', Reference= '" + this->Ref_Com->Text + "' WHERE ID_Commande = " + ligneCom->Cells["ID_Commande"]->Value->ToString() + "; UPDATE Projet.Ligne SET QUantite ='"+this->Qtt_Com->Text+"', ID_Article = (SELECT ID_Article FROM Projet.Catalogue_Entreprise WHERE Libelle_Article = '"+this->comboBox2->Text+"');COMMIT;";
 		}
 		else {
-			req = "START TRANSACTION; UPDATE Projet.Paiement SET Libelle_Paiement = '" + this->textBox5->Text + "', Date_Paiement = '" + theDate_paie + "', Montant ='" + this->textBox6->Text + "', Solde_Restant='" + this->textBox7->Text + "', ID_Mode_Paiement =(SELECT ID_Mode_Paiement FROM Projet.Mode_Paiement WHERE Nom_Mode_Paiement = '" + this->comboBox1->Text + "'), ID_Commande = " + this->textBox11->Text + " WHERE ID_Paiement = " + lignePaie->Cells["ID_Paiement"]->Value->ToString() + "; UPDATE Projet.Commande SET Date_Livraison = '" + theDate_liv + "', Date_Envoi = '" + theDate_env + "', Date_Commande = '" + theDate_com + "', CDE_Montant_Total_HT = '" + this->textBox1->Text + "', CDE_Montant_Total_TVA = '" + this->textBox2->Text + "', CDE_Reduction = '" + this->textBox9->Text + "', CDE_Montant_Total_TTC = '" + this->textBox8->Text + "', Reference = '" + this->textBox10->Text + "' WHERE ID_Commande = " + ligneCom->Cells["ID_Commande"]->Value->ToString() + "; COMMIT; ";
+			req = "START TRANSACTION; UPDATE Projet.Paiement SET Libelle_Paiement = '" + this->textBox5->Text + "', Date_Paiement = '" + theDate_paie + "', Montant ='" + this->textBox6->Text + "', Solde_Restant='" + this->textBox7->Text + "', ID_Mode_Paiement =(SELECT ID_Mode_Paiement FROM Projet.Mode_Paiement WHERE Nom_Mode_Paiement = '" + this->comboBox1->Text + "'), ID_Commande = " + this->textBox11->Text + " WHERE ID_Paiement = " + lignePaie->Cells["ID_Paiement"]->Value->ToString() + "; UPDATE Projet.Commande SET Date_Livraison = '" + theDate_liv + "', Date_Envoi = '" + theDate_env + "', Date_Commande = '" + theDate_com + "', Reference = '" + this->Ref_Com->Text + "' WHERE ID_Commande = " + ligneCom->Cells["ID_Commande"]->Value->ToString() + ", ID_Article = (SELECT ID_Article FROM Projet.Catalogue_Entreprise WHERE Libelle_Article = '" + this->comboBox2->Text + "');COMMIT;";
+
 		}
+			cmd->CommandText = req;
+			reader = cmd->ExecuteReader();
+			while (reader->Read())
+			{
+			};
+			reader->Close();
 
+			req = "SELECT ID_Commande, Date_Livraison, Date_Envoi, Date_Commande, CDE_Montant_Total_HT, CDE_Montant_Total_TVA, CDE_Reduction, CDE_Montant_Total_TTC, Reference FROM Projet.Commande";
+			InsertDataGrid(req);
 
-		cmd->CommandText = req;
-		reader = cmd->ExecuteReader();
-		while (reader->Read())
-		{
-		};
-		reader->Close();
-
-		req = "SELECT ID_Commande, Date_Livraison, Date_Envoi, Date_Commande, CDE_Montant_Total_HT, CDE_Montant_Total_TVA, CDE_Reduction, CDE_Montant_Total_TTC, Reference FROM Projet.Commande";
-		InsertDataGrid(req);
-
-		req = "SELECT Paiement.ID_Paiement, Paiement.Libelle_Paiement, Paiement.Date_Paiement, Paiement.Montant, Paiement.Solde_Restant, Mode_Paiement.Nom_Mode_Paiement AS Paiement_Mode, ID_Commande FROM Projet.Paiement JOIN Projet.Mode_Paiement ON Paiement.ID_Mode_Paiement = Mode_Paiement.ID_Mode_Paiement WHERE ID_Commande =" + lignePaie->Cells["ID_Commande"]->Value->ToString() + ";";
-		PaiementDataGrid(req);
+			req = "SELECT Paiement.ID_Paiement, Paiement.Libelle_Paiement, Paiement.Date_Paiement, Paiement.Montant, Paiement.Solde_Restant, Mode_Paiement.Nom_Mode_Paiement AS Paiement_Mode, ID_Commande FROM Projet.Paiement JOIN Projet.Mode_Paiement ON Paiement.ID_Mode_Paiement = Mode_Paiement.ID_Mode_Paiement WHERE ID_Commande =" + lignePaie->Cells["ID_Commande"]->Value->ToString() + ";";
+			PaiementDataGrid(req);
 	}
 	catch (Exception^ e)
 	{
 		MessageBox::Show("OOPS 2 :" + e);
 	}
 }
-private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
-	DataGridViewRow^ ligneCom = dataGridView1->SelectedRows[0];
-	DataGridViewRow^ lignePaie = dataGridView2->SelectedRows[0];
-	MySqlConnection^ cnxx = gcnew MySqlConnection(cnxstr);
-	MySqlCommand^ cmd = gcnew MySqlCommand();
-	MySqlDataReader^ Reader;
-	cmd->Connection = cnxx;
-	auto ret = MessageBox::Show("Voulez supprimer la commande n°" + ligneCom->Cells["ID_Commande"]->Value->ToString() + " et toutes ses dépendances (Paiements) ?", "Suppression commande", MessageBoxButtons::OKCancel, MessageBoxIcon::Warning);
-	if (ret == DialogResult::OK) {
-		cmd->CommandText = "START TRANSACTION; DELETE Projet.Paiement FROM Projet.Paiement WHERE ID_Commande = " + ligneCom->Cells["ID_Commande"]->Value->ToString() + "; DELETE Projet.Commande FROM Projet.Commande WHERE ID_Commande = " + ligneCom->Cells["ID_Commande"]->Value->ToString() + "; COMMIT;";
-	}
-	else {
-		auto ret2 = MessageBox::Show("Voulez supprimer la dépendance de la commande n°" + ligneCom->Cells["ID_Commande"]->Value->ToString() + " de référence ID_Paiement ="+lignePaie->Cells["ID_Paiement"]->Value->ToString() +" ?", "Suppression dependance", MessageBoxButtons::OKCancel, MessageBoxIcon::Warning);
-		if (ret2 == DialogResult::OK) {
-			cmd->CommandText = "START TRANSACTION; DELETE Projet.Paiement FROM Projet.Paiement WHERE ID_Commande = " + ligneCom->Cells["ID_Commande"]->Value->ToString() + " AND ID_Paiement = "+ lignePaie->Cells["ID_Paiement"]->Value->ToString() +"; COMMIT;";
-		}
-	}
+
+private: System::Void Add_ComV_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ theDate_com = this->dateTimePicker1->Value.ToString("yyyy-MM-dd");
+	String^ theDate_liv = this->dateTimePicker2->Value.ToString("yyyy-MM-dd");
+	String^ theDate_env = this->dateTimePicker3->Value.ToString("yyyy-MM-dd");
+	String^ theDate_paie = this->dateTimePicker4->Value.ToString("yyyy-MM-dd");
+
 	try
 	{
+		MySqlConnection^ cnxx = gcnew MySqlConnection(this->cnxstr);
+		MySqlCommand^ cmd = gcnew MySqlCommand();
+		MySqlDataReader^ reader;
+		String^ req;
+		cmd->Connection = cnxx;
+		if (this->checkBox1->Checked && !this->checkBox2->Checked) {
+			cmd->CommandText = "START TRANSACTION;\
+				INSERT INTO Commande(Date_Livraison, Date_Envoi, Date_Commande, Reference, CDE_Reduction, CDE_Montant_Total_TTC, CDE_Montant_Total_TVA, CDE_Montant_Total_HT)\
+				SELECT '"+theDate_liv+"', '"+theDate_env+"', '"+theDate_com+"', '"+this->Ref_Com->Text+"', 2, 1, 1, 1;\
+				INSERT INTO Ligne(Quantite, ID_Article, Couleur)\
+				SELECT '"+this->Qtt_Com->Text+"', (SELECT ID_Article FROM Projet.Catalogue_Entreprise WHERE Libelle_Article = '"+this->comboBox2->Text+"') AS ID, (SELECT Couleur FROM Projet.Ligne WHERE ID_Article = (SELECT ID_Article FROM Projet.Catalogue_Entreprise WHERE Libelle_Article = '" + this->comboBox2->Text + "')) AS Couleur;\
+				INSERT INTO Ligne_Commande(ID_Ligne, ID_Commande)\
+				SELECT MAX(ID_Ligne), MAX(ID_Commande)\
+				FROM Ligne, Commande; SELECT MAX(ID_Commande) FROM Commande LIMIT 1;";
+
+			cnxx->Open();
+			reader = cmd->ExecuteReader();
+			while (reader->Read())
+			{
+				req = reader[0]->ToString();
+			};
+			reader->Close();
+
+			MySqlCommand^ cmd2 = gcnew MySqlCommand();
+			MySqlDataReader^ reader1;
+			cmd2->Connection = cnxx;
+			cmd2->CommandText = "UPDATE Commande\
+				LEFT JOIN Ligne_Commande\
+				ON Commande.ID_Commande = Ligne_Commande.ID_Commande\
+				LEFT JOIN Ligne\
+				ON Ligne_Commande.ID_Ligne = Ligne.ID_Ligne\
+				LEFT JOIN Catalogue_Entreprise CE\
+				ON Ligne.ID_Article = CE.ID_Article\
+				SET CDE_Montant_Total_HT = (Quantite * Prix_HT * Prix_Commercial), CDE_Montant_Total_TVA = (Quantite * Prix_HT * Prix_Commercial * (Taux_TVA_Produit / 100)), CDE_Montant_Total_TTC = (Quantite * Prix_HT * Prix_Commercial * ((100 + Taux_TVA_Produit) / 100) * (100 - CDE_Reduction) / 100)\
+				WHERE Commande.ID_Commande = '"+req+"';\
+			COMMIT; ";
+			reader1 = cmd2->ExecuteReader();
+			while (reader1->Read())
+			{
+			};
+			reader1->Close();
+		}
+		else if (!this->checkBox1->Checked && this->checkBox2->Checked && this->textBox11->Text !="") {
+			try
+			{
+				cmd->CommandText = "START TRANSACTION; INSERT INTO Projet.Paiement(Libelle_Paiement, Date_Paiement, Montant, Solde_Restant, ID_Commande, ID_Mode_Paiement) SELECT '" + this->textBox5->Text + "', '" + theDate_paie + "', '" + this->textBox6->Text + "', '" + this->textBox7->Text + "', '" + this->textBox11->Text + "', Mode_Paiement.ID_Mode_Paiement FROM Projet.Mode_Paiement, Projet.Commande WHERE Mode_Paiement.Nom_Mode_Paiement = '" + this->comboBox1->Text + "'; COMMIT;";
+				cnxx->Open();
+				reader = cmd->ExecuteReader();
+				while (reader->Read())
+				{
+				};
+				reader->Close();
+			}
+			catch (Exception^ e)
+			{
+				MessageBox::Show("Merci de renseigner des paramètres existants" + e);
+			}
+		}
+		else if (this->checkBox1->Checked && this->checkBox2->Checked) {
+
+		}
+		else {
+			MessageBox::Show("Choisisez ou ajouter");
+		}
+
+		req = "SELECT ID_Commande, Date_Livraison, Date_Envoi, Date_Commande, CDE_Montant_Total_HT, CDE_Montant_Total_TVA, CDE_Reduction, CDE_Montant_Total_TTC, Reference FROM Projet.Commande;";
+		InsertDataGrid(req);
+	}
+	catch (Exception^ e)
+	{
+		MessageBox::Show("" + e);
+	}
+	this->G_Com->Visible = false;
+	this->G_Paie->Visible = false;
+	this->Modif_ComV->Visible = false;
+	this->Add_ComV->Visible = false;
+	this->Cancel_Com->Visible = false;
+}
+
+
+
+private: System::Void GestionCommandes_Load(System::Object^ sender, System::EventArgs^ e) {
+	MySqlConnection^ cnxx = gcnew MySqlConnection(this->cnxstr);
+	MySqlCommand^ cmd = gcnew MySqlCommand();
+	MySqlDataReader^ reader;
+	cmd->Connection = cnxx;
+	try
+	{
+		cmd->CommandText = "SELECT\
+					Libelle_Article,\
+					SCouleur,\
+					Ligne.Couleur AS LCouleur\
+					FROM\
+					(SELECT\
+						Catalogue_Entreprise.ID_Article AS CID_Article,\
+						Libelle_Article,\
+						SCouleur\
+						FROM\
+						(SELECT\
+							Stock.Couleur AS SCouleur,\
+							ID_Article\
+							FROM\
+							Projet.Stock\
+							JOIN Projet.Present_en_Stock ON Present_en_Stock.ID_Stock = Stock.ID_Stock WHERE Quantite_Stock > 0) AS TStock\
+						JOIN Projet.Catalogue_Entreprise ON Catalogue_Entreprise.ID_Article = TStock.ID_Article) AS TArticle\
+					JOIN Projet.Ligne ON Ligne.ID_Article = TArticle.CID_Article WHERE SCouleur = Ligne.Couleur;";
+
 		cnxx->Open();
-		Reader = cmd->ExecuteReader();
-		while (Reader->Read())
+		reader = cmd->ExecuteReader();
+		while (reader->Read())
+		{
+			this->comboBox2->Items->Add(reader[0]);
+		};
+	}
+	catch (Exception^ e)
+	{
+		MessageBox::Show("" + e);
+	}
+
+	reader->Close();
+
+	try
+	{
+		MySqlCommand^ cmd2 = gcnew MySqlCommand();
+		MySqlDataReader^ reader1;
+		cmd2->Connection = cnxx;
+		cmd2->CommandText = "SELECT Nom_Mode_Paiement FROM Projet.Mode_Paiement;";
+		reader1 = cmd2->ExecuteReader();
+		while (reader1->Read())
+		{
+			this->comboBox1->Items->Add(reader1[0]);
+		};
+		reader1->Close();
+	}
+	catch (Exception^ e)
+	{
+		MessageBox::Show(""+e);
+	}
+
+
+}
+
+
+private: System::Void sup_com_Click(System::Object^ sender, System::EventArgs^ e) {
+	DataGridViewRow^ ligneCom = dataGridView1->SelectedRows[0];
+	MySqlConnection^ cnxx = gcnew MySqlConnection(this->cnxstr);
+	MySqlCommand^ cmd = gcnew MySqlCommand();
+	MySqlDataReader^ reader;
+	String^ id = ligneCom->Cells["ID_Commande"]->Value->ToString();
+	cmd->Connection = cnxx;
+	try
+	{
+		cmd->CommandText = "START TRANSACTION;\
+			DELETE FROM Projet.Paiement\
+			WHERE ID_Commande =  '" + id + "';\
+			DELETE Projet.Ligne_Commande, Projet.Ligne\
+			FROM Ligne\
+			LEFT JOIN Projet.Ligne_Commande\
+			ON Ligne_Commande.ID_Ligne = Ligne.ID_Ligne WHERE ID_Commande = '" + id + "';\
+			DELETE Projet.Commande FROM Commande\
+			WHERE ID_Commande =  '" + id + "';\
+			COMMIT;";
+
+		cnxx->Open();
+		reader = cmd->ExecuteReader();
+		while (reader->Read())
 		{
 		};
 	}
@@ -1194,57 +1316,71 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 		MessageBox::Show("" + e);
 	}
 
-	Reader->Close();
-	System::String^ requ = "SELECT ID_Commande, Date_Livraison, Date_Envoi, Date_Commande, CDE_Montant_Total_HT, CDE_Montant_Total_TVA, CDE_Reduction, CDE_Montant_Total_TTC, Reference FROM Projet.Commande";
-	InsertDataGrid(requ);
-}
-
-private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) { //Par ID
-	String^IDcom = this->textBox3->Text;
-	this->textBox4->Clear();
-	String^req = "SELECT ID_Commande, Date_Livraison, Date_Envoi, Date_Commande, CDE_Montant_Total_HT, CDE_Montant_Total_TVA, CDE_Reduction, CDE_Montant_Total_TTC, Reference FROM Projet.Commande WHERE ID_Commande = "+IDcom+";";
-	InsertDataGrid(req);
-	
-}
-private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) { //Par reference
-	String^ IDcom = this->textBox4->Text;
-	this->textBox3->Clear();
-	String^ req = "SELECT ID_Commande, Date_Livraison, Date_Envoi, Date_Commande, CDE_Montant_Total_HT, CDE_Montant_Total_TVA, CDE_Reduction, CDE_Montant_Total_TTC, Reference FROM Projet.Commande WHERE Commande.Reference = '" + IDcom + "';";
+	reader->Close();
+	String^ req = "SELECT ID_Commande, Date_Livraison, Date_Envoi, Date_Commande, CDE_Montant_Total_HT, CDE_Montant_Total_TVA, CDE_Reduction, CDE_Montant_Total_TTC, Reference FROM Projet.Commande;";
 	InsertDataGrid(req);
 }
 
-
-private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	if (this->textBox1->Text != "" && this->textBox2->Text != "") {
-		this->textBox8->Text = (Convert::ToSingle(this->textBox1->Text)* (1+(Convert::ToSingle(this->textBox2->Text)/100))).ToString();
-	}
-	else if (this->textBox1->Text != "" && this->textBox2->Text == "") {
-		this->textBox8->Text = this->textBox1->Text;
-	}
-	else if (this->textBox2->Text != "" && this->textBox1->Text == "") {
-		this->textBox8->Text = this->textBox2->Text;
-	};
-}
-
-private: System::Void textBox8_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	if (this->textBox8->Text != "" && this->textBox9->Text != "" && this->textBox6->Text != "") {
-		this->textBox7->Text = ((Convert::ToSingle(this->textBox8->Text) + Convert::ToSingle(this->textBox9->Text)) - Convert::ToSingle(this->textBox6->Text)).ToString();
-	}
-}
-
-private: System::Void GestionCommandes_Load(System::Object^ sender, System::EventArgs^ e) {
-
-	MySqlConnection^ cnxx = gcnew MySqlConnection(this->cnxstr);
-	MySqlCommand^ cmd = gcnew MySqlCommand();
-	MySqlDataReader^ reader;
-	cmd->Connection = cnxx;
-	cmd->CommandText = "SELECT Nom_Mode_Paiement FROM Projet.Mode_Paiement;";
-	cnxx->Open();
-	reader = cmd->ExecuteReader();
-	while (reader->Read())
+private: System::Void modif_com_Click(System::Object^ sender, System::EventArgs^ e) {
+	DataGridViewRow^ ligneCom = dataGridView1->SelectedRows[0];
+	DataGridViewRow^ lignePaiement = dataGridView2->SelectedRows[0];
+	DataGridViewRow^ ligneArticle = dataGridView3->SelectedRows[0];
+	try
 	{
-		this->comboBox1->Items->Add(reader[0]);
-	};
+		if (ligneCom)
+		{
+			//Affichage des données dans textbox Commande
+			this->dateTimePicker3->Value = DateTime::ParseExact(ligneCom->Cells["Date_Commande"]->FormattedValue->ToString(), "MM/dd/yyyy", Globalization::CultureInfo::InvariantCulture);
+			this->dateTimePicker2->Value = DateTime::ParseExact(ligneCom->Cells["Date_Envoi"]->FormattedValue->ToString(), "MM/dd/yyyy", Globalization::CultureInfo::InvariantCulture);
+			this->dateTimePicker1->Value = DateTime::ParseExact(ligneCom->Cells["Date_Livraison"]->FormattedValue->ToString(), "MM/dd/yyyy", Globalization::CultureInfo::InvariantCulture);
+
+			this->Ref_Com->Text = ligneCom->Cells["Reference"]->Value->ToString();
+
+
+		};
+
+		if (lignePaiement) {
+			//Paiement
+			this->dateTimePicker4->Value = DateTime::ParseExact(lignePaiement->Cells["Date_Paiement"]->FormattedValue->ToString(), "MM/dd/yyyy", Globalization::CultureInfo::InvariantCulture);
+
+			this->textBox5->Text = lignePaiement->Cells["Libelle_Paiement"]->Value->ToString();
+			this->textBox6->Text = lignePaiement->Cells["Montant"]->Value->ToString();
+			this->textBox7->Text = lignePaiement->Cells["Solde_Restant"]->Value->ToString();
+			this->textBox11->Text = ligneCom->Cells["ID_Commande"]->Value->ToString();
+			this->comboBox1->Text = lignePaiement->Cells["Paiement_Mode"]->Value->ToString();
+		}
+
+		if (ligneArticle) {
+			this->Qtt_Com->Text = ligneArticle->Cells["Quantite"]->Value->ToString();
+			this->comboBox2->Text = ligneArticle->Cells["Libelle_Article"]->Value->ToString();
+		}
+	}
+	catch (Exception^ e)
+	{
+		MessageBox::Show("" + e);
+	}
+
+
+	this->G_Com->Visible = true;
+	this->G_Paie->Visible = true;
+
+
+	this->checkBox1->Visible = true;
+	this->checkBox2->Visible = true;
+	this->Modif_ComV->Visible = true;
+	this->Add_ComV->Visible = false;
+	this->Cancel_Com->Visible = true;
+}
+
+private: System::Void checkBox2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	if(this->checkBox2->Checked){
+		this->label19->Visible = true;
+		this->textBox11->Visible = true;
+	}
+	else {
+		this->label19->Visible = false;
+		this->textBox11->Visible = false;
+	}
 }
 };
 }

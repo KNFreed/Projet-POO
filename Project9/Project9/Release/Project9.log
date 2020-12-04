@@ -1,51 +1,76 @@
-﻿  Connexion.cpp
-C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(754,23): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(797,30): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(832,30): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(808,20): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(917,22): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(1077,25): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionCommandes.h(967,12): warning C4101: 'req': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(319,22): warning C4101: 'e': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(353,22): warning C4101: 'e': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(396,22): warning C4101: 'e': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(434,22): warning C4101: 'e': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(455,22): warning C4101: 'e': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(480,22): warning C4101: 'e': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(543,21): warning C4101: 'e': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(601,21): warning C4101: 'e': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(827,23): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(866,30): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(920,30): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(972,30): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\Connexion.h(252,21): warning C4101: 'ex': unreferenced local variable
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(2123,5): warning MSB3245: Could not resolve this reference. Could not locate the assembly "System.Data.CData.MariaDB". Check to make sure the assembly exists on disk. If this reference is required by your code, you may get compilation errors.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.MetaGen.targets(91,5): warning : Required file "C:\PROGRAM FILES (X86)\MYSQL\MYSQL CONNECTOR NET 8.0.22\ASSEMBLIES\V4.5.2\MYSQL.DATA.DLL" is missing.
+  Accueil.cpp
+  Connexion.cpp
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionPersonnel.h(768,27): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionPersonnel.h(815,27): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionPersonnel.h(850,27): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionClient.h(798,23): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionClient.h(906,22): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionClient.h(1066,25): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(501,22): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(535,22): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(578,22): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(616,22): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(637,22): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(659,22): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(723,21): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(781,21): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(812,23): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(835,21): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStock.h(831,23): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStock.h(871,30): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStock.h(924,30): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStock.h(976,30): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\Connexion.h(252,21): warning C4101: 'ex': unreferenced local variable
   EcranPrincipal.cpp
-C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(754,23): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(797,30): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionPersonnel.h(832,30): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(808,20): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(917,22): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionClient.h(1077,25): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionCommandes.h(967,12): warning C4101: 'req': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(319,22): warning C4101: 'e': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(353,22): warning C4101: 'e': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(396,22): warning C4101: 'e': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(434,22): warning C4101: 'e': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(455,22): warning C4101: 'e': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(480,22): warning C4101: 'e': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(543,21): warning C4101: 'e': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStats.h(601,21): warning C4101: 'e': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(827,23): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(866,30): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(920,30): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(972,30): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionPersonnel.h(768,27): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionPersonnel.h(815,27): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionPersonnel.h(850,27): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionClient.h(798,23): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionClient.h(906,22): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionClient.h(1066,25): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(501,22): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(535,22): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(578,22): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(616,22): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(637,22): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(659,22): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(723,21): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(781,21): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(812,23): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(835,21): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStock.h(831,23): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStock.h(871,30): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStock.h(924,30): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStock.h(976,30): warning C4101: 'ex': unreferenced local variable
+  GestionClient.cpp
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionClient.h(798,23): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionClient.h(906,22): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionClient.h(1066,25): warning C4101: 'ex': unreferenced local variable
   GestionCommandes.cpp
-C:\Users\Nyu\source\repos\Project9\Project9\GestionCommandes.h(967,12): warning C4101: 'req': unreferenced local variable
+  GestionPersonnel.cpp
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionPersonnel.h(768,27): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionPersonnel.h(815,27): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionPersonnel.h(850,27): warning C4101: 'ex': unreferenced local variable
+  GestionStats.cpp
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(501,22): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(535,22): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(578,22): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(616,22): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(637,22): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(659,22): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(723,21): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(781,21): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(812,23): warning C4101: 'e': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStats.h(835,21): warning C4101: 'ex': unreferenced local variable
   GestionStock.cpp
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(827,23): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(866,30): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(920,30): warning C4101: 'ex': unreferenced local variable
-C:\Users\Nyu\source\repos\Project9\Project9\GestionStock.h(972,30): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStock.h(831,23): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStock.h(871,30): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStock.h(924,30): warning C4101: 'ex': unreferenced local variable
+D:\Nyu\Documents\GitHub\Projet-POO\Project9\Project9\GestionStock.h(976,30): warning C4101: 'ex': unreferenced local variable
+  Parametres.cpp
+  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
   Generating Code...
   Accueil.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
-  Project9.vcxproj -> C:\Users\Nyu\source\repos\Project9\Release\Project9.exe
+  Project9.vcxproj -> D:\Nyu\Documents\GitHub\Projet-POO\Project9\Release\Project9.exe

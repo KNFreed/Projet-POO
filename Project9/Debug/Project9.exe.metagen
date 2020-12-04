@@ -18,8 +18,6 @@ Assembly MySql.Data, Version=8.0.22.0, Culture=neutral, PublicKeyToken=c5687fc88
 	hash=None, flags=None
 Assembly System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
-Assembly System.Data.CData.MariaDB, Version=20.0.0.40, Culture=neutral, PublicKeyToken=f57f3fbecba6b076: 
-	hash=None, flags=None
 Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
 Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
