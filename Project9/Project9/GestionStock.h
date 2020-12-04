@@ -800,10 +800,13 @@ namespace Project9 {
 
         }
 #pragma endregion
-    private: System::Void AffichPers_Click(System::Object^ sender, System::EventArgs^ e) {
+    private:
+        // Afficher la liste du Stock/Commande/Produit
+        System::Void AffichPers_Click(System::Object^ sender, System::EventArgs^ e) {
         System::String^ req = "SELECT ID_Article, Libelle_Article AS Nom, Nature, Prix_HT, Taux_TVA_Produit, Prix_Commercial FROM Projet.Catalogue_Entreprise;";
         InsertDataGrid(req);
     }
+        // Insérer Valeurs dans la Grille n°1
     System::Void InsertDataGrid(System::String^ req) {
 		MySqlDataAdapter^ adapt;
 		MySqlConnection^ cnxx = gcnew MySqlConnection(cnxstr);
@@ -815,7 +818,8 @@ namespace Project9 {
 		adapt->Fill(table);
 		dataGridView1->DataSource = table;
 	}
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+    //Rechercher le produit par Identifiant
+    System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
     System::String^ req = "SELECT ID_Article, Libelle_Article AS Nom, Nature, Prix_HT, Taux_TVA_Produit, Prix_Commercial FROM Projet.Catalogue_Entreprise WHERE ID_Article =" + textBox1->Text + ";";
     try {
         InsertDataGrid(req);
@@ -828,12 +832,13 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
         this->label5->Visible = true;
     }
 }
-private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+    //Rechercher le produit par Nom
+    System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
     System::String^ req = "SELECT ID_Article, Libelle_Article AS Nom, Nature, Prix_HT, Taux_TVA_Produit, Prix_Commercial FROM Projet.Catalogue_Entreprise WHERE Libelle_Article LIKE '" + textBox2->Text + "%';";
     InsertDataGrid(req);
     textBox2->Text = "";
 }
-
+       // Insertion Stock/Produit/Historique
        System::Void button2_Click2(System::Object^ sender, System::EventArgs^ e) {
            try {
                if (this->textBox2->Text != "" && this->textBox3->Text != "" && this->textBox4->Text != "" && this->textBox5->Text != "" && this->textBox6->Text != "" && this->textBox7->Text != "" && this->textBox8->Text != "" && this->comboBox1->Text != "") {
@@ -867,9 +872,8 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
                MessageBox::Show("Erreur innatendue. Contactez votre adminsitrateur système.");
            }
        }
-
+       // Mise A Jour Stock/Produit/Histo pour un produit avec l'indentifiant
        System::Void button2_Click3(System::Object^ sender, System::EventArgs^ e) {
-      
            DataGridViewRow^ ligne = dataGridView1->SelectedRows[0];
            DataGridViewRow^ ligneHisto = dataGridView2->SelectedRows[0];
            try {
@@ -921,7 +925,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
                MessageBox::Show("Erreur innatendue. Contactez votre adminsitrateur système.");
            }
        }
-
+       //Insertion nouveau Stock
        System::Void button2_Click4(System::Object^ sender, System::EventArgs^ e) {
            DataGridViewRow^ ligne = dataGridView1->SelectedRows[0];
            DataGridViewRow^ ligneStock = dataGridView3->SelectedRows[0];
@@ -1071,7 +1075,8 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
            }
            this->AffichPers->Enabled = true;
        }
-private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+    //Selectionne les historiques et stocks correspondants à l'identifiant de l'article 
+    System::Void dataGridView1_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
     DataGridViewRow^ ligne = dataGridView1->SelectedRows[0];
     System::String^ Identifiant = ligne->Cells["ID_Article"]->Value->ToString();
     System::String^ requ = "SELECT Historique_Tarif_TVA.ID_Histo, Date_Debut_Mesure, Date_Fin_Mesure, Taux_TVA, Prix_UHT FROM Projet.Liste_Historique LEFT JOIN Projet.Historique_Tarif_TVA ON Liste_Historique.ID_Histo = Historique_Tarif_TVA.ID_Histo WHERE ID_Article =" + Identifiant + " ORDER BY Date_Debut_Mesure DESC;";
@@ -1108,7 +1113,7 @@ private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Wi
 			   dataGridView3->DataSource = table;
                dataGridView3->Columns[0]->Visible = false;
 		   }
-private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+    System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
     // Ajout des items spécifiques au stock
     this->label12->Visible = true;
     this->label13->Visible = true;
@@ -1145,7 +1150,7 @@ private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e
     this->textBox8->Text = ligneStock->Cells["Seuil_reapprov"]->Value->ToString();
     this->comboBox1->Text = ligneStock->Cells["Couleur"]->Value->ToString();
 }
-private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+    System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
     // Ajout des items spécifiques au stock
     this->label4->Visible = true;
     this->label6->Visible = true;
@@ -1188,7 +1193,8 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
     this->textBox5->Text = ligne->Cells["Taux_TVA_Produit"]->Value->ToString();
     this->textBox6->Text = ligne->Cells["Prix_Commercial"]->Value->ToString();
 }
-private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+    //Supprime le produit correspondant à l'identifiant
+    System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
     DataGridViewRow^ ligne = dataGridView1->SelectedRows[0];
     MySqlConnection^ cnxx = gcnew MySqlConnection(cnxstr);
     MySqlCommand^ cmd = gcnew MySqlCommand();

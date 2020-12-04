@@ -94,12 +94,7 @@ namespace Project9 {
 	private: System::Windows::Forms::Button^ AffichPers;
 
 
-
-
-
-
 	protected:
-
 
 
 	private:
@@ -223,7 +218,6 @@ namespace Project9 {
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(122, 26);
 			this->textBox1->TabIndex = 3;
-			this->textBox1->TextChanged += gcnew System::EventHandler(this, &GestionClient::textBox1_TextChanged);
 			// 
 			// label1
 			// 
@@ -237,7 +231,6 @@ namespace Project9 {
 			this->label1->Size = System::Drawing::Size(180, 18);
 			this->label1->TabIndex = 7;
 			this->label1->Text = L"Recherche par identifiant";
-			this->label1->Click += gcnew System::EventHandler(this, &GestionClient::label1_Click);
 			// 
 			// button1
 			// 
@@ -538,7 +531,6 @@ namespace Project9 {
 			this->textBox4->Size = System::Drawing::Size(122, 26);
 			this->textBox4->TabIndex = 21;
 			this->textBox4->Visible = false;
-			this->textBox4->TextChanged += gcnew System::EventHandler(this, &GestionClient::textBox4_TextChanged);
 			// 
 			// label9
 			// 
@@ -687,7 +679,6 @@ namespace Project9 {
 			this->label13->TabIndex = 29;
 			this->label13->Text = L"Pays";
 			this->label13->Visible = false;
-			this->label13->Click += gcnew System::EventHandler(this, &GestionClient::label13_Click);
 			// 
 			// label14
 			// 
@@ -702,7 +693,6 @@ namespace Project9 {
 			this->label14->TabIndex = 32;
 			this->label14->Text = L"Nouvelle adresse \?";
 			this->label14->Visible = false;
-			this->label14->Click += gcnew System::EventHandler(this, &GestionClient::label14_Click);
 			// 
 			// checkBox3
 			// 
@@ -718,7 +708,6 @@ namespace Project9 {
 			this->checkBox3->Text = L"Oui";
 			this->checkBox3->UseVisualStyleBackColor = true;
 			this->checkBox3->Visible = false;
-			this->checkBox3->CheckedChanged += gcnew System::EventHandler(this, &GestionClient::checkBox3_CheckedChanged);
 			// 
 			// GestionClient
 			// 
@@ -767,21 +756,23 @@ namespace Project9 {
 #pragma endregion
 
 
-	private: System::Void InsertDataGrid(System::String^ req) {
-		MySqlDataAdapter^ adapt;
-		MySqlConnection^ cnxx = gcnew MySqlConnection(cnxstr);
-		adapt = gcnew MySqlDataAdapter(req, cnxx);
-		MySqlCommandBuilder^ commandBuilder;
-		commandBuilder = gcnew MySqlCommandBuilder(adapt);
-		System::Data::DataTable^ table;
-		table = gcnew Data::DataTable();
-		adapt->Fill(table);
-		dataGridView1->DataSource = table;
-		dataGridView1->Columns[3]->DefaultCellStyle->Format = "MM/dd/yyyy";
+	private: 
+		//Insérer Valeurs dans la Grille n°1
+		System::Void InsertDataGrid(System::String^ req) {
+			MySqlDataAdapter^ adapt;
+			MySqlConnection^ cnxx = gcnew MySqlConnection(cnxstr);
+			adapt = gcnew MySqlDataAdapter(req, cnxx);
+			MySqlCommandBuilder^ commandBuilder;
+			commandBuilder = gcnew MySqlCommandBuilder(adapt);
+			System::Data::DataTable^ table;
+			table = gcnew Data::DataTable();
+			adapt->Fill(table);
+			dataGridView1->DataSource = table;
+			dataGridView1->Columns[3]->DefaultCellStyle->Format = "MM/dd/yyyy";
 	}
 
-
-		   private: System::Void AdresseDataGrid(System::String^ req) {
+		// Insérer Valeurs dans la Grille N°2
+		System::Void AdresseDataGrid(System::String^ req) {
 			   MySqlDataAdapter^ adapt;
 			   MySqlConnection^ cnxx = gcnew MySqlConnection(cnxstr);
 			   adapt = gcnew MySqlDataAdapter(req, cnxx);
@@ -794,36 +785,34 @@ namespace Project9 {
 			   dataGridView2->Columns[5]->Visible = false;
 			   dataGridView2->Columns[6]->Visible = false;
 		   }
-private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	System::String^ req = "SELECT ID_Client, Nom_Client AS Nom, Prenom_Client AS Prenom, Date_Naissance FROM Projet.Client WHERE ID_Client =" + textBox1->Text + ";";
-	try {
+		// Rechercher le client par Identifiant
+		 System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
+			System::String^ req = "SELECT ID_Client, Nom_Client AS Nom, Prenom_Client AS Prenom, Date_Naissance FROM Projet.Client WHERE ID_Client =" + textBox1->Text + ";";
+			try {
+			InsertDataGrid(req);
+			textBox1->Text = "";
+				if (this->label5->Visible) {
+				this->label5->Visible = false;
+					}
+				}
+				catch (Exception^ ex) {
+				this->label5->Visible = true;
+					}
+				}
+		 // Rechercher le client par Nom
+		System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		System::String^ req = "SELECT ID_Client, Nom_Client AS Nom, Prenom_Client AS Prenom, Date_Naissance FROM Projet.Client WHERE Nom_Client LIKE '" + textBox2->Text + "%' AND Prenom_Client LIKE '" + textBox3->Text + "%';";
+			InsertDataGrid(req);
+			textBox2->Text = "";
+			textBox3->Text = "";
+				}
+
+		// Afficher la liste des clients enregistrés
+		System::Void AffichPers_Click(System::Object^ sender, System::EventArgs^ e) {
+		System::String^ req = "SELECT ID_Client, Nom_Client AS Nom, Prenom_Client AS Prenom, Date_Naissance FROM Projet.Client;";
 		InsertDataGrid(req);
-		textBox1->Text = "";
-		if (this->label5->Visible) {
-			this->label5->Visible = false;
-		}
-	}
-	catch (Exception^ ex) {
-		this->label5->Visible = true;
-	}
 }
-private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	System::String^ req = "SELECT ID_Client, Nom_Client AS Nom, Prenom_Client AS Prenom, Date_Naissance FROM Projet.Client WHERE Nom_Client LIKE '" + textBox2->Text + "%' AND Prenom_Client LIKE '" + textBox3->Text + "%';";
-	InsertDataGrid(req);
-	textBox2->Text = "";
-	textBox3->Text = "";
-}
-private: System::Void AffichPers_Click(System::Object^ sender, System::EventArgs^ e) {
-	System::String^ req = "SELECT ID_Client, Nom_Client AS Nom, Prenom_Client AS Prenom, Date_Naissance FROM Projet.Client;";
-	InsertDataGrid(req);
-}
-private: System::Void AjoutPers_Click(System::Object^ sender, System::EventArgs^ e) {
+		System::Void AjoutPers_Click(System::Object^ sender, System::EventArgs^ e) {
 	// Retrait des labels
 	this->label1->Visible = false;
 	this->label2->Visible = false;
@@ -1078,10 +1067,10 @@ private: System::Void AjoutPers_Click(System::Object^ sender, System::EventArgs^
 				   MessageBox::Show("Erreur innatendue. Contactez votre adminsitrateur système.");
 			   }
 		   }
-private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	retour();
 }
-private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+	System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 	DataGridViewRow^ ligne = dataGridView1->SelectedRows[0];
 	MySqlConnection^ cnxx = gcnew MySqlConnection(cnxstr);
 	MySqlCommand^ cmd = gcnew MySqlCommand();
@@ -1099,7 +1088,7 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 	this->button4->Enabled = false;
 	this->button5->Enabled = false;
 }
-private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 	DataGridViewRow^ ligne = dataGridView1->SelectedRows[0];
 	DataGridViewRow^ ligneAdresse = dataGridView2->SelectedRows[0];
 	if (ligne){
@@ -1161,23 +1150,15 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 
 	}
 }
-private: System::Void GestionClient_Load(System::Object^ sender, System::EventArgs^ e) {
+	System::Void GestionClient_Load(System::Object^ sender, System::EventArgs^ e) {
 }
-private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+	System::Void dataGridView1_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 	DataGridViewRow^ ligne = dataGridView1->SelectedRows[0];
 	System::String^ Identifiant = ligne->Cells["ID_Client"]->Value->ToString();
 	System::String^ requ = "SELECT Rue, Code_Postal, Ville, Pays, Type, Definition_Lieu.ID_Lieu_Livraison AS ID_Lieu, Definition_Lieu.ID_Adresse FROM Projet.Definition_Lieu LEFT JOIN Projet.Repertoire_Adresse ON Definition_Lieu.ID_Adresse = Repertoire_Adresse.ID_Adresse WHERE ID_Client =" + Identifiant + ";";
 	this->button4->Enabled = true;
 	this->button5->Enabled = true;
 	AdresseDataGrid(requ);
-}
-private: System::Void label13_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label14_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void checkBox3_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

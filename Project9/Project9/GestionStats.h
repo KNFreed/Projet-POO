@@ -29,6 +29,19 @@ namespace Project9 {
 			//
 		}
 	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::GroupBox^ groupBox1;
+	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::ComboBox^ comboBox5;
+	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::ComboBox^ comboBox4;
+	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::ComboBox^ comboBox3;
+	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::ComboBox^ comboBox2;
+	private: System::Windows::Forms::Label^ label2;
+
+
+
 	public:
 
 		System::String^ cnxstr;
@@ -95,9 +108,20 @@ namespace Project9 {
 			this->groupBox_Calcachat = (gcnew System::Windows::Forms::GroupBox());
 			this->btn_searchID = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->comboBox5 = (gcnew System::Windows::Forms::ComboBox());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->comboBox4 = (gcnew System::Windows::Forms::ComboBox());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->groupBox_calcMois->SuspendLayout();
 			this->groupBox_Calcachat->SuspendLayout();
 			this->panel1->SuspendLayout();
+			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// btn_exec_stat
@@ -255,6 +279,7 @@ namespace Project9 {
 			// 
 			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
 				static_cast<System::Int32>(static_cast<System::Byte>(42)));
+			this->panel1->Controls->Add(this->groupBox1);
 			this->panel1->Controls->Add(this->label_action);
 			this->panel1->Controls->Add(this->Output_BoxStat);
 			this->panel1->Controls->Add(this->comboBox_stat);
@@ -265,6 +290,160 @@ namespace Project9 {
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(1044, 541);
 			this->panel1->TabIndex = 9;
+			// 
+			// groupBox1
+			// 
+			this->groupBox1->Controls->Add(this->comboBox5);
+			this->groupBox1->Controls->Add(this->label5);
+			this->groupBox1->Controls->Add(this->comboBox4);
+			this->groupBox1->Controls->Add(this->label4);
+			this->groupBox1->Controls->Add(this->comboBox3);
+			this->groupBox1->Controls->Add(this->label3);
+			this->groupBox1->Controls->Add(this->comboBox2);
+			this->groupBox1->Controls->Add(this->label2);
+			this->groupBox1->Controls->Add(this->button1);
+			this->groupBox1->Font = (gcnew System::Drawing::Font(L"Whitney Semibold", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
+				static_cast<System::Int32>(static_cast<System::Byte>(222)));
+			this->groupBox1->Location = System::Drawing::Point(3, 197);
+			this->groupBox1->Name = L"groupBox1";
+			this->groupBox1->Size = System::Drawing::Size(232, 301);
+			this->groupBox1->TabIndex = 9;
+			this->groupBox1->TabStop = false;
+			this->groupBox1->Text = L"Simulation Variation";
+			this->groupBox1->Visible = false;
+			// 
+			// comboBox5
+			// 
+			this->comboBox5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
+				static_cast<System::Int32>(static_cast<System::Byte>(42)));
+			this->comboBox5->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->comboBox5->Font = (gcnew System::Drawing::Font(L"Whitney Semibold", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->comboBox5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
+				static_cast<System::Int32>(static_cast<System::Byte>(222)));
+			this->comboBox5->FormattingEnabled = true;
+			this->comboBox5->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"0", L"2", L"3", L"5" });
+			this->comboBox5->Location = System::Drawing::Point(116, 163);
+			this->comboBox5->Name = L"comboBox5";
+			this->comboBox5->Size = System::Drawing::Size(110, 26);
+			this->comboBox5->TabIndex = 15;
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Whitney Semibold", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
+				static_cast<System::Int32>(static_cast<System::Byte>(222)));
+			this->label5->Location = System::Drawing::Point(6, 166);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(111, 18);
+			this->label5->TabIndex = 14;
+			this->label5->Text = L"Demarque (%)";
+			// 
+			// comboBox4
+			// 
+			this->comboBox4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
+				static_cast<System::Int32>(static_cast<System::Byte>(42)));
+			this->comboBox4->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->comboBox4->Font = (gcnew System::Drawing::Font(L"Whitney Semibold", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->comboBox4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
+				static_cast<System::Int32>(static_cast<System::Byte>(222)));
+			this->comboBox4->FormattingEnabled = true;
+			this->comboBox4->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"0", L"5", L"6" });
+			this->comboBox4->Location = System::Drawing::Point(116, 131);
+			this->comboBox4->Name = L"comboBox4";
+			this->comboBox4->Size = System::Drawing::Size(110, 26);
+			this->comboBox4->TabIndex = 13;
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Whitney Semibold", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
+				static_cast<System::Int32>(static_cast<System::Byte>(222)));
+			this->label4->Location = System::Drawing::Point(6, 134);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(81, 18);
+			this->label4->TabIndex = 12;
+			this->label4->Text = L"Reduc (%)";
+			// 
+			// comboBox3
+			// 
+			this->comboBox3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
+				static_cast<System::Int32>(static_cast<System::Byte>(42)));
+			this->comboBox3->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->comboBox3->Font = (gcnew System::Drawing::Font(L"Whitney Semibold", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->comboBox3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
+				static_cast<System::Int32>(static_cast<System::Byte>(222)));
+			this->comboBox3->FormattingEnabled = true;
+			this->comboBox3->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"0", L"5", L"10", L"15" });
+			this->comboBox3->Location = System::Drawing::Point(116, 99);
+			this->comboBox3->Name = L"comboBox3";
+			this->comboBox3->Size = System::Drawing::Size(110, 26);
+			this->comboBox3->TabIndex = 11;
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Whitney Semibold", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
+				static_cast<System::Int32>(static_cast<System::Byte>(222)));
+			this->label3->Location = System::Drawing::Point(6, 102);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(83, 18);
+			this->label3->TabIndex = 10;
+			this->label3->Text = L"Marge (%)";
+			// 
+			// comboBox2
+			// 
+			this->comboBox2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
+				static_cast<System::Int32>(static_cast<System::Byte>(42)));
+			this->comboBox2->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->comboBox2->Font = (gcnew System::Drawing::Font(L"Whitney Semibold", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->comboBox2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
+				static_cast<System::Int32>(static_cast<System::Byte>(222)));
+			this->comboBox2->FormattingEnabled = true;
+			this->comboBox2->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"5.5", L"10", L"20" });
+			this->comboBox2->Location = System::Drawing::Point(116, 67);
+			this->comboBox2->Name = L"comboBox2";
+			this->comboBox2->Size = System::Drawing::Size(110, 26);
+			this->comboBox2->TabIndex = 9;
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Whitney Semibold", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
+				static_cast<System::Int32>(static_cast<System::Byte>(222)));
+			this->label2->Location = System::Drawing::Point(6, 70);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(71, 18);
+			this->label2->TabIndex = 8;
+			this->label2->Text = L"TVA (%)";
+			// 
+			// button1
+			// 
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Whitney Semibold", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(220)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
+				static_cast<System::Int32>(static_cast<System::Byte>(222)));
+			this->button1->Location = System::Drawing::Point(57, 234);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(99, 39);
+			this->button1->TabIndex = 0;
+			this->button1->Text = L"Simuler";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &GestionStats::button1_Click_1);
 			// 
 			// GestionStats
 			// 
@@ -279,6 +458,8 @@ namespace Project9 {
 			this->groupBox_Calcachat->PerformLayout();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
+			this->groupBox1->ResumeLayout(false);
+			this->groupBox1->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
@@ -288,6 +469,7 @@ namespace Project9 {
 	private: System::Void btn_exec_stat_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->groupBox_calcMois->Visible = false;
 		this->groupBox_Calcachat->Visible = false;
+		this->groupBox1->Visible = false;
 		int index = this->comboBox_stat->SelectedIndex;
 		int j = 1;
 		int i = 1;
@@ -335,7 +517,7 @@ namespace Project9 {
 			req = "SELECT ID_Article, Libelle_Article AS Nom FROM Projet.Catalogue_Entreprise WHERE ID_Article = \
 			(SELECT ID_Article FROM Projet.Present_en_Stock WHERE ID_Stock = (SELECT ID_Stock FROM Projet.Stock WHERE Quantite_Stock < Seuil_Reapprov));";
 
-			cmd->CommandText =req;
+			cmd->CommandText = req;
 
 			try
 			{
@@ -365,7 +547,7 @@ namespace Project9 {
 
 
 		case 4:
-			String^ top10;
+			String ^ top10;
 			String^ noqtt;
 			req = "SELECT Catalogue_Entreprise.ID_Article, TOT_QTT, Libelle_Article FROM Projet.Catalogue_Entreprise LEFT JOIN \
 			(SELECT SUM(Quantite) AS TOT_QTT, ID_Article FROM Projet.Ligne GROUP BY ID_Article) AS TOP_QTT ON TOP_QTT.ID_Article = Catalogue_Entreprise.ID_Article \
@@ -404,7 +586,7 @@ namespace Project9 {
 			break;
 
 		case 5:
-			String^ end10;
+			String ^ end10;
 			String^ noqtt2;
 			req = "SELECT Catalogue_Entreprise.ID_Article, TOT_QTT, Libelle_Article FROM Projet.Catalogue_Entreprise LEFT JOIN \
 			(SELECT SUM(Quantite) AS TOT_QTT, ID_Article FROM Projet.Ligne GROUP BY ID_Article) AS TOP_QTT ON TOP_QTT.ID_Article = Catalogue_Entreprise.ID_Article \
@@ -440,9 +622,9 @@ namespace Project9 {
 			break;
 
 		case 6:
-			
+
 			float val_comm;
-			req = "SELECT SUM(Quantite_Stock*Prix_Commercial) AS TOT FROM Projet.Stock";
+			req = "SELECT SUM(Quantite_Stock* Prix_HT* Prix_Commercial) AS TOT FROM Projet.Stock LEFT JOIN Projet.Present_en_Stock ON Stock.ID_Stock = Present_en_Stock.ID_Stock LEFT JOIN Projet.Catalogue_Entreprise ON Present_en_Stock.ID_Article = Catalogue_Entreprise.ID_Article;";
 
 			cmd->CommandText = req;
 
@@ -462,12 +644,9 @@ namespace Project9 {
 			break;
 
 		case 7:
-			// TODO : ATTENTION CHANGER LA REQUETE ET BDD ICI JUSTE TEMPORAIRE
 
 			float val_achat;
-			req = "SELECT SUM(Quantite_Stock * Prix_HT) AS TOT FROM Projet.Stock FULL JOIN \
-			(SELECT ID_Stock AS ID_S, ID_Article, Prix_HT FROM Projet.Present_en_Stock FULL JOIN(SELECT \
-					ID_Article AS ID_A, Prix_HT FROM Projet.Catalogue_Entreprise) AS cmd ON ID_A = ID_Article) AS all_id ON ID_S = ID_Stock";
+			req = "SELECT SUM(Quantite_Stock* Prix_HT) AS TOT FROM Projet.Stock LEFT JOIN Projet.Present_en_Stock ON Stock.ID_Stock = Present_en_Stock.ID_Stock LEFT JOIN Projet.Catalogue_Entreprise ON Present_en_Stock.ID_Article = Catalogue_Entreprise.ID_Article;";
 
 			cmd->CommandText = req;
 
@@ -487,6 +666,7 @@ namespace Project9 {
 			break;
 
 		case 8:
+			this->groupBox1->Visible = true;
 			break;
 
 		default:
@@ -608,5 +788,53 @@ namespace Project9 {
 
 
 	}
-	};
+	private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
+		try{
+			if(comboBox2->SelectedItem->ToString()!="" && comboBox3->SelectedItem->ToString() != ""&& comboBox4->SelectedItem->ToString() != ""&& comboBox5->SelectedItem->ToString() != ""){
+				MySqlConnection^ connect = gcnew MySqlConnection(this->cnxstr);
+				MySqlCommand^ cmd = gcnew MySqlCommand();
+				cmd->Connection = connect;
+				String^ req;
+				MySqlDataReader^ reader;
+				connect->Open();
+				req = "";
+				float val_achat;
+				req = "SELECT SUM(Quantite_Stock* Prix_HT) AS TOT FROM Projet.Stock LEFT JOIN Projet.Present_en_Stock ON Stock.ID_Stock = Present_en_Stock.ID_Stock LEFT JOIN Projet.Catalogue_Entreprise ON Present_en_Stock.ID_Article = Catalogue_Entreprise.ID_Article;";
+
+				cmd->CommandText = req;
+
+				try
+				{
+					reader = cmd->ExecuteReader();
+					reader->Read();
+					val_achat = System::Convert::ToSingle(reader[0]);
+				}
+				catch (Exception^ e)
+				{
+					val_achat = 0;
+				}
+
+				reader->Close();
+				float x1 = float::Parse(comboBox2->SelectedItem->ToString());
+				float x2 = float::Parse(comboBox3->SelectedItem->ToString());
+				float x3 = float::Parse(comboBox4->SelectedItem->ToString());
+				float x4 = float::Parse(comboBox5->SelectedItem->ToString());
+				// D'abord la marge, puis la TVA. 
+				float val_final = val_achat * ((100 + x2) / 100) * ((100 + x1) / 100);
+				// puis la réduc
+				val_final -= val_final*(x3 / 100);
+				// puis le dernier
+				val_final -= val_final * (x4 / 100);
+
+			this->Output_BoxStat->Text = "Valeur totale Stock : " + val_final + " €";
+			}
+			else {
+				MessageBox::Show("Merci de renseigner tous les paramètres obligatoires.");
+			}
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show("Erreur innatendue. Veuillez recommencer.");
+		}
+	}
+};
 }
