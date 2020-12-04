@@ -654,7 +654,6 @@ namespace Project9 {
             this->textBox8->Size = System::Drawing::Size(122, 26);
             this->textBox8->TabIndex = 60;
             this->textBox8->Visible = false;
-            this->textBox8->TextChanged += gcnew System::EventHandler(this, &GestionPersonnel::textBox8_TextChanged);
             // 
             // label12
             // 
@@ -669,7 +668,6 @@ namespace Project9 {
             this->label12->TabIndex = 59;
             this->label12->Text = L"ID Supérieur";
             this->label12->Visible = false;
-            this->label12->Click += gcnew System::EventHandler(this, &GestionPersonnel::label12_Click);
             // 
             // GestionPersonnel
             // 
@@ -715,16 +713,8 @@ namespace Project9 {
 
         }
 #pragma endregion
-	private: System::Void AffichPers_Click(System::Object^ sender, System::EventArgs^ e) {
-
-	}
-private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-}
-private: System::Void dataGridView1_CellContentClick_1(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-}
-private: System::Void dataGridView1_CellContentClick_2(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-}
 private: 
+    // Insérer Valeurs dans la Grille n°1
     System::Void InsertDataGrid(System::String^ req) {
         MySqlDataAdapter^ adapt;
         MySqlConnection^ cnxx = gcnew MySqlConnection(cnxstr);
@@ -737,192 +727,178 @@ private:
         dataGridView1->DataSource = table;
         dataGridView1->Columns[3]->DefaultCellStyle->Format = "MM/dd/yyyy";
     }
-    
+    // Insérer Valeurs dans la Grille n°2
+    System::Void AdresseDataGrid(System::String^ req) {
+        MySqlDataAdapter^ adapt;
+        MySqlConnection^ cnxx = gcnew MySqlConnection(cnxstr);
+        adapt = gcnew MySqlDataAdapter(req, cnxx);
+        MySqlCommandBuilder^ commandBuilder;
+        commandBuilder = gcnew MySqlCommandBuilder(adapt);
+        System::Data::DataTable^ table;
+        table = gcnew Data::DataTable();
+        adapt->Fill(table);
+        dataGridView2->DataSource = table;
+        dataGridView2->Columns[0]->Visible = false;
+    }
+    // Sélectionne un Perosnnel
+    System::Void dataGridView1_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+        DataGridViewRow^ ligne = dataGridView1->SelectedRows[0];
+        System::String^ Identifiant = ligne->Cells["ID_Employe"]->Value->ToString();
+        System::String^ requ = "SELECT Personnel.ID_Adresse, Rue, Code_Postal, Ville, Pays FROM Projet.Repertoire_Adresse LEFT JOIN Projet.Personnel ON Personnel.ID_Adresse = Repertoire_Adresse.ID_Adresse WHERE ID_Employe =" + Identifiant + ";";
+        this->button4->Enabled = true;
+        this->button5->Enabled = true;
+        AdresseDataGrid(requ);
+    }
+    // Afficher la liste du personnel enregistré
     System::Void AffichPers_Click_1(System::Object^ sender, System::EventArgs^ e) {
-    System::String^ req = "SELECT ID_Employe, Nom_Employe AS Nom, Prenom_Employe AS Prenom, Date_Embauche, ID_Superieur FROM Projet.Personnel;";
-    InsertDataGrid(req);
-}
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-    System::String^ req = "SELECT ID_Employe, Nom_Employe AS Nom, Prenom_Employe AS Prenom, Date_Embauche, ID_Superieur FROM Projet.Personnel WHERE ID_Employe =" + textBox1->Text + ";";
-    try {
+        System::String^ req = "SELECT ID_Employe, Nom_Employe AS Nom, Prenom_Employe AS Prenom, Date_Embauche, ID_Superieur FROM Projet.Personnel;";
         InsertDataGrid(req);
-        textBox1->Text = "";
-        if (this->label5->Visible) {
-            this->label5->Visible = false;
+    }
+
+    // Rechercher le personnel par Identifiant
+    System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+        System::String^ req = "SELECT ID_Employe, Nom_Employe AS Nom, Prenom_Employe AS Prenom, Date_Embauche, ID_Superieur FROM Projet.Personnel WHERE ID_Employe =" + textBox1->Text + ";";
+        try {
+            InsertDataGrid(req);
+            textBox1->Text = "";
+            if (this->label5->Visible) {
+                this->label5->Visible = false;
+            }
+        }
+        catch (Exception^ ex) {
+            this->label5->Visible = true;
         }
     }
-    catch (Exception^ ex) {
-        this->label5->Visible = true;
+
+    // Rechercher le personnel par Nom/Prénom
+    System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+        System::String^ req = "SELECT ID_Employe, Nom_Employe AS Nom, Prenom_Employe AS Prenom, Date_Embauche, ID_Superieur FROM Projet.Personnel WHERE Nom_Employe LIKE '" + textBox2->Text + "%' AND Prenom_Employe LIKE '" + textBox3->Text + "%';";
+        InsertDataGrid(req);
+        textBox2->Text = "";
+        textBox3->Text = "";
     }
-}
-private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-    System::String^ req = "SELECT ID_Employe, Nom_Employe AS Nom, Prenom_Employe AS Prenom, Date_Embauche, ID_Superieur FROM Projet.Personnel WHERE Nom_Employe LIKE '" + textBox2->Text + "%' AND Prenom_Employe LIKE '" + textBox3->Text + "%';";
-    InsertDataGrid(req);
-    textBox2->Text = "";
-    textBox3->Text = "";
-}
-       System::Void button2_Click2(System::Object^ sender, System::EventArgs^ e) {
-           try {
-               if (this->textBox2->Text != "" && this->textBox3->Text != "" && this->textBox4->Text != "" && this->textBox5->Text != "" && this->textBox6->Text != "" && this->textBox7->Text != "") {
-                   //Query
-                   System::String^ theDate = this->dateTimePicker1->Value.ToString("yyyy-MM-dd");
-                   // Connexion SQL
 
-                   MySqlConnection^ cnxx = gcnew MySqlConnection(cnxstr);
-                   MySqlCommand^ cmd = gcnew MySqlCommand();
-                   MySqlDataReader^ Reader;
-                   cmd->Connection = cnxx;
-                   if (this->textBox8->Text == "") {
-                       cmd->CommandText = "START TRANSACTION; INSERT INTO Repertoire_Adresse (Rue, Code_Postal, Ville,Pays) VALUES ('" + this->textBox4->Text + "', '" + this->textBox5->Text + "', '" + this->textBox6->Text + "', '" + this->textBox7->Text + "'); INSERT INTO Personnel (Nom_Employe, Prenom_Employe, Date_Embauche,ID_Adresse) SELECT '" + this->textBox2->Text + "', '" + this->textBox3->Text + "', '" + theDate + "',MAX(ID_Adresse) FROM Repertoire_Adresse; COMMIT;";
-                   }
-                   else {
-                       cmd->CommandText = "START TRANSACTION; INSERT INTO Repertoire_Adresse (Rue, Code_Postal, Ville,Pays) VALUES ('" + this->textBox4->Text + "', '" + this->textBox5->Text + "', '" + this->textBox6->Text + "', '" + this->textBox7->Text + "'); INSERT INTO Personnel (Nom_Employe, Prenom_Employe, Date_Embauche,ID_Superieur,ID_Adresse) SELECT '" + this->textBox2->Text + "', '" + this->textBox3->Text + "', '" + theDate + "','" + this->textBox8->Text + "',MAX(ID_Adresse) FROM Repertoire_Adresse; COMMIT;";
-                   }
-                   cnxx->Open();
-                   Reader = cmd->ExecuteReader();
-                   while (Reader->Read())
-                   {
-                   };
-                   Reader->Close();
-                   System::String^ requ = "SELECT ID_Employe, Nom_Employe AS Nom, Prenom_Employe AS Prenom, Date_Embauche, ID_Superieur FROM Projet.Personnel;";
-                   InsertDataGrid(requ);
+    // Insertion Personnel
+    System::Void button2_Click2(System::Object^ sender, System::EventArgs^ e) {
+        try {
+            if (this->textBox2->Text != "" && this->textBox3->Text != "" && this->textBox4->Text != "" && this->textBox5->Text != "" && this->textBox6->Text != "" && this->textBox7->Text != "") {
+                System::String^ theDate = this->dateTimePicker1->Value.ToString("yyyy-MM-dd");
+                // Connexion SQL
 
-                   // On remet tout comme avant
-                   retour();
-               }
-               else {
-                   MessageBox::Show("Erreur : Merci de remplir tous les champs obligatoires.");
-               }
-           }
-           catch (Exception^ ex) {
-               MessageBox::Show("Erreur innatendue. Contactez votre adminsitrateur système.");
-           }
-       }
+                MySqlConnection^ cnxx = gcnew MySqlConnection(cnxstr);
+                MySqlCommand^ cmd = gcnew MySqlCommand();
+                MySqlDataReader^ Reader;
+                cmd->Connection = cnxx;
+                // En fonction de s'il y a un Supérieur
+                if (this->textBox8->Text == "") {
+                    cmd->CommandText = "START TRANSACTION; INSERT INTO Repertoire_Adresse (Rue, Code_Postal, Ville,Pays) VALUES ('" + this->textBox4->Text + "', '" + this->textBox5->Text + "', '" + this->textBox6->Text + "', '" + this->textBox7->Text + "'); INSERT INTO Personnel (Nom_Employe, Prenom_Employe, Date_Embauche,ID_Adresse) SELECT '" + this->textBox2->Text + "', '" + this->textBox3->Text + "', '" + theDate + "',MAX(ID_Adresse) FROM Repertoire_Adresse; COMMIT;";
+                }
+                else {
+                    cmd->CommandText = "START TRANSACTION; INSERT INTO Repertoire_Adresse (Rue, Code_Postal, Ville,Pays) VALUES ('" + this->textBox4->Text + "', '" + this->textBox5->Text + "', '" + this->textBox6->Text + "', '" + this->textBox7->Text + "'); INSERT INTO Personnel (Nom_Employe, Prenom_Employe, Date_Embauche,ID_Superieur,ID_Adresse) SELECT '" + this->textBox2->Text + "', '" + this->textBox3->Text + "', '" + theDate + "','" + this->textBox8->Text + "',MAX(ID_Adresse) FROM Repertoire_Adresse; COMMIT;";
+                }
+                cnxx->Open();
+                Reader = cmd->ExecuteReader();
+                while (Reader->Read())
+                {
+                };
+                Reader->Close();
+                System::String^ requ = "SELECT ID_Employe, Nom_Employe AS Nom, Prenom_Employe AS Prenom, Date_Embauche, ID_Superieur FROM Projet.Personnel;";
+                InsertDataGrid(requ);
 
-       // ENVOI MISE A JOUR D'UN PERSONNEL
-       System::Void button2_Click3(System::Object^ sender, System::EventArgs^ e) {
-           DataGridViewRow^ ligne = dataGridView1->SelectedRows[0];
-           DataGridViewRow^ ligneAdresse = dataGridView2->SelectedRows[0];
-           try {
-                   
-               if (this->textBox2->Text != "" && this->textBox3->Text != "" && this->textBox4->Text != "" && this->textBox5->Text != "" && this->textBox6->Text != "" && this->textBox7->Text != "") {
-                   //Query
-                   System::String^ theDate = this->dateTimePicker1->Value.ToString("yyyy-MM-dd");
-                   // Connexion SQL
+                // On remet tout comme avant
+                retour();
+            }
+            else {
+                MessageBox::Show("Erreur : Merci de remplir tous les champs obligatoires.");
+            }
+        }
+        catch (Exception^ ex) {
+            MessageBox::Show("Erreur innatendue. Contactez votre adminsitrateur système.");
+        }
+    }
 
-                   MySqlConnection^ cnxx = gcnew MySqlConnection(cnxstr);
-                   MySqlCommand^ cmd = gcnew MySqlCommand();
-                   MySqlDataReader^ Reader;
-                   cmd->Connection = cnxx;
-                   if (this->textBox8->Text == "") { this->textBox8->Text = "null"; }
-                   cmd->CommandText = "START TRANSACTION; UPDATE Repertoire_Adresse SET Rue = '" + this->textBox4->Text + "', Code_Postal = '" + this->textBox5->Text + "', Ville = '" + this->textBox6->Text + "', Pays = '" + this->textBox7->Text + "' WHERE ID_Adresse = '" + ligneAdresse->Cells["ID_Adresse"]->Value->ToString() + "'; UPDATE Personnel SET Nom_Employe = '" + this->textBox2->Text + "', Prenom_Employe = '" + this->textBox3->Text + "', Date_Embauche = '" + theDate + "', ID_Superieur = " + this->textBox8->Text + " WHERE ID_Employe = '" + ligne->Cells["ID_Employe"]->Value->ToString() + "'; COMMIT; ";
-                   cnxx->Open();
-                   Reader = cmd->ExecuteReader();
-                   while (Reader->Read())
-                   {
-                   };
-                   Reader->Close();
-                   retour();
-               }
-               else {
-                   MessageBox::Show("Erreur : Merci de remplir tous les champs obligatoires.");
-               }
-                   
-           }
-           catch (Exception^ ex) {
-               MessageBox::Show("Erreur innatendue. Contactez votre adminsitrateur système.");
-           }
-       }
+    // ENVOI MISE A JOUR D'UN PERSONNEL
+    System::Void button2_Click3(System::Object^ sender, System::EventArgs^ e) {
+        DataGridViewRow^ ligne = dataGridView1->SelectedRows[0];
+        DataGridViewRow^ ligneAdresse = dataGridView2->SelectedRows[0];
+        try {
 
-       void retour() {
-           this->label1->Visible = true;
-           this->label2->Visible = true;
-           this->textBox1->Visible = true;
-           this->button1->Visible = true;
-           this->button3->Visible = false;
-           this->label9->Visible = false;
-           this->label10->Visible = false;
-           this->label11->Visible = false;
-           this->textBox4->Visible = false;
-           this->textBox5->Visible = false;
-           this->textBox6->Visible = false;
-           this->label13->Visible = false;
-           this->label12->Visible = false;
-           this->textBox7->Visible = false;
-           this->textBox8->Visible = false;
-           this->label3->Text = L"Recherche par Nom";
-           this->label3->Location = System::Drawing::Point(94, 248);
-           this->label6->Visible = false;
-           this->dateTimePicker1->Visible = false;
-           this->button2->Location = System::Drawing::Point(391, 277);
-           switch (mode_actuel) {
-           case 2:
-               this->button2->Click -= gcnew System::EventHandler(this, &GestionPersonnel::button2_Click2);
-           case 3:
-               this->button2->Click -= gcnew System::EventHandler(this, &GestionPersonnel::button2_Click3);
-           }
+            if (this->textBox2->Text != "" && this->textBox3->Text != "" && this->textBox4->Text != "" && this->textBox5->Text != "" && this->textBox6->Text != "" && this->textBox7->Text != "") {
+                //Query
+                System::String^ theDate = this->dateTimePicker1->Value.ToString("yyyy-MM-dd");
+                // Connexion SQL
 
-           this->button2->Click += gcnew System::EventHandler(this, &GestionPersonnel::button2_Click);
-           textBox2->Text = "";
-           textBox3->Text = "";
-           textBox4->Text = "";
-           textBox5->Text = "";
-           textBox6->Text = "";
-           textBox7->Text = "";
-           textBox8->Text = "";
-           this->button2->Text = "Rechercher";
+                MySqlConnection^ cnxx = gcnew MySqlConnection(cnxstr);
+                MySqlCommand^ cmd = gcnew MySqlCommand();
+                MySqlDataReader^ Reader;
+                cmd->Connection = cnxx;
+                if (this->textBox8->Text == "") { this->textBox8->Text = "null"; }
+                cmd->CommandText = "START TRANSACTION; UPDATE Repertoire_Adresse SET Rue = '" + this->textBox4->Text + "', Code_Postal = '" + this->textBox5->Text + "', Ville = '" + this->textBox6->Text + "', Pays = '" + this->textBox7->Text + "' WHERE ID_Adresse = '" + ligneAdresse->Cells["ID_Adresse"]->Value->ToString() + "'; UPDATE Personnel SET Nom_Employe = '" + this->textBox2->Text + "', Prenom_Employe = '" + this->textBox3->Text + "', Date_Embauche = '" + theDate + "', ID_Superieur = " + this->textBox8->Text + " WHERE ID_Employe = '" + ligne->Cells["ID_Employe"]->Value->ToString() + "'; COMMIT; ";
+                cnxx->Open();
+                Reader = cmd->ExecuteReader();
+                while (Reader->Read())
+                {
+                };
+                Reader->Close();
+                retour();
+            }
+            else {
+                MessageBox::Show("Erreur : Merci de remplir tous les champs obligatoires.");
+            }
 
-           if (this->AjoutPers->Enabled == false) {
-               this->AjoutPers->Enabled = true;
-               this->button5->Enabled = true;
-           }
-           this->AffichPers->Enabled = true;
-       }
+        }
+        catch (Exception^ ex) {
+            MessageBox::Show("Erreur innatendue. Contactez votre adminsitrateur système.");
+        }
+    }
+    // Bouton de retour
+    void retour() {
+        this->label1->Visible = true;
+        this->label2->Visible = true;
+        this->textBox1->Visible = true;
+        this->button1->Visible = true;
+        this->button3->Visible = false;
+        this->label9->Visible = false;
+        this->label10->Visible = false;
+        this->label11->Visible = false;
+        this->textBox4->Visible = false;
+        this->textBox5->Visible = false;
+        this->textBox6->Visible = false;
+        this->label13->Visible = false;
+        this->label12->Visible = false;
+        this->textBox7->Visible = false;
+        this->textBox8->Visible = false;
+        this->label3->Text = L"Recherche par Nom";
+        this->label3->Location = System::Drawing::Point(94, 248);
+        this->label6->Visible = false;
+        this->dateTimePicker1->Visible = false;
+        this->button2->Location = System::Drawing::Point(391, 277);
+        switch (mode_actuel) {
+        case 2:
+            this->button2->Click -= gcnew System::EventHandler(this, &GestionPersonnel::button2_Click2);
+        case 3:
+            this->button2->Click -= gcnew System::EventHandler(this, &GestionPersonnel::button2_Click3);
+        }
+
+        this->button2->Click += gcnew System::EventHandler(this, &GestionPersonnel::button2_Click);
+        textBox2->Text = "";
+        textBox3->Text = "";
+        textBox4->Text = "";
+        textBox5->Text = "";
+        textBox6->Text = "";
+        textBox7->Text = "";
+        textBox8->Text = "";
+        this->button2->Text = "Rechercher";
+
+        if (this->AjoutPers->Enabled == false) {
+            this->AjoutPers->Enabled = true;
+            this->button5->Enabled = true;
+        }
+        this->AffichPers->Enabled = true;
+    }
        
-       
-       System::Void AjoutPers_Click(System::Object^ sender, System::EventArgs^ e) {
-    // Retrait des labels
-    this->label1->Visible = false;
-    this->label2->Visible = false;
-    this->label5->Visible = false;
-    // Puis des boutons inutiles
-    this->textBox1->Visible = false;
-    this->button1->Visible = false;
-    // Modif des noms
-    this->label3->Text = "Nom";
-    this->button2->Text = "Ajouter";
-    this->label3->Location = System::Drawing::Point(194, 248);
-    // Ajout cases manquantes
-    this->label6->Visible = true;
-    this->dateTimePicker1->Visible = true;
-    this->button3->Visible = true;
-    this->label9->Visible = true;
-    this->label10->Visible = true;
-    this->label11->Visible = true;
-    this->textBox4->Visible = true;
-    this->textBox5->Visible = true;
-    this->textBox6->Visible = true;
-    this->label13->Visible = true;
-    this->textBox7->Visible = true;
-    this->textBox8->Visible = true;
-    this->label12->Visible = true;
-    //Déplacement case Ajouter
-    this->button2->Location = System::Drawing::Point(391, 478);
-    this->button2->Click -= gcnew System::EventHandler(this, &GestionPersonnel::button2_Click);
-    this->button2->Click += gcnew System::EventHandler(this, &GestionPersonnel::button2_Click2);
-    this->mode_actuel = 2;
-    this->button4->Enabled = false;
-    this->button5->Enabled = false;
-    this->AffichPers->Enabled = false;
-}
-private: System::Void label12_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textBox8_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-    DataGridViewRow^ ligne = dataGridView1->SelectedRows[0];
-    DataGridViewRow^ ligneAdresse = dataGridView2->SelectedRows[0];
-    if (ligne) {
+    // Bouton d'affichage des box pour ajouter un personnel
+    System::Void AjoutPers_Click(System::Object^ sender, System::EventArgs^ e) {
         // Retrait des labels
         this->label1->Visible = false;
         this->label2->Visible = false;
@@ -932,7 +908,7 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
         this->button1->Visible = false;
         // Modif des noms
         this->label3->Text = "Nom";
-        this->button2->Text = "Update";
+        this->button2->Text = "Ajouter";
         this->label3->Location = System::Drawing::Point(194, 248);
         // Ajout cases manquantes
         this->label6->Visible = true;
@@ -951,71 +927,90 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
         //Déplacement case Ajouter
         this->button2->Location = System::Drawing::Point(391, 478);
         this->button2->Click -= gcnew System::EventHandler(this, &GestionPersonnel::button2_Click);
-        this->button2->Click += gcnew System::EventHandler(this, &GestionPersonnel::button2_Click3);
-        this->mode_actuel = 3;
+        this->button2->Click += gcnew System::EventHandler(this, &GestionPersonnel::button2_Click2);
+        this->mode_actuel = 2;
         this->button4->Enabled = false;
         this->button5->Enabled = false;
-
-        // Intégration du texte
-        this->textBox2->Text = ligne->Cells["Nom"]->Value->ToString();
-        this->textBox3->Text = ligne->Cells["Prenom"]->Value->ToString();
-        this->textBox8->Text = ligne->Cells["ID_Superieur"]->Value->ToString();
-
-        this->dateTimePicker1->Value = DateTime::ParseExact(ligne->Cells["Date_Embauche"]->FormattedValue->ToString(), "MM/dd/yyyy", Globalization::CultureInfo::InvariantCulture);
-
-
-        this->textBox4->Text = ligneAdresse->Cells["Rue"]->Value->ToString();
-        this->textBox5->Text = ligneAdresse->Cells["Code_Postal"]->Value->ToString();
-        this->textBox6->Text = ligneAdresse->Cells["Ville"]->Value->ToString();
-        this->textBox7->Text = ligneAdresse->Cells["Pays"]->Value->ToString();
         this->AffichPers->Enabled = false;
-        this->AjoutPers->Enabled = false;
     }
 
-}
-private: 
-    
-    System::Void AdresseDataGrid(System::String^ req) {
-        MySqlDataAdapter^ adapt;
-        MySqlConnection^ cnxx = gcnew MySqlConnection(cnxstr);
-        adapt = gcnew MySqlDataAdapter(req, cnxx);
-        MySqlCommandBuilder^ commandBuilder;
-        commandBuilder = gcnew MySqlCommandBuilder(adapt);
-        System::Data::DataTable^ table;
-        table = gcnew Data::DataTable();
-        adapt->Fill(table);
-        dataGridView2->DataSource = table;
-        dataGridView2->Columns[0]->Visible = false;
+    // Bouton d'affichage des box pour update un personnel
+    System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+        DataGridViewRow^ ligne = dataGridView1->SelectedRows[0];
+        DataGridViewRow^ ligneAdresse = dataGridView2->SelectedRows[0];
+        if (ligne) {
+            // Retrait des labels
+            this->label1->Visible = false;
+            this->label2->Visible = false;
+            this->label5->Visible = false;
+            // Puis des boutons inutiles
+            this->textBox1->Visible = false;
+            this->button1->Visible = false;
+            // Modif des noms
+            this->label3->Text = "Nom";
+            this->button2->Text = "Update";
+            this->label3->Location = System::Drawing::Point(194, 248);
+            // Ajout cases manquantes
+            this->label6->Visible = true;
+            this->dateTimePicker1->Visible = true;
+            this->button3->Visible = true;
+            this->label9->Visible = true;
+            this->label10->Visible = true;
+            this->label11->Visible = true;
+            this->textBox4->Visible = true;
+            this->textBox5->Visible = true;
+            this->textBox6->Visible = true;
+            this->label13->Visible = true;
+            this->textBox7->Visible = true;
+            this->textBox8->Visible = true;
+            this->label12->Visible = true;
+            //Déplacement case Ajouter
+            this->button2->Location = System::Drawing::Point(391, 478);
+            this->button2->Click -= gcnew System::EventHandler(this, &GestionPersonnel::button2_Click);
+            this->button2->Click += gcnew System::EventHandler(this, &GestionPersonnel::button2_Click3);
+            this->mode_actuel = 3;
+            this->button4->Enabled = false;
+            this->button5->Enabled = false;
+
+            // Intégration du texte
+            this->textBox2->Text = ligne->Cells["Nom"]->Value->ToString();
+            this->textBox3->Text = ligne->Cells["Prenom"]->Value->ToString();
+            this->textBox8->Text = ligne->Cells["ID_Superieur"]->Value->ToString();
+
+            this->dateTimePicker1->Value = DateTime::ParseExact(ligne->Cells["Date_Embauche"]->FormattedValue->ToString(), "MM/dd/yyyy", Globalization::CultureInfo::InvariantCulture);
+
+
+            this->textBox4->Text = ligneAdresse->Cells["Rue"]->Value->ToString();
+            this->textBox5->Text = ligneAdresse->Cells["Code_Postal"]->Value->ToString();
+            this->textBox6->Text = ligneAdresse->Cells["Ville"]->Value->ToString();
+            this->textBox7->Text = ligneAdresse->Cells["Pays"]->Value->ToString();
+            this->AffichPers->Enabled = false;
+            this->AjoutPers->Enabled = false;
+        }
+
     }
-    
-    System::Void dataGridView1_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-    DataGridViewRow^ ligne = dataGridView1->SelectedRows[0];
-    System::String^ Identifiant = ligne->Cells["ID_Employe"]->Value->ToString();
-    System::String^ requ = "SELECT Personnel.ID_Adresse, Rue, Code_Postal, Ville, Pays FROM Projet.Repertoire_Adresse LEFT JOIN Projet.Personnel ON Personnel.ID_Adresse = Repertoire_Adresse.ID_Adresse WHERE ID_Employe =" + Identifiant + ";";
-    this->button4->Enabled = true;
-    this->button5->Enabled = true;
-    AdresseDataGrid(requ);
-}
-private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-    retour();
-}
-private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
-    DataGridViewRow^ ligne = dataGridView1->SelectedRows[0];
-    MySqlConnection^ cnxx = gcnew MySqlConnection(cnxstr);
-    MySqlCommand^ cmd = gcnew MySqlCommand();
-    MySqlDataReader^ Reader;
-    cmd->Connection = cnxx;
-    cmd->CommandText = "START TRANSACTION;UPDATE Personnel SET ID_Superieur = null WHERE ID_Superieur = '" + ligne->Cells["ID_Employe"]->Value->ToString() + "';DELETE Projet.Personnel, Projet.Repertoire_Adresse FROM Personnel LEFT JOIN Projet.Repertoire_Adresse ON Personnel.ID_Adresse = Repertoire_Adresse.ID_Adresse WHERE ID_Employe = '" + ligne->Cells["ID_Employe"]->Value->ToString() + "'; COMMIT;";
-    cnxx->Open();
-    Reader = cmd->ExecuteReader();
-    while (Reader->Read())
-    {
-    };
-    Reader->Close();
-    System::String^ requ = "SELECT ID_Employe, Nom_Employe AS Nom, Prenom_Employe AS Prenom, Date_Embauche, ID_Superieur FROM Projet.Personnel;";
-    InsertDataGrid(requ);
-    this->button4->Enabled = false;
-    this->button5->Enabled = false;
-}
+    // Bouton de retour
+    System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+        retour();
+    }
+    // Suppression d'un personnel
+    System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+        DataGridViewRow^ ligne = dataGridView1->SelectedRows[0];
+        MySqlConnection^ cnxx = gcnew MySqlConnection(cnxstr);
+        MySqlCommand^ cmd = gcnew MySqlCommand();
+        MySqlDataReader^ Reader;
+        cmd->Connection = cnxx;
+        cmd->CommandText = "START TRANSACTION;UPDATE Personnel SET ID_Superieur = null WHERE ID_Superieur = '" + ligne->Cells["ID_Employe"]->Value->ToString() + "';DELETE Projet.Personnel, Projet.Repertoire_Adresse FROM Personnel LEFT JOIN Projet.Repertoire_Adresse ON Personnel.ID_Adresse = Repertoire_Adresse.ID_Adresse WHERE ID_Employe = '" + ligne->Cells["ID_Employe"]->Value->ToString() + "'; COMMIT;";
+        cnxx->Open();
+        Reader = cmd->ExecuteReader();
+        while (Reader->Read())
+        {
+        };
+        Reader->Close();
+        System::String^ requ = "SELECT ID_Employe, Nom_Employe AS Nom, Prenom_Employe AS Prenom, Date_Embauche, ID_Superieur FROM Projet.Personnel;";
+        InsertDataGrid(requ);
+        this->button4->Enabled = false;
+        this->button5->Enabled = false;
+    }
 };
 }

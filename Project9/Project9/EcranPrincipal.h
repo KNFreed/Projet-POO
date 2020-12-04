@@ -334,6 +334,7 @@ namespace Project9 {
 				this->GestionCommandes->Name = L"gestionCommandes";
 				this->GestionCommandes->Size = System::Drawing::Size(1234, 650);
 				this->GestionCommandes->TabIndex = 1;
+				this->GestionCommandes->cnxstr = cnxstr;
 				this->Controls->Add(this->GestionCommandes);
 			}
 		}
